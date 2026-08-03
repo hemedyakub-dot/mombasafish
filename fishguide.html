@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Know Your Fish · Mombasa Fish Market</title>
+<meta name="description" content="The interactive guide to Indian Ocean fish — flavor profiles, best cooking methods, Swahili names. Take the Fish Finder quiz and discover your perfect catch.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mombasa Fish Market">
+<meta property="og:title" content="Know Your Fish · Mombasa Fish Market">
+<meta property="og:description" content="Which fish is right for you? Flavor meters, cooking guides, and the Fish Finder quiz — Indian Ocean seafood, explained.">
+<meta property="og:url" content="https://mombasafish.netlify.app/fishguide">
+<meta property="og:image" content="https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2026-04-18_at_23.14.59.jpg?v=1776561006&width=1200">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
+
+<header class="hdr">
+  <a class="logo" href="index.html">Mombasa<em>*</em>Fish Market</a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="catalogue.html">Shop</a>
+    <a href="fishguide.html" class="on">Fish Guide</a>
+    <a href="track.html">Track Order</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html">About</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <p class="tag">The interactive guide</p>
+  <h1>Know your <span>fish.</span></h1>
+  <p class="sub">Every fish has a character — some mild and gentle, some bold and rich. Learn them like a Shimoni fisherman, and never buy the wrong fish again.</p>
+  <canvas id="waves" style="position:absolute;left:0;bottom:-2px;width:100%;height:110px;pointer-events:none"></canvas>
+</div>
+
+<div class="wrap">
+
+<section>
+  <div class="quiz" id="quiz">
+    <span class="kick">Fish finder</span>
+    <h3>Answer 3 questions. Meet your fish.</h3>
+    <p class="ql">01 · How will you cook it?</p>
+    <div class="qopts" data-q="cook">
+      <button data-v="fry">Frying</button>
+      <button data-v="grill">Grilling / BBQ</button>
+      <button data-v="curry">Curry / coconut stew</button>
+      <button data-v="raw">Steaks / raw</button>
+    </div>
+    <p class="ql">02 · What taste do you love?</p>
+    <div class="qopts" data-q="taste">
+      <button data-v="mild">Mild &amp; gentle</button>
+      <button data-v="rich">Rich &amp; bold</button>
+    </div>
+    <p class="ql">03 · Your budget per kg?</p>
+    <div class="qopts" data-q="budget">
+      <button data-v="eco">Under KES 800</button>
+      <button data-v="mid">KES 800 – 1,500</button>
+      <button data-v="any">Money is not the issue</button>
+    </div>
+    <p style="margin-top:1.3rem"><button class="btn btn-coral" id="qgo">Find my fish</button></p>
+    <div class="qresult" id="qres">
+      <div class="qbest" id="qbest"></div>
+      <p class="qalts" id="qalts"></p>
+    </div>
+  </div>
+
+  <span class="kick">The library</span>
+  <h2 class="sec">Meet the <span>catch</span></h2>
+  <p class="sec-sub">Tap the filters to explore by character. Meters show taste strength, firmness, and natural oils — the three things that decide how a fish should be cooked.</p>
+
+  <div class="filters" id="gfilters">
+    <button class="on" data-f="all">All</button>
+    <button data-f="mild">Mild</button>
+    <button data-f="rich">Rich</button>
+    <button data-f="fry">For frying</button>
+    <button data-f="grill">For grilling</button>
+    <button data-f="curry">For curry</button>
+  </div>
+
+  <div class="grid" id="glib"></div>
+</section>
+
+</div>
+
+<footer>
+  <div class="cols">
+    <div><h4>Pages</h4>
+      <a href="index.html">Home</a><a href="catalogue.html">Shop</a><a href="track.html">Track Order</a><a href="blog.html">Blog</a><a href="about.html">About</a></div>
+    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a></div>
+    <div><h4>Follow us</h4><div class="social"><a href="https://web.facebook.com/mombasafishmarket">Facebook</a><a href="https://instagram.com/mombasafishmarket">Instagram</a><a href="https://youtube.com/mombasafish">YouTube</a><a href="https://tiktok.com/@mombasafish">TikTok</a><a href="https://x.com/mombasa_fish">X</a></div></div>
+  </div>
+  <p class="fine">Mombasafish: Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 Mombasa Fish Market</p>
+</footer>
+
+<script>
+var FISH=[
+{n:"Tuna Fish",sw:"Jodari",p:1000,fl:4,fi:5,oi:3,t:"rich",c:["grill","raw","fry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2024-10-05_at_22.10.03.jpg?v=1776561005&width=480",note:"The best seller. Deep red steaks — sear hot and fast, never overcook."},
+{n:"King Fish",sw:"Nguru",p:1200,fl:4,fi:5,oi:3,t:"rich",c:["grill","fry","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/IMG_20210425_102321.jpg?v=1776561005&width=480",note:"Pride of the coast. The classic biryani fish — chunks hold together."},
+{n:"Emperor Fish",sw:"Changu",p:700,fl:2,fi:3,oi:2,t:"mild",c:["fry","grill","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2026-04-18_at_23.14.59.jpg?v=1776561006&width=480",note:"The family favourite — few bones, star of samaki wa kupaka."},
+{n:"Red Snapper",sw:"Premium catch",p:700,fl:2,fi:4,oi:2,t:"mild",c:["grill","fry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2026-04-17_at_09.29.25.jpg?v=1776543230&width=480",note:"Restaurant favourite worldwide — shines with simple seasoning."},
+{n:"Trevally Fish",sw:"Kolekole",p:700,fl:4,fi:4,oi:3,t:"rich",c:["fry","grill","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2026-04-17_at_09.29.24.jpg?v=1776407558&width=480",note:"Stands up to bold seasoning — a fish with muscle."},
+{n:"Grouper Fish",sw:"Tewa",p:600,fl:2,fi:3,oi:1,t:"mild",c:["curry","fry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/166274504_482590459539917_3045138797807010038_n.jpg?v=1776561005&width=480",note:"White and flaky — the mchuzi wa samaki (fish curry) classic."},
+{n:"Sail Fish",sw:"Sulisuli",p:800,fl:4,fi:4,oi:2,t:"rich",c:["grill","raw"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsAppImage2025-12-10at2.01.19AM.jpg?v=1776561006&width=480",note:"Big-game fish — bold steaks, excellent smoked."},
+{n:"Swordfish",sw:"Sulisuli Kipanga",p:800,fl:3,fi:5,oi:2,t:"rich",c:["grill","raw"],img:null,ini:"SK",note:"King of the BBQ — famously forgiving over hot coals."},
+{n:"Cobia",sw:"Songoro",p:800,fl:3,fi:5,oi:2,t:"mild",c:["grill","fry","raw"],img:null,ini:"SO",note:"Tuna's texture, gentler taste — great first 'steak fish'."},
+{n:"Rabbit Fish",sw:"Tafi",p:700,fl:2,fi:2,oi:2,t:"mild",c:["fry","grill"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2024-10-05_at_22.10.17_2.jpg?v=1776561006&width=480",note:"Delicate and sweet — deep-fry whole with ugali or coconut rice."},
+{n:"Parrot Fish",sw:"Pono",p:600,fl:2,fi:2,oi:1,t:"mild",c:["fry","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/101691446_898481500575523_1554090597382567823_n.jpg?v=1776543281&width=480",note:"Tender and gently sweet — lovely in coconut sauces."},
+{n:"Red Mullet",sw:"Mkundaji",p:700,fl:3,fi:2,oi:2,t:"mild",c:["fry","grill"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/FB_IMG_1600500920739.jpg?v=1776561005&width=480",note:"Subtly sweet, distinctive — best fried whole."},
+{n:"Shark Steak",sw:"Papa Mbichi",p:700,fl:3,fi:5,oi:2,t:"rich",c:["fry","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsAppImage2025-12-10at2.01.17AM_2.jpg?v=1776561005&width=480",note:"Dense, boneless, distinctive — a traditional coastal staple."},
+{n:"Indian Mackerel",sw:"Una",p:600,fl:4,fi:3,oi:5,t:"rich",c:["fry","grill","curry"],img:null,ini:"UN",note:"Rich natural oils — big flavour at a friendly price."},
+{n:"Sardines",sw:"Simusimu",p:600,fl:4,fi:2,oi:5,t:"rich",c:["fry","grill"],img:null,ini:"SI",note:"Omega-3 champions — crispy-fry and eat them fresh."},
+{n:"Anchovies",sw:"Uwono",p:600,fl:5,fi:1,oi:4,t:"rich",c:["fry"],img:null,ini:"UW",note:"Tiny fish, mighty flavour — lifts everyday dishes."},
+{n:"Octopus",sw:"Pweza",p:1000,fl:3,fi:5,oi:1,t:"rich",c:["curry","grill"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/Screenshot_20230222_081757_WhatsAppBusiness.jpg?v=1776561005&width=480",note:"The legend — pweza wa nazi. Slow-cook until fork-soft."},
+{n:"Calamari · Squid",sw:"Ngisi",p:1200,fl:2,fi:3,oi:1,t:"mild",c:["fry","curry"],img:"https://cdn.shopify.com/s/files/1/0657/2153/2515/files/FB_IMG_1600500930840.jpg?v=1776561006&width=480",note:"Cook fast and hot, or slow and gentle — nothing in between."}
+];
+
+(function(){
+  var WA='254787668888';
+  function meter(lb,v){return '<div class="meter"><span class="lb">'+lb+'</span><span class="tr"><span class="fl" style="width:'+(v*20)+'%"></span></span></div>';}
+  function tagRow(f){
+    var m={fry:'Frying',grill:'Grilling',curry:'Curry',raw:'Steaks/Raw'};
+    return '<div class="tags">'+f.c.map(function(x){return '<span class="tag">'+m[x]+'</span>';}).join('')+'</div>';
+  }
+  function waLink(f){return 'https://wa.me/'+WA+'?text='+encodeURIComponent('Hello! I would like to order '+f.n+' ('+f.sw+').');}
+  function cardHTML(f){
+    var im=f.img?'<div class="im"><img src="'+f.img+'" alt="'+f.n+'" loading="lazy"></div>':'<div class="ph">'+f.ini+'</div>';
+    return im+'<div class="bd"><h3>'+f.n+'</h3><span class="en">'+f.sw+'</span>'+
+      tagRow(f)+
+      meter('Taste',f.fl)+meter('Firmness',f.fi)+meter('Oils',f.oi)+
+      '<p class="ds" style="margin-top:.35rem">'+f.note+'</p>'+
+      '<span class="pr">KES '+f.p.toLocaleString()+' / kg</span>'+
+      '<a class="add" style="text-align:center;text-decoration:none;margin-top:.6rem" href="'+waLink(f)+'">Order on WhatsApp</a></div>';
+  }
+  var lib=document.getElementById('glib');
+  function render(filter){
+    lib.innerHTML='';
+    FISH.forEach(function(f){
+      if(filter!=='all'&&f.t!==filter&&f.c.indexOf(filter)<0)return;
+      var d=document.createElement('div');d.className='card';d.innerHTML=cardHTML(f);lib.appendChild(d);
+    });
+  }
+  render('all');
+  var fb=document.querySelectorAll('#gfilters button');
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(x){x.classList.remove('on');});b.classList.add('on');render(b.dataset.f);
+  });});
+
+  var ans={cook:null,taste:null,budget:null};
+  document.querySelectorAll('.qopts').forEach(function(g){
+    g.querySelectorAll('button').forEach(function(b){
+      b.addEventListener('click',function(){
+        g.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});
+        b.classList.add('on');ans[g.dataset.q]=b.dataset.v;
+      });
+    });
+  });
+  document.getElementById('qgo').addEventListener('click',function(){
+    if(!ans.cook||!ans.taste||!ans.budget){alert('Answer all 3 questions first.');return;}
+    var scored=FISH.map(function(f){
+      var s=0;
+      if(f.c.indexOf(ans.cook)>=0)s+=3;
+      if(f.t===ans.taste)s+=2;
+      if(ans.budget==='eco'&&f.p<800)s+=2;
+      if(ans.budget==='mid'&&f.p>=800&&f.p<=1500)s+=2;
+      if(ans.budget==='any')s+=1;
+      return {f:f,s:s};
+    }).sort(function(a,b){return b.s-a.s;});
+    var best=scored[0].f,alts=scored.slice(1,3).map(function(x){return x.f.n+' ('+x.f.sw+')';});
+    var im=best.img?'<img src="'+best.img+'" alt="'+best.n+'">':'';
+    document.getElementById('qbest').innerHTML=im+
+      '<div><span class="badge">Your perfect match</span><h4>'+best.n+' — '+best.sw+'</h4>'+
+      '<p style="font-size:.88rem;color:var(--muted);margin:.2rem 0 .6rem">'+best.note+' · KES '+best.p.toLocaleString()+' / kg</p>'+
+      '<a class="btn btn-wa" style="padding:.65rem 1.2rem;font-size:.9rem" href="'+waLink(best)+'">Order '+best.sw+' now</a></div>';
+    document.getElementById('qalts').textContent='Also great for you: '+alts.join(' · ');
+    document.getElementById('qres').classList.add('show');
+    document.getElementById('qres').scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+})();
+
+(function(){
+  var cv=document.getElementById('waves');if(!cv)return;
+  var cx=cv.getContext('2d'),W,H,t=0,run=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var L=[
+    {amp:20,len:.006,sp:.014,dy:44,c:'rgba(250,246,238,.22)'},
+    {amp:15,len:.009,sp:-.021,dy:30,c:'rgba(250,246,238,.35)'},
+    {amp:11,len:.013,sp:.03,dy:17,c:'rgba(250,246,238,.55)'},
+    {amp:7,len:.018,sp:-.042,dy:6,c:'#FAF6EE'}
+  ];
+  function size(){var r=window.devicePixelRatio>1.5?1.5:window.devicePixelRatio||1;W=cv.clientWidth;H=cv.clientHeight;cv.width=W*r;cv.height=H*r;cx.setTransform(r,0,0,r,0,0);}
+  function draw(){cx.clearRect(0,0,W,H);for(var i=0;i<L.length;i++){var l=L[i];cx.beginPath();cx.moveTo(0,H);for(var x=0;x<=W;x+=6){var y=H-l.dy+Math.sin(x*l.len+t*l.sp*60)*l.amp+Math.sin(x*l.len*1.7+t*l.sp*38)*l.amp*.4;cx.lineTo(x,y);}cx.lineTo(W,H);cx.closePath();cx.fillStyle=l.c;cx.fill();}}
+  function loop(){if(run&&!reduce){t+=.016;draw();}requestAnimationFrame(loop);}
+  size();draw();if(!reduce)requestAnimationFrame(loop);
+  window.addEventListener('resize',function(){size();draw();});
+  document.addEventListener('visibilitychange',function(){run=!document.hidden;});
+})();
+</script>
+</body>
+</html>

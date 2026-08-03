@@ -202,3 +202,28 @@ footer a{color:rgba(242,237,227,.85);text-decoration:none;display:block;padding:
 footer a:hover{color:var(--catch)}
 footer p{color:rgba(242,237,227,.7)}
 footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);font-size:.72rem;color:rgba(242,237,227,.5);letter-spacing:.04em}
+/* Fish guide */
+.meter{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:var(--muted)}
+.meter .lb{width:58px;flex-shrink:0}
+.meter .tr{flex:1;height:6px;background:rgba(3,42,46,.09);border-radius:3px;overflow:hidden}
+.meter .fl{height:100%;background:var(--deep);border-radius:3px;transition:width .5s ease}
+.tags{display:flex;gap:.3rem;flex-wrap:wrap;margin:.15rem 0 .3rem}
+.tag{font-size:.66rem;background:var(--sand);color:var(--deep);padding:.16rem .5rem;border-radius:999px;font-weight:600;letter-spacing:.02em}
+.quiz{background:var(--white);border:1px solid var(--line);border-radius:20px;padding:1.5rem;box-shadow:0 10px 40px rgba(3,42,46,.08);margin-bottom:2.5rem}
+.quiz h3{font-family:var(--font-display);font-size:1.05rem;color:var(--abyss);margin-bottom:.2rem}
+.quiz .ql{font-size:.8rem;font-family:var(--font-mono);color:var(--coral);margin:1.1rem 0 .5rem;letter-spacing:.04em}
+.qopts{display:flex;gap:.5rem;flex-wrap:wrap}
+.qopts button{background:var(--cream);border:2px solid var(--line);color:var(--ink);border-radius:999px;padding:.5rem 1rem;font-size:.85rem;font-weight:600;cursor:pointer;transition:all .15s}
+.qopts button:hover{border-color:var(--abyss)}
+.qopts button.on{background:var(--abyss);color:var(--sand);border-color:var(--abyss)}
+.qresult{margin-top:1.4rem;display:none}
+.qresult.show{display:block}
+.qbest{border:2px solid var(--coral);border-radius:16px;padding:1.1rem;display:flex;gap:1rem;align-items:center;flex-wrap:wrap;background:var(--cream)}
+.qbest .badge{font-family:var(--font-mono);font-size:.68rem;color:var(--coral);letter-spacing:.1em;text-transform:uppercase}
+.qbest h4{font-family:var(--font-display);font-size:1.25rem;color:var(--abyss)}
+.qbest img{width:110px;height:82px;object-fit:cover;border-radius:12px}
+.qalts{font-size:.84rem;color:var(--muted);margin-top:.7rem}
+
+.social{display:flex;gap:.45rem;flex-wrap:wrap;margin-top:.2rem}
+.social a{display:inline-block;padding:.35rem .75rem;border:1px solid rgba(242,237,227,.3);border-radius:999px;font-size:.78rem}
+.social a:hover{border-color:var(--catch);color:var(--catch)}
