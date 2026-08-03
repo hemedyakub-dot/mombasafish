@@ -21,7 +21,7 @@ a{color:var(--deep)}
 
 /* Header */
 .hdr{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.95rem 1.1rem;position:sticky;top:0;background:rgba(250,246,238,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--line)}
-.logo{font-family:var(--font-display);font-size:1.05rem;color:var(--abyss);text-decoration:none;letter-spacing:.02em}
+.logo{font-family:var(--font-display);font-size:1.05rem;color:var(--abyss);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.55rem}
 .logo em{color:var(--coral);font-style:normal}
 .nav{display:flex;gap:.2rem;flex-wrap:wrap}
 .nav a{color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:600;padding:.45rem .7rem;border-radius:999px;transition:background .2s,color .2s}
@@ -202,6 +202,14 @@ footer a{color:rgba(242,237,227,.85);text-decoration:none;display:block;padding:
 footer a:hover{color:var(--catch)}
 footer p{color:rgba(242,237,227,.7)}
 footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);font-size:.72rem;color:rgba(242,237,227,.5);letter-spacing:.04em}
+/* Full-bleed photo band */
+.band{position:relative;isolation:isolate;text-align:center;padding:5rem 1rem;color:#fff;background-size:cover;background-position:center}
+.band::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(3,42,46,.55)}
+.band h2{font-family:var(--font-display);font-size:clamp(1.5rem,5vw,2.4rem);margin-bottom:.6rem;text-shadow:0 2px 24px rgba(0,0,0,.5)}
+.band h2 span{color:var(--catch)}
+.band p{max-width:32rem;margin:0 auto 1.6rem;color:rgba(255,255,255,.93);text-shadow:0 1px 12px rgba(0,0,0,.5)}
+.band .cta{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
 /* Fish guide */
 .meter{display:flex;align-items:center;gap:.5rem;font-size:.68rem;color:var(--muted)}
 .meter .lb{width:58px;flex-shrink:0}

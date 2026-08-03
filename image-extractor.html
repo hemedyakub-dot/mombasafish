@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mombasafish — Brand Image Extractor</title>
+<style>
+body{font-family:system-ui,sans-serif;background:#032A2E;color:#F2EDE3;padding:2rem 1rem;max-width:56rem;margin:0 auto}
+h1{font-size:1.4rem}p{color:#b8c9c5;font-size:.92rem;line-height:1.6}
+button.big{background:#25D366;color:#06281c;border:0;border-radius:999px;padding:1rem 2rem;font-size:1.05rem;font-weight:700;cursor:pointer;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.85rem;margin-top:1rem}
+td,th{padding:.45rem .5rem;border-bottom:1px solid rgba(127,212,193,.2);text-align:left}
+td.st{font-family:monospace;font-size:.78rem}
+.ok{color:#7FD4C1}.fail{color:#FF6B5A}
+a{color:#7FD4C1}
+img.th{width:52px;height:40px;object-fit:cover;border-radius:6px;background:#07474C}
+</style>
+</head>
+<body>
+<h1>🐟 Mombasafish — Brand Image Extractor</h1>
+<p>This tool downloads all <b id="count"></b> brand images from the Shopify CDN into your Downloads folder, already renamed correctly. Click the button, and if the browser asks to "download multiple files", click <b>Allow</b>. Then move all the files into the <b>images/</b> folder of your GitHub repo.</p>
+<button class="big" id="go">⬇ Download all images</button>
+<table id="tbl"><tr><th></th><th>Filename</th><th>What it is</th><th>Status</th></tr></table>
+
+<script>
+var B="https://cdn.shopify.com/s/files/1/0657/2153/2515";
+var IMGS=[
+["logo.jpg",B+"/files/Mombasa_fish_Market_-_logo.jpg?v=1765722420","THE LOGO (square, 1024px)"],
+["wordmark.png",B+"/files/Mombasa_Fish_Market.png?v=1765723060","Wordmark (small)"],
+["banner-wide.png",B+"/files/Mombasa_Fish_Market_69e5f341-74be-4d55-b850-f0e80542b1ea.png?v=1765723856","Wide brand banner (2500px)"],
+["hero-sunset.jpg",B+"/files/WhatsApp_Image_2024-10-05_at_22.10.17_1.jpg?v=1776549206&width=1600","Golden hero — sunset boat"],
+["hero-shoreline.jpg",B+"/files/WhatsApp_Image_2026-04-18_at_22.28.08.jpg?v=1776540626&width=1600","Golden hero — shoreline"],
+["banner-food.jpg",B+"/files/Screenshot_20230503_203941_WhatsApp.jpg?v=1776536297&width=1600","Food banner"],
+["jodari.jpg",B+"/files/WhatsApp_Image_2024-10-05_at_22.10.03.jpg?v=1776561005&width=1000","Tuna"],
+["changu.jpg",B+"/files/WhatsApp_Image_2026-04-18_at_23.14.59.jpg?v=1776561006&width=800","Emperor fish"],
+["kolekole.jpg",B+"/files/WhatsApp_Image_2026-04-17_at_09.29.24.jpg?v=1776407558&width=800","Trevally"],
+["mkundaji.jpg",B+"/files/FB_IMG_1600500920739.jpg?v=1776561005&width=800","Red mullet"],
+["nguru.jpg",B+"/files/IMG_20210425_102321.jpg?v=1776561005&width=800","Kingfish"],
+["papa.jpg",B+"/files/WhatsAppImage2025-12-10at2.01.17AM_2.jpg?v=1776561005&width=800","Shark steak"],
+["pono.jpg",B+"/files/101691446_898481500575523_1554090597382567823_n.jpg?v=1776543281&width=800","Parrot fish"],
+["red-snapper.jpg",B+"/files/WhatsApp_Image_2026-04-17_at_09.29.25.jpg?v=1776543230&width=800","Red snapper"],
+["sulisuli.jpg",B+"/files/WhatsAppImage2025-12-10at2.01.19AM.jpg?v=1776561006&width=800","Sailfish"],
+["tafi.jpg",B+"/files/WhatsApp_Image_2024-10-05_at_22.10.17_2.jpg?v=1776561006&width=800","Rabbit fish"],
+["tewa.jpg",B+"/files/166274504_482590459539917_3045138797807010038_n.jpg?v=1776561005&width=800","Grouper"],
+["kaa.webp",B+"/files/crab.webp?v=1776561006&width=800","Crab"],
+["lobster.jpg",B+"/files/103884273_148266736811125_2804365931209849033_n.jpg?v=1776536116&width=800","Lobster"],
+["ngisi.jpg",B+"/files/FB_IMG_1600500930840.jpg?v=1776561006&width=800","Calamari"],
+["pweza.jpg",B+"/files/Screenshot_20230222_081757_WhatsAppBusiness.jpg?v=1776561005&width=800","Octopus"],
+["prawns-jumbo.jpg",B+"/files/93507684_2872779186181021_2079635760737764120_n.jpg?v=1776561005&width=800","Prawns jumbo"],
+["prawns-king.jpg",B+"/files/165819989_781914029373929_7431530059414083226_n.jpg?v=1776561005&width=800","Prawns king"],
+["prawns-tiger.jpg",B+"/files/165813909_167693791858696_5041865692671187138_n.jpg?v=1776561021&width=800","Prawns tiger"],
+["prawns-s1.jpg",B+"/files/FB_IMG_1600500756138.jpg?v=1776561005&width=800","Prawns S1"],
+["prawns-s2.jpg",B+"/files/165247476_159723659345195_6554619317367162920_n.jpg?v=1776561005&width=800","Prawns S2"],
+["prawns-cocktail.jpg",B+"/files/101952128_259601745101176_5010943339864834802_n.jpg?v=1776541325&width=800","Prawns cocktail"],
+["katashingo.jpg",B+"/files/rn-image_picker_lib_temp_5d824d28-ba03-4453-b546-3b5a3bd77ab8.jpg?v=1785078968&width=800","Dried anchovies"],
+["cooler-5kg.jpg",B+"/files/ETS.jpg?v=1776561005&width=800","Cooler 5kg"],
+["cooler-7kg.jpg",B+"/files/ETS_bd737948-d048-4e12-a1d7-2c497aab225f.jpg?v=1776561005&width=800","Cooler 7kg"],
+["cooler-15kg.jpg",B+"/files/ETS_fa813ee1-fa95-43d3-ab42-0f26062cec8c.jpg?v=1776561005&width=800","Cooler 15kg"],
+["blog-journey.jpg",B+"/articles/WhatsApp_Image_2024-10-05_at_22.10.17_1-1242405.jpg?v=1783977861&width=1000","Blog — journey"],
+["blog-recipes.jpg",B+"/articles/Screenshot_20230503_203941_WhatsApp-8527670.jpg?v=1783977862&width=1000","Blog — recipes"],
+["blog-blue-economy.jpg",B+"/articles/WhatsApp_Image_2026-04-18_at_22.28.08-9081429.jpg?v=1783977865&width=1000","Blog — blue economy"],
+["blog-jodari-ai.jpg",B+"/articles/a-clean-professional-product-photograph-_lK_bBLHHTBmzoZY7Y-tvDQ_VegyuaC1S_6NDRSEJQc1-A-3632000.jpg?v=1783977867&width=1000","Blog — tuna guide"]
+];
+document.getElementById('count').textContent=IMGS.length;
+var tbl=document.getElementById('tbl');
+IMGS.forEach(function(r,i){
+  var tr=document.createElement('tr');
+  tr.innerHTML='<td><img class="th" src="'+r[1]+'" loading="lazy"></td><td class="st">'+r[0]+'</td><td>'+r[2]+'</td><td class="st" id="s'+i+'">—</td>';
+  tbl.appendChild(tr);
+});
+function grab(i){
+  var r=IMGS[i],s=document.getElementById('s'+i);
+  s.textContent='…';
+  return fetch(r[1]).then(function(x){if(!x.ok)throw 0;return x.blob();}).then(function(b){
+    var a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=r[0];
+    document.body.appendChild(a);a.click();a.remove();
+    s.textContent='✓ saved';s.className='st ok';
+  }).catch(function(){
+    s.innerHTML='<a href="'+r[1]+'" target="_blank">open &amp; save manually</a>';s.className='st fail';
+  });
+}
+document.getElementById('go').addEventListener('click',function(){
+  var i=0;
+  (function next(){if(i>=IMGS.length)return;grab(i++).then(function(){setTimeout(next,400);});})();
+});
+</script>
+</body>
+</html>
