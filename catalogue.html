@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
+<style>.hero.hero-photo{--hero-img:url("images/blue-waves.jpg");min-height:42vh}</style>
 </head>
 <body>
 
@@ -23,6 +24,33 @@
     <a href="about.html">About</a>
   </nav>
 </header>
+
+<div class="hero hero-photo">
+  <p class="tag">Shop seafood</p>
+  <h1>Fresh from <span>the ocean.</span></h1>
+  <p class="sub">Ocean-fresh, straight from Shimoni's small boats to your kitchen.</p>
+  <canvas id="waves" style="position:absolute;left:0;bottom:-2px;width:100%;height:110px;pointer-events:none"></canvas>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('waves');if(!cv)return;
+  var cx=cv.getContext('2d'),W,H,t=0,run=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var L=[
+    {amp:20,len:.006,sp:.014,dy:44,c:'rgba(250,246,238,.22)'},
+    {amp:15,len:.009,sp:-.021,dy:30,c:'rgba(250,246,238,.35)'},
+    {amp:11,len:.013,sp:.03,dy:17,c:'rgba(250,246,238,.55)'},
+    {amp:7,len:.018,sp:-.042,dy:6,c:'#FAF6EE'}
+  ];
+  function size(){var r=window.devicePixelRatio>1.5?1.5:window.devicePixelRatio||1;W=cv.clientWidth;H=cv.clientHeight;cv.width=W*r;cv.height=H*r;cx.setTransform(r,0,0,r,0,0);}
+  function draw(){cx.clearRect(0,0,W,H);for(var i=0;i<L.length;i++){var l=L[i];cx.beginPath();cx.moveTo(0,H);for(var x=0;x<=W;x+=6){var y=H-l.dy+Math.sin(x*l.len+t*l.sp*60)*l.amp+Math.sin(x*l.len*1.7+t*l.sp*38)*l.amp*.4;cx.lineTo(x,y);}cx.lineTo(W,H);cx.closePath();cx.fillStyle=l.c;cx.fill();}}
+  function loop(){if(run&&!reduce){t+=.016;draw();}requestAnimationFrame(loop);}
+  size();draw();if(!reduce)requestAnimationFrame(loop);
+  window.addEventListener('resize',function(){size();draw();});
+  document.addEventListener('visibilitychange',function(){run=!document.hidden;});
+})();
+</script>
 
 <div class="wrap">
 <section>
