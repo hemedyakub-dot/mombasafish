@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us · Mombasa Fish Market</title>
+<meta name="description" content="Traceable to the source — how your seafood travels from the small-boat fishermen of Shimoni to your door, cold chain unbroken.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>.hero.hero-photo{--hero-img:url("https://cdn.shopify.com/s/files/1/0657/2153/2515/files/WhatsApp_Image_2026-04-18_at_22.28.08.jpg?v=1776540626&width=1600");min-height:52vh}</style>
+</head>
+<body>
+
+<div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
+
+<header class="hdr">
+  <a class="logo" href="index.html">Mombasa<em>*</em>Fish Market</a>
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="catalogue.html">Shop</a>
+    <a href="track.html">Track Order</a>
+    <a href="blog.html">Blog</a>
+    <a href="about.html" class="on">About</a>
+  </nav>
+</header>
+
+<div class="hero hero-photo">
+  <p class="tag">Shimoni · South Coast · Kenya</p>
+  <h1>Traceable to <span>the source.</span></h1>
+  <p class="sub">Not a marketing line — it's how this business runs, every single day.</p>
+  <canvas id="waves" style="position:absolute;left:0;bottom:-2px;width:100%;height:120px;pointer-events:none"></canvas>
+</div>
+
+<script>
+(function(){
+  var cv=document.getElementById('waves');if(!cv)return;
+  var cx=cv.getContext('2d'),W,H,t=0,run=true;
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var L=[
+    {amp:22,len:.006,sp:.014,dy:48,c:'rgba(250,246,238,.22)'},
+    {amp:16,len:.009,sp:-.021,dy:32,c:'rgba(250,246,238,.35)'},
+    {amp:12,len:.013,sp:.03,dy:18,c:'rgba(250,246,238,.55)'},
+    {amp:8,len:.018,sp:-.042,dy:6,c:'#FAF6EE'}
+  ];
+  function size(){
+    var r=window.devicePixelRatio>1.5?1.5:window.devicePixelRatio||1;
+    W=cv.clientWidth;H=cv.clientHeight;
+    cv.width=W*r;cv.height=H*r;cx.setTransform(r,0,0,r,0,0);
+  }
+  function draw(){
+    cx.clearRect(0,0,W,H);
+    for(var i=0;i<L.length;i++){
+      var l=L[i];cx.beginPath();cx.moveTo(0,H);
+      for(var x=0;x<=W;x+=6){
+        var y=H-l.dy+Math.sin(x*l.len+t*l.sp*60)*l.amp+Math.sin(x*l.len*1.7+t*l.sp*38)*l.amp*.4;
+        cx.lineTo(x,y);
+      }
+      cx.lineTo(W,H);cx.closePath();cx.fillStyle=l.c;cx.fill();
+    }
+  }
+  function loop(){if(run&&!reduce){t+=.016;draw();}requestAnimationFrame(loop);}
+  size();draw();
+  if(!reduce)requestAnimationFrame(loop);
+  window.addEventListener('resize',function(){size();draw();});
+  document.addEventListener('visibilitychange',function(){run=!document.hidden;});
+})();
+</script>
+
+<div class="wrap">
+
+<section>
+  <span class="kick">Boat to box</span>
+  <h2 class="sec">The journey of <span>your fish</span></h2>
+  <div class="steps">
+    <div class="step"><span class="n">04:30</span><h3>The boats go out</h3><p>The small-boat fishermen of Shimoni head out at dawn — traditional, low-impact methods, not industrial trawlers that strip the reef.</p></div>
+    <div class="step"><span class="n">11:00</span><h3>The catch lands</h3><p>When a boat comes in, we buy the same day — directly from the fisherman. No brokers, no cold storage limbo.</p></div>
+    <div class="step"><span class="n">13:00</span><h3>Cleaned &amp; packed</h3><p>Cleaned to your preference, packed in an EPS cooler with ice. The cold chain starts here and never breaks.</p></div>
+    <div class="step"><span class="n">→</span><h3>On its way to you</h3><p>Mombasa: same-day rider. Other counties: express transport, cooler sealed. <a href="track.html">You track every stage</a>.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="kick">Why it matters</span>
+  <h2 class="sec">Why <span>small boats?</span></h2>
+  <p class="sec-sub">Buying from small-boat fishermen isn't just a sourcing choice — it's a stand.</p>
+  <div class="steps">
+    <div class="step"><h3>Money stays on the coast</h3><p>Buying direct means more of what you pay goes to the fishing families of Shimoni — not a chain of middlemen.</p></div>
+    <div class="step"><h3>The ocean is protected</h3><p>Small-boat fishing respects seasons, size limits, and the reef — so the next generation catches fish too. <a href="blog.html#blue-economy">Read about the blue economy</a>.</p></div>
+    <div class="step"><h3>Quality you can see</h3><p>Fish that came out of the ocean yesterday has nothing to hide. Freshness you can see with your own eyes — it smells like the sea, not the freezer.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="kick">Our promise</span>
+  <h2 class="sec">What we <span>stand for</span></h2>
+  <div class="steps">
+    <div class="step"><h3>Quality</h3><p>Every fish is inspected before packing. Not satisfied? Tell us — we make it right.</p></div>
+    <div class="step"><h3>Delivery</h3><p>Cold chain from Shimoni to your door, 8 counties and counting.</p></div>
+    <div class="step"><h3>Freshness</h3><p>The day's catch, packed within hours — not days.</p></div>
+    <div class="step"><h3>Traceable</h3><p>Every order has its boat, its date, and its coastline. What you eat is exactly what we say it is.</p></div>
+  </div>
+</section>
+
+<section>
+  <span class="kick">One name, five missions</span>
+  <h2 class="sec">The Mombasafish <span>ecosystem</span></h2>
+  <p class="sec-sub">Mombasa Fish Market is where it starts — not where it ends. The Mombasafish name is growing into a family of ventures built on the same waters.</p>
+  <div class="steps">
+    <div class="step"><span class="n" style="color:#1FAF54">● LIVE</span><h3>Mombasafish Market</h3><p>Fresh Indian Ocean seafood, delivered across Kenya. You're here.</p></div>
+    <div class="step"><span class="n" style="color:#1FAF54">● LIVE</span><h3>Mombasafish Media</h3><p>Stories from the coast — fishermen journeys, recipes, and life on the water. <a href="blog.html">Read the stories</a>.</p></div>
+    <div class="step"><span class="n">COMING</span><h3>Mombasafish Academy</h3><p>Training the next generation — seafood handling, small-boat skills, and blue economy know-how.</p></div>
+    <div class="step"><span class="n">COMING</span><h3>Mombasafish Ocean</h3><p>Conservation and coastal tourism — healthy reefs, sustainable fishing, and experiences on the water: dhow trips, Shimoni visits, the taste of the coast at its source. <a href="blog.html#blue-economy">Why it matters</a>.</p></div>
+    <div class="step"><span class="n">COMING</span><h3>Mombasafish Exports</h3><p>Taking the taste of the Swahili coast beyond Kenya — Indian Ocean seafood to the world.</p></div>
+  </div>
+</section>
+
+<section class="center">
+  <h2 class="sec">Karibu — <span>welcome to the family</span></h2>
+  <p class="sec-sub">Questions? Orders? Message us on WhatsApp — we reply fast. Or visit the shop in person in Mombasa town.</p>
+  <div style="display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap">
+    <a class="btn btn-wa" href="https://wa.me/254787668888?text=Hello%20Mombasa%20Fish%20Market!">Chat with us</a>
+    <a class="btn btn-ghost" href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Find us on Google Maps</a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <div class="cols">
+    <div><h4>Pages</h4>
+      <a href="index.html">Home</a><a href="catalogue.html">Shop</a><a href="track.html">Track Order</a><a href="blog.html">Blog</a></div>
+    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p></div>
+  </div>
+  <p class="fine">Mombasafish: Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 Mombasa Fish Market</p>
+</footer>
+
+</body>
+</html>
