@@ -5,20 +5,20 @@
    ============================================================ */
 var PROMO = {
   on:        true,                                  // true = show popup, false = off
-  id:        "promo-aug-2026",                      // CHANGE THIS every new promo (resets who has seen it)
-  image:     "images/prawns-jumbo.jpg",             // picture in the popup (leave "" for no picture)
-  kicker:    "This week only",                      // small line above the headline
-  title:     "Jumbo Prawns — fresh in",             // the headline
-  text:      "The boats brought in a good haul. Order before Friday and we'll pack it with the day's catch.",
-  button:    "Order on WhatsApp",                   // button text
-  link:      "https://wa.me/254787668888?text=Hello%20Mombasafish!%20I%20saw%20the%20Jumbo%20Prawns%20offer.",
+  id:        "omega3-combo-aug2026",                // CHANGE THIS every new promo (resets who has seen it)
+  image:     "images/katashingo.jpg",               // picture in the popup (leave "" for no picture)
+  kicker:    "Offer of the week",                   // small line above the headline
+  title:     "The Omega-3 Combo — save KES 300",    // the headline
+  text:      "Sardines, anchovies and Indian mackerel — the giants of omega-3. 1 kg of each for KES 1,500 instead of 1,800. While the catch lasts.",
+  button:    "Get the combo",                       // button text
+  link:      "catalogue.html#omega-combo",
   delay:     6000,                                  // wait 6 seconds before showing (gives people time to look around)
   showAgainAfterDays: 3,                            // if dismissed, don't show again for 3 days
 
   /* PINNED STRIP — always-visible bar under the header */
-  strip:     false,                                 // true = show pinned strip
-  stripText: "🔥 Weekend special: Jumbo Prawns fresh in — order by Friday",
-  stripLink: "catalogue.html"
+  strip:     true,                                  // true = show pinned strip
+  stripText: "🐟 Offer of the week: Omega-3 Combo — 3 kg for KES 1,500 (save 300)",
+  stripLink: "catalogue.html#omega-combo"
 };
 /* ===================== END OF EDITING ====================== */
 
