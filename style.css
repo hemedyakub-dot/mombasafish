@@ -202,6 +202,27 @@ footer a{color:rgba(242,237,227,.85);text-decoration:none;display:block;padding:
 footer a:hover{color:var(--catch)}
 footer p{color:rgba(242,237,227,.7)}
 footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);font-size:.72rem;color:rgba(242,237,227,.5);letter-spacing:.04em}
+/* FishBox builder */
+.fbox{background:var(--sand);border-radius:16px;padding:1rem 1.1rem;margin:.9rem 0 .2rem;border:1px solid var(--line)}
+.fbox .fbh{display:flex;justify-content:space-between;align-items:baseline;gap:.6rem;margin-bottom:.55rem}
+.fbox .fbh b{font-family:var(--font-display);font-size:.92rem;color:var(--abyss)}
+.fbox .fbw{font-family:var(--font-mono);font-size:.82rem;color:var(--deep)}
+.fbar{height:10px;border-radius:6px;background:rgba(3,42,46,.1);overflow:hidden;margin-bottom:.5rem}
+.fbar i{display:block;height:100%;background:var(--deep);border-radius:6px;transition:width .35s ease,background .3s}
+.fbar.warn i{background:var(--catch)}
+.fbar.over i{background:var(--coral)}
+.fbox p.fbmsg{font-size:.85rem;line-height:1.5;color:var(--ink);margin-bottom:.5rem}
+.fbox p.fbmsg b{color:var(--abyss)}
+.fbox .fbadd{background:var(--abyss);color:var(--sand);border:0;border-radius:999px;padding:.55rem 1rem;font-weight:700;font-size:.82rem;cursor:pointer}
+.fbox .fbadd:hover{filter:brightness(1.2)}
+.fbox .fbok{font-size:.85rem;color:#1FAF54;font-weight:700}
+
+/* Price on request */
+.card .pr.por{color:var(--deep);font-family:var(--font-body);font-weight:700;font-size:.82rem}
+.card a.ask{display:block;text-align:center;text-decoration:none;margin-top:.6rem;background:#1FAF54;color:#fff;border-radius:999px;padding:.6rem .9rem;font-weight:700;font-size:.85rem}
+.card a.ask:hover{filter:brightness(1.08)}
+.badge-export{display:inline-block;background:var(--catch);color:var(--abyss);font-size:.62rem;font-weight:700;letter-spacing:.06em;padding:.15rem .5rem;border-radius:999px;margin-bottom:.2rem}
+
 /* Combo offer */
 .combo{background:var(--abyss);color:var(--sand);border-radius:22px;overflow:hidden;display:grid;grid-template-columns:1fr;margin-bottom:2.4rem;box-shadow:0 20px 50px rgba(3,42,46,.25);position:relative}
 @media(min-width:760px){.combo{grid-template-columns:1.05fr 1fr}}
