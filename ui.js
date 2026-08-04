@@ -50,10 +50,13 @@
   var lastY=window.pageYOffset, ticking=false;
   function onScroll(){
     var y=window.pageYOffset;
-    if(nav.classList.contains('open') && Math.abs(y-lastY)>40) setOpen(false);
-    var down = y>lastY && y>140;
+    if(nav.classList.contains('open') && Math.abs(y-lastY)>20) setOpen(false);
     var searchOpen=document.querySelector('.srch-wrap.open');
-    hdr.classList.toggle('hide', down && !searchOpen);
+    var atTop = y<12;
+    var goingUp = y < lastY - 2;
+    /* leaves immediately on any downward movement; comes back on the way up or at the top */
+    var show = atTop || goingUp || searchOpen;
+    hdr.classList.toggle('hide', !show);
     lastY=y; ticking=false;
   }
   window.addEventListener('scroll',function(){
