@@ -202,6 +202,35 @@ footer a{color:rgba(242,237,227,.85);text-decoration:none;display:block;padding:
 footer a:hover{color:var(--catch)}
 footer p{color:rgba(242,237,227,.7)}
 footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);font-size:.72rem;color:rgba(242,237,227,.5);letter-spacing:.04em}
+/* Pillar deep sections */
+.pillar{border-top:1px solid var(--line);padding-top:2.4rem;margin-top:2.6rem}
+.pillar:first-of-type{border-top:0;margin-top:0}
+.phead{display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;margin-bottom:1rem}
+.phead .pico{width:54px;height:54px;border-radius:14px;background:var(--abyss);color:var(--foam);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:1.1rem;flex-shrink:0}
+.phead h3{font-family:var(--font-display);font-size:clamp(1.25rem,4vw,1.7rem);color:var(--abyss);line-height:1.15}
+.plede{font-size:1.02rem;color:var(--deep);font-weight:600;line-height:1.6;margin-bottom:1.1rem;max-width:44rem}
+.pgrid{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media(min-width:760px){.pgrid{grid-template-columns:1fr 1fr}}
+.pnow,.pnext{border-radius:16px;padding:1.15rem 1.25rem;font-size:.9rem}
+.pnow{background:var(--white);border:1px solid var(--line);box-shadow:0 2px 10px rgba(3,42,46,.05)}
+.pnext{background:var(--abyss);color:var(--sand)}
+.pnow h4,.pnext h4{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.6rem;font-weight:400}
+.pnow h4{color:var(--coral)}
+.pnext h4{color:var(--catch)}
+.pnow ul,.pnext ul{margin:0 0 0 1.05rem}
+.pnow li,.pnext li{margin-bottom:.5rem;line-height:1.55}
+.pnext li{color:rgba(242,237,227,.88)}
+.pstory{background:var(--sand);border-left:4px solid var(--coral);border-radius:0 14px 14px 0;padding:1.1rem 1.3rem;margin:1.2rem 0;font-size:.93rem;line-height:1.65}
+.pstory b{color:var(--abyss)}
+.pstory .who{display:block;margin-top:.5rem;font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.04em}
+.pshots{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin:1.2rem 0}
+.pshots img{aspect-ratio:4/3;object-fit:cover;width:100%;border-radius:12px;box-shadow:0 4px 16px rgba(3,42,46,.12)}
+.pstats{display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));margin:1.1rem 0}
+.pstat{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:.85rem 1rem}
+.pstat b{display:block;font-family:var(--font-display);font-size:1.35rem;color:var(--deep);line-height:1.1}
+.pstat span{font-size:.76rem;color:var(--muted)}
+.plinks{font-size:.85rem;color:var(--muted);margin-top:.9rem}
+
 /* Pillar blocks */
 @media(min-width:720px){.spot.rev img{order:2}.spot.rev .sb{order:1}}
 .pillnum{font-family:var(--font-mono);font-size:.75rem;color:var(--coral);letter-spacing:.12em}
