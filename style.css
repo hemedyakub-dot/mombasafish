@@ -22,7 +22,13 @@ a{color:var(--deep)}
 /* Header */
 .hdr{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.95rem 1.1rem;position:sticky;top:0;background:rgba(250,246,238,.94);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:50;border-bottom:1px solid var(--line)}
 .logo{font-family:var(--font-display);font-size:1.05rem;color:var(--abyss);text-decoration:none;letter-spacing:.02em;display:flex;align-items:center;gap:.55rem}
-.logo em{color:var(--coral);font-style:normal}
+.logo em{font-style:normal}
+/* Wordmark: MombasaFish — deep sea blue-green + coral catch */
+.wm{letter-spacing:-.01em;white-space:nowrap}
+.wm em{color:var(--coral);position:relative}
+.wm em::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:linear-gradient(90deg,var(--catch),var(--coral));border-radius:2px;opacity:.85}
+footer .wmf{font-family:var(--font-display);font-size:.95rem;color:var(--sand);letter-spacing:-.01em}
+footer .wmf em{color:var(--catch);font-style:normal}
 .nav{display:flex;gap:.2rem;flex-wrap:wrap}
 .nav a{color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:600;padding:.45rem .7rem;border-radius:999px;transition:background .2s,color .2s}
 .nav a:hover,.nav a.on{background:var(--abyss);color:var(--sand)}

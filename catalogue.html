@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shop Seafood · Mombasafish</title>
+<title>Shop Seafood · MombasaFish</title>
 <meta name="description" content="Fresh Indian Ocean seafood — tuna, kingfish, octopus, prawns and more. Add to cart, check out on WhatsApp, pay with M-Pesa.">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="Mombasafish">
-<meta property="og:title" content="Shop Seafood · Mombasafish">
+<meta property="og:site_name" content="MombasaFish">
+<meta property="og:title" content="Shop Seafood · MombasaFish">
 <meta property="og:description" content="Tuna, kingfish, octopus, prawns and more — fresh from Shimoni. Add to cart, check out on WhatsApp, pay with M-Pesa.">
 <meta property="og:url" content="https://mombasafish.netlify.app/catalogue">
 <meta property="og:image" content="https://mombasafish.netlify.app/images/jodari.jpg">
@@ -23,7 +23,7 @@
 <div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
 
 <header class="hdr">
-  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="Mombasafish logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover">Mombasa<em>fish</em></a>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="catalogue.html" class="on">Shop</a>
@@ -471,7 +471,7 @@
     <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p></div>
     <div><h4>Follow us</h4><div class="social"><a href="https://web.facebook.com/mombasafishmarket">Facebook</a><a href="https://instagram.com/mombasafishmarket">Instagram</a><a href="https://youtube.com/mombasafish">YouTube</a><a href="https://tiktok.com/@mombasafish">TikTok</a><a href="https://x.com/mombasa_fish">X</a></div></div>
   </div>
-  <p class="fine">Mombasafish: Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 Mombasafish</p>
+  <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
 </footer>
 
 <script>
@@ -587,7 +587,7 @@
       return '• '+c.dataset.name+' — '+q+' — '+fmt(c.qty*(+c.dataset.price));
     });
     var w=totalWeight();
-    var msg='Hello Mombasafish! I would like to order:\n\n'+lines.join('\n')+
+    var msg='Hello MombasaFish! I would like to order:\n\n'+lines.join('\n')+
       '\n\nItems total: '+fmt(total(sel))+
       (w>0?'\nCatch weight: '+w+' kg':'')+
       (noBox?'\nCooler box: not needed (own arrangement / collection)':'')+
@@ -596,6 +596,7 @@
   });
 })();
 </script>
+<script src="search.js" defer></script>
 <script src="promo.js" defer></script>
 </body>
 </html>
