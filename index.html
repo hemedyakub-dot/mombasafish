@@ -19,6 +19,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.jpg">
+<link rel="preload" as="image" href="images/hero-sunset.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <style>.hero.hero-photo{--hero-img:url("images/hero-sunset.jpg")}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":["LocalBusiness","Store"],"@id":"https://mombasafish.com/#business","name":"MombasaFish","alternateName":"Mombasa Fish Market","description":"Fresh Indian Ocean seafood from the small-boat fishermen of Shimoni, delivered cold-chain across Kenya. Order on WhatsApp, pay with M-Pesa.","url":"https://mombasafish.com/","logo":"https://mombasafish.com/images/logo.jpg","image":"https://mombasafish.com/images/hero-sunset.jpg","telephone":"+254787668888","email":"mombasafish@gmail.com","priceRange":"KES 600 - KES 4000","currenciesAccepted":"KES","paymentAccepted":"M-Pesa, Cash","address":{"@type":"PostalAddress","addressLocality":"Mombasa","addressRegion":"Mombasa County","addressCountry":"KE"},"geo":{"@type":"GeoCoordinates","latitude":-4.0543525,"longitude":39.6656239},"hasMap":"https://maps.app.goo.gl/NTLTpW95RUBnPDsh9","areaServed":[{"@type":"State","name":"Mombasa"},{"@type":"State","name":"Kwale"},{"@type":"State","name":"Kilifi"},{"@type":"State","name":"Nairobi"},{"@type":"State","name":"Kiambu"},{"@type":"State","name":"Machakos"},{"@type":"State","name":"Nakuru"},{"@type":"State","name":"Taita-Taveta"}],"sameAs":["https://web.facebook.com/mombasafishmarket","https://instagram.com/mombasafishmarket","https://youtube.com/mombasafish","https://tiktok.com/@mombasafish","https://x.com/mombasa_fish"],"makesOffer":{"@type":"Offer","itemOffered":{"@type":"Product","name":"Fresh Indian Ocean seafood","category":"Seafood","description":"Fresh fish, prawns, shellfish, dried seafood, sea moss and mangrove honey from the Indian Ocean.","image":"https://mombasafish.com/images/jodari.jpg","brand":{"@type":"Brand","name":"MombasaFish"},"offers":{"@type":"AggregateOffer","priceCurrency":"KES","lowPrice":"40","highPrice":"4000","offerCount":"38","availability":"https://schema.org/InStock","seller":{"@id":"https://mombasafish.com/#business"}}}}}</script>
@@ -29,7 +30,7 @@
 <div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
 
 <header class="hdr">
-  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" width="34" height="34" fetchpriority="high" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
   <nav class="nav">
     <a href="index.html" class="on">Home</a>
     <a href="catalogue.html">Shop</a>
@@ -125,7 +126,7 @@
   <p class="sec-sub">The species our customers come back for again and again — reliable, wildly delicious, easy to love.</p>
   <div class="grid">
     <div class="card">
-      <div class="im"><img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy"></div>
+      <div class="im"><img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy" width="640" height="1317"></div>
       <div class="bd"><h3>Tuna Fish</h3><span class="en">Jodari · Shimoni</span><p class="ds">Deep red, firm, protein-rich. Steaks, grilling, sushi.</p><span class="pr">KES 1,000 / kg</span></div>
     </div>
     <div class="card">
@@ -146,7 +147,7 @@
 
 <section>
   <div class="spot">
-    <img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy">
+    <img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy" width="640" height="1317">
     <div class="sb">
       <span class="kick">Catch of the week</span>
       <h3>Tuna Fish — Jodari</h3>
@@ -220,7 +221,7 @@
       <span class="tl">Fisherman's Journey<small>Boat to box — from Shimoni to your door</small></span>
     </a>
     <a class="tile" href="blog.html#five-recipes">
-      <img src="images/nguru-fried.jpg" alt="Swahili kitchen" loading="lazy">
+      <img src="images/nguru-fried.jpg" alt="Swahili kitchen" loading="lazy" width="900" height="855">
       <span class="tl">Swahili Kitchen<small>Coastal recipes — coconut-grilled fish and more</small></span>
     </a>
     <a class="tile" href="blog.html#blue-economy">
@@ -259,7 +260,7 @@
     <div>
       <h4>Contact</h4>
       <a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a>
-      <a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a>
+      <a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><a href="policies.html">Policies &amp; privacy</a>
       <p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p>
     </div>
     <div>
@@ -277,6 +278,7 @@
 </footer>
 
 <script src="search.js" defer></script>
+<script src="ui.js" defer></script>
 <script src="promo.js" defer></script>
 </body>
 </html>

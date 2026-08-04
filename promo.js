@@ -46,7 +46,8 @@ var PROMO = {
     if(hdr&&hdr.parentNode) hdr.parentNode.insertBefore(s,hdr.nextSibling);
   }
 
-  if(!PROMO.on) return;
+  var skip=/track/.test(location.pathname);
+  if(!PROMO.on||skip) return;
   var key='pmo_'+PROMO.id;
   try{
     var seen=localStorage.getItem(key);

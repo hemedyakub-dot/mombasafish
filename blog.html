@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.jpg">
+<link rel="preload" as="image" href="images/hero-shoreline.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <style>.hero.hero-photo{--hero-img:url("images/hero-shoreline.jpg");min-height:42vh}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Blog","item":"https://mombasafish.com/blog"}]}</script>
@@ -26,7 +27,7 @@
 <div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
 
 <header class="hdr">
-  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" width="34" height="34" fetchpriority="high" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="catalogue.html">Shop</a>
@@ -193,7 +194,7 @@
   <div class="cols">
     <div><h4>Pages</h4>
       <a href="index.html">Home</a><a href="catalogue.html">Shop</a><a href="track.html">Track Order</a><a href="about.html">About</a></div>
-    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a></div>
+    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><a href="policies.html">Policies &amp; privacy</a></div>
     <div><h4>Follow us</h4><div class="social"><a href="https://web.facebook.com/mombasafishmarket">Facebook</a><a href="https://instagram.com/mombasafishmarket">Instagram</a><a href="https://youtube.com/mombasafish">YouTube</a><a href="https://tiktok.com/@mombasafish">TikTok</a><a href="https://x.com/mombasa_fish">X</a></div></div>
   </div>
   <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
@@ -210,6 +211,7 @@
 })();
 </script>
 <script src="search.js" defer></script>
+<script src="ui.js" defer></script>
 <script src="promo.js" defer></script>
 </body>
 </html>

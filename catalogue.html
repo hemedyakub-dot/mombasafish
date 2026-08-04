@@ -17,6 +17,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.jpg">
+<link rel="preload" as="image" href="images/blue-waves.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <style>.hero.hero-photo{--hero-img:url("images/blue-waves.jpg");min-height:42vh}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Shop Seafood","item":"https://mombasafish.com/catalogue"}]}</script>
@@ -26,7 +27,7 @@
 <div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
 
 <header class="hdr">
-  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
+  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" width="34" height="34" fetchpriority="high" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
   <nav class="nav">
     <a href="index.html">Home</a>
     <a href="catalogue.html" class="on">Shop</a>
@@ -74,8 +75,8 @@
   <div class="combo" id="omega-combo">
     <div class="cimgs">
       <img src="images/simusimu.jpg" alt="Sardines — Simusimu" loading="lazy" onerror="this.outerHTML='&lt;div class=\'ph3\'&gt;SI&lt;/div&gt;'">
-      <img src="images/uwono.jpg" alt="Anchovies — Uwono" loading="lazy" onerror="this.outerHTML='&lt;div class=\'ph3\'&gt;UW&lt;/div&gt;'">
-      <img src="images/una.jpg" alt="Indian Mackerel — Una" loading="lazy" onerror="this.outerHTML='&lt;div class=\'ph3\'&gt;UN&lt;/div&gt;'">
+      <img src="images/uwono.jpg" alt="Anchovies — Uwono" loading="lazy" onerror="this.outerHTML='&lt;div class=\'ph3\'&gt;UW&lt;/div&gt;'" width="850" height="1133">
+      <img src="images/una.jpg" alt="Indian Mackerel — Una" loading="lazy" onerror="this.outerHTML='&lt;div class=\'ph3\'&gt;UN&lt;/div&gt;'" width="768" height="960">
       <img src="images/sardines-hand.jpg" alt="Fresh small fish at the counter" loading="lazy">
     </div>
     <div class="cb">
@@ -106,7 +107,7 @@
   <p class="catdesc">Whole reef and ocean fish, cleaned to your preference — scaled, gutted, filleted, or left whole. Caught by the small boats of Shimoni.</p>
   <div class="grid">
     <div class="card" data-name="Emperor Fish (Changu)" data-price="700" data-unit="kg">
-      <div class="im"><img src="images/changu.jpg" alt="Emperor Fish" loading="lazy"></div>
+      <div class="im"><img src="images/changu.jpg" alt="Emperor Fish" loading="lazy" width="900" height="1125"></div>
       <div class="bd"><h3>Emperor Fish</h3><span class="en">Changu</span>
       <p class="ds">Best-loved reef fish — firm white flesh, mild taste, few bones. Fry whole, grill, or coconut sauce.</p>
       <span class="pr">KES 700 / kg</span>
@@ -114,7 +115,7 @@
       <div class="qty"><button class="mn" aria-label="less">−</button><span class="n">0 kg</span><button class="pl" aria-label="more">+</button></div></div>
     </div>
     <div class="card" data-name="Tuna Fish (Jodari)" data-price="1000" data-unit="kg">
-      <div class="im"><img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy"></div>
+      <div class="im"><img src="images/jodari.jpg" alt="Tuna Fish" loading="lazy" width="640" height="1317"></div>
       <div class="bd"><h3>Tuna Fish</h3><span class="en">Jodari</span>
       <p class="ds">Deep red, firm, protein-rich meat. Steaks, searing, grilling, or sushi-style.</p>
       <span class="pr">KES 1,000 / kg</span>
@@ -146,7 +147,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Shark Steak (Papa Mbichi)" data-price="700" data-unit="kg">
-      <div class="im"><img src="images/papa.jpg" alt="Shark Steak" loading="lazy"></div>
+      <div class="im"><img src="images/papa.jpg" alt="Shark Steak" loading="lazy" width="624" height="780"></div>
       <div class="bd"><h3>Shark Steak</h3><span class="en">Papa Mbichi</span>
       <p class="ds">Firm, dense, boneless meat with coastal character. Frying, spiced stews.</p>
       <span class="pr">KES 700 / kg</span>
@@ -178,7 +179,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Cobia (Songoro)" data-price="800" data-unit="kg">
-      <div class="im"><img src="images/songoro.jpg" alt="Cobia" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;SO&lt;/div&gt;\'"></div>
+      <div class="im"><img src="images/songoro.jpg" alt="Cobia" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;SO&lt;/div&gt;\'" width="651" height="869"></div>
       <div class="bd"><h3>Cobia</h3><span class="en">Songoro</span>
       <p class="ds">Cut into thick white steaks — dense like tuna but milder, with almost no small bones. Searing, grilling, frying, curries.</p>
       <span class="pr">KES 800 / kg</span>
@@ -186,7 +187,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Sail Fish (Sulisuli)" data-price="800" data-unit="kg">
-      <div class="im"><img src="images/sulisuli.jpg" alt="Sail Fish" loading="lazy"></div>
+      <div class="im"><img src="images/sulisuli.jpg" alt="Sail Fish" loading="lazy" width="720" height="900"></div>
       <div class="bd"><h3>Sail Fish</h3><span class="en">Sulisuli</span>
       <p class="ds">Big-game ocean fish, bold distinctive flavour. Steaks, charcoal grilling, smoking.</p>
       <span class="pr">KES 800 / kg</span>
@@ -194,7 +195,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Swordfish (Sulisuli Kipanga)" data-price="800" data-unit="kg">
-      <div class="im"><img src="images/sulisuli-kipanga.jpg" alt="Swordfish" loading="lazy"></div>
+      <div class="im"><img src="images/sulisuli-kipanga.jpg" alt="Swordfish" loading="lazy" width="769" height="960"></div>
       <div class="bd"><h3>Swordfish</h3><span class="en">Sulisuli Kipanga</span>
       <p class="ds">King of the BBQ — dense steaks that hold together over hot coals. Grill, sear, skewer.</p>
       <span class="pr">KES 800 / kg</span>
@@ -218,7 +219,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Indian Mackerel (Una)" data-price="600" data-unit="kg">
-      <div class="im"><img src="images/una.jpg" alt="Indian Mackerel" loading="lazy" onerror="this.parentNode.outerHTML='&lt;div class=\'ph\'&gt;UN&lt;/div&gt;'"></div>
+      <div class="im"><img src="images/una.jpg" alt="Indian Mackerel" loading="lazy" onerror="this.parentNode.outerHTML='&lt;div class=\'ph\'&gt;UN&lt;/div&gt;'" width="768" height="960"></div>
       <div class="bd"><h3>Indian Mackerel</h3><span class="en">Una</span>
       <p class="ds">Firm and flavourful, rich in natural oils. Frying, charcoal grilling, coconut curry.</p>
       <span class="pr">KES 600 / kg</span>
@@ -226,7 +227,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Anchovies (Uwono)" data-price="600" data-unit="kg">
-      <div class="im"><img src="images/uwono.jpg" alt="Anchovies" loading="lazy" onerror="this.parentNode.outerHTML='&lt;div class=\'ph\'&gt;UW&lt;/div&gt;'"></div>
+      <div class="im"><img src="images/uwono.jpg" alt="Anchovies" loading="lazy" onerror="this.parentNode.outerHTML='&lt;div class=\'ph\'&gt;UW&lt;/div&gt;'" width="850" height="1133"></div>
       <div class="bd"><h3>Anchovies</h3><span class="en">Uwono</span>
       <p class="ds">Tiny fish with intense savoury flavour. Crispy frying, spiced dishes, with ugali.</p>
       <span class="pr">KES 600 / kg</span>
@@ -300,7 +301,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Lobster" data-price="3300" data-unit="kg">
-      <div class="im"><img src="images/lobster.jpg" alt="Lobster" loading="lazy"></div>
+      <div class="im"><img src="images/lobster.jpg" alt="Lobster" loading="lazy" width="900" height="1200"></div>
       <div class="bd"><h3>Lobster</h3><span class="en">The crown jewel</span>
       <p class="ds">Firm texture, naturally sweet and delicate. Garlic-butter grilling, steaming, feasts.</p>
       <span class="pr">KES 3,300 / kg</span>
@@ -316,7 +317,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Oysters (Chaza)" data-price="40" data-unit="pc" data-weight="0.06">
-      <div class="im"><img src="images/chaza.jpg" alt="Oysters" loading="lazy"></div>
+      <div class="im"><img src="images/chaza.jpg" alt="Oysters" loading="lazy" width="335" height="597"></div>
       <div class="bd"><h3>Oysters</h3><span class="en">Chaza · per piece</span>
       <p class="ds">Shucked fresh to order. Eat them raw with lime and pilipili, grill them over charcoal, or bake with garlic butter.</p>
       <span class="pr">KES 40 each</span>
@@ -324,7 +325,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Mussels (Kome)" data-price="2000" data-unit="kg">
-      <div class="im"><img src="images/kome.jpg" alt="Mussels" loading="lazy"></div>
+      <div class="im"><img src="images/kome.jpg" alt="Mussels" loading="lazy" width="447" height="447"></div>
       <div class="bd"><h3>Mussels</h3><span class="en">Kome</span>
       <p class="ds">Sweet, tender and quick — steam them open in coconut milk, garlic and chili in under ten minutes.</p>
       <span class="pr">KES 2,000 / kg</span>
@@ -332,7 +333,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="White Clams" data-price="2500" data-unit="kg">
-      <div class="im"><img src="images/clams.jpg" alt="White clams" loading="lazy"></div>
+      <div class="im"><img src="images/clams.jpg" alt="White clams" loading="lazy" width="218" height="231"></div>
       <div class="bd"><h3>White Clams</h3><span class="en">Premium shellfish</span>
       <p class="ds">Delicate and mildly sweet. Steamed with white wine or coconut, tossed through pasta, or dropped into a seafood broth.</p>
       <span class="pr">KES 2,500 / kg</span>
@@ -351,7 +352,7 @@
 
   <h3 class="cat">Dried, Sea Moss &amp; Honey <small>· per kg · honey per jar</small></h3>
   <p class="catdesc">Sun-dried the traditional coastal way, plus mineral-rich sea moss farmed on our own shoreline racks and rare mangrove honey — delivered in resealable, leak-proof packaging.</p>
-  <img src="images/mwani-farm.jpg" alt="Sea moss drying racks on the shore" loading="lazy" style="width:100%;max-height:260px;object-fit:cover;border-radius:16px;margin-bottom:1.1rem">
+  <img src="images/mwani-farm.jpg" alt="Sea moss drying racks on the shore" loading="lazy" style="width:100%;max-height:260px;object-fit:cover;border-radius:16px;margin-bottom:1.1rem" width="950" height="1266">
   <div class="grid">
     <div class="card" data-name="Dried Anchovies (Katashingo)" data-price="700" data-unit="kg">
       <div class="im"><img src="images/katashingo.jpg" alt="Dried Anchovies" loading="lazy"></div>
@@ -362,7 +363,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Dried Seamoss - Uncleaned (Mwani Mkavu)" data-price="600" data-unit="kg">
-      <div class="im"><img src="images/mwani-mkavu.jpg" alt="Dried sea moss uncleaned" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;MW&lt;/div&gt;\'"></div>
+      <div class="im"><img src="images/mwani-mkavu.jpg" alt="Dried sea moss uncleaned" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;MW&lt;/div&gt;\'" width="800" height="1422"></div>
       <div class="bd"><h3>Dried Sea Moss — Uncleaned</h3><span class="en">Mwani Mkavu</span>
       <p class="ds">Farmed and sun-dried on the shore, natural form — rinse and soak before use. Sea moss gel, smoothies, soups.</p>
       <span class="pr">KES 600 / kg</span>
@@ -370,7 +371,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Dried Seamoss - Cleaned (Mwani Mkavu Msafi)" data-price="900" data-unit="kg">
-      <div class="im"><img src="images/mwani-msafi.jpg" alt="Dried sea moss cleaned" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;MM&lt;/div&gt;\'"></div>
+      <div class="im"><img src="images/mwani-msafi.jpg" alt="Dried sea moss cleaned" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;MM&lt;/div&gt;\'" width="800" height="1422"></div>
       <div class="bd"><h3>Dried Sea Moss — Cleaned</h3><span class="en">Mwani Mkavu Msafi</span>
       <p class="ds">Washed, sorted and sun-dried golden — soak and blend straight away, no cleaning needed. Gel, smoothies, skincare.</p>
       <span class="pr">KES 900 / kg</span>
@@ -386,7 +387,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0 kg</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Mangrove Honey (Asali ya Mikoko) — 500g jar" data-price="900" data-unit="pc" data-weight="0.5">
-      <div class="im"><img src="images/asali-mikoko.jpg" alt="Mangrove honey" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;AS&lt;/div&gt;\'"></div>
+      <div class="im"><img src="images/asali-mikoko.jpg" alt="Mangrove honey" loading="lazy" onerror="this.parentNode.outerHTML=\'&lt;div class=\\'ph\\'&gt;AS&lt;/div&gt;\'" width="800" height="1200"></div>
       <div class="bd"><h3>Mangrove Honey</h3><span class="en">Asali ya Mikoko · 500g jar</span>
       <p class="ds">Rare dark honey from the coastal mangrove forests of the Shimoni coast — a rich flavour ordinary honey can't match. Sealed 500g jar.</p>
       <span class="pr">KES 900 / jar</span>
@@ -399,7 +400,7 @@
   <p class="catdesc">Sun-dried whole prawns — the coast's secret flavour weapon. Sold in sealed 500g packs or by the kilo.</p>
   <div class="grid">
     <div class="card" data-name="Dried Prawns (Kamba Wakavu) — 500g pack" data-price="2000" data-unit="pc" data-weight="0.5">
-      <div class="im"><img src="images/kamba-wakavu.jpg" alt="Dried prawns" loading="lazy"></div>
+      <div class="im"><img src="images/kamba-wakavu.jpg" alt="Dried prawns" loading="lazy" width="800" height="1066"></div>
       <div class="bd"><span class="badge-export">PREMIUM</span><h3>Dried Prawns</h3><span class="en">Kamba Wakavu · 500g pack</span>
       <p class="ds">Sun-dried whole prawns with an intense, concentrated sweetness. A pinch transforms pilau, stews, coconut sauces and vegetables.</p>
       <span class="pr">KES 2,000 / 500g pack</span>
@@ -407,7 +408,7 @@
       <div class="qty"><button class="mn">−</button><span class="n">0</span><button class="pl">+</button></div></div>
     </div>
     <div class="card" data-name="Dried Prawns (Kamba Wakavu) — 1 kg" data-price="4000" data-unit="kg">
-      <div class="im"><img src="images/kamba-wakavu-2.jpg" alt="Dried prawns, bulk" loading="lazy"></div>
+      <div class="im"><img src="images/kamba-wakavu-2.jpg" alt="Dried prawns, bulk" loading="lazy" width="800" height="1066"></div>
       <div class="bd"><span class="badge-export">PREMIUM</span><h3>Dried Prawns — 1 kg</h3><span class="en">Kamba Wakavu · by the kilo</span>
       <p class="ds">The full kilo for households that cook with them often, and for shops and restaurants. Same sun-dried quality, better value.</p>
       <span class="pr">KES 4,000 / kg</span>
@@ -461,6 +462,28 @@
 <div class="cartpanel" id="cpanel">
   <div class="ch"><h3>Your cart</h3><button id="cclose" aria-label="close">×</button></div>
   <div id="citems"></div>
+  <div class="cdet">
+    <div>
+      <label for="cprep">How should we clean it?</label>
+      <select id="cprep">
+        <option value="Cleaned &amp; gutted">Cleaned &amp; gutted</option>
+        <option value="Whole, uncleaned">Whole, uncleaned</option>
+        <option value="Filleted">Filleted</option>
+        <option value="Cut into steaks">Cut into steaks</option>
+        <option value="Mixed — I'll explain on WhatsApp">Mixed — I'll explain</option>
+      </select>
+    </div>
+    <div>
+      <label for="ccounty">Delivery county</label>
+      <select id="ccounty">
+        <option value="">Select…</option>
+        <option>Mombasa</option><option>Kwale</option><option>Kilifi</option>
+        <option>Nairobi</option><option>Kiambu</option><option>Machakos</option>
+        <option>Nakuru</option><option>Taita-Taveta</option>
+        <option value="Other (I'll say on WhatsApp)">Other</option>
+      </select>
+    </div>
+  </div>
   <div class="fbox" id="fbox"></div>
   <div class="ctotal"><span>Total (items)</span><span id="ctot"></span></div>
   <p class="cnote">Cooler box &amp; transport are confirmed on WhatsApp and charged at cost. Pay by M-Pesa after we confirm your order.</p>
@@ -471,7 +494,7 @@
   <div class="cols">
     <div><h4>Pages</h4>
       <a href="index.html">Home</a><a href="track.html">Track Order</a><a href="blog.html">Blog</a><a href="about.html">About</a></div>
-    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p></div>
+    <div><h4>Contact</h4><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><a href="policies.html">Policies &amp; privacy</a><p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p></div>
     <div><h4>Follow us</h4><div class="social"><a href="https://web.facebook.com/mombasafishmarket">Facebook</a><a href="https://instagram.com/mombasafishmarket">Instagram</a><a href="https://youtube.com/mombasafish">YouTube</a><a href="https://tiktok.com/@mombasafish">TikTok</a><a href="https://x.com/mombasa_fish">X</a></div></div>
   </div>
   <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
@@ -485,6 +508,29 @@
       ctot=document.getElementById('ctot');
   var cards=[].slice.call(document.querySelectorAll('.card[data-name]'));
   var noBox=false;
+  var STORE='mf_cart_v1';
+  function save(){
+    try{
+      var d={q:{},noBox:noBox,
+             prep:(document.getElementById('cprep')||{}).value,
+             county:(document.getElementById('ccounty')||{}).value};
+      cards.forEach(function(c){ if(c.qty>0) d.q[c.dataset.name]=c.qty; });
+      localStorage.setItem(STORE,JSON.stringify(d));
+    }catch(e){}
+  }
+  function restore(){
+    try{
+      var d=JSON.parse(localStorage.getItem(STORE)||'{}');
+      if(d.noBox)noBox=true;
+      cards.forEach(function(c){
+        var v=d.q&&d.q[c.dataset.name];
+        if(v){c.qty=v;c.querySelector('.n').textContent=label(c);c.classList.add('sel');}
+      });
+      var p=document.getElementById('cprep'), co=document.getElementById('ccounty');
+      if(p&&d.prep)p.value=d.prep;
+      if(co&&d.county)co.value=d.county;
+    }catch(e){}
+  }
   function fmt(x){return 'KES '+Math.round(x).toLocaleString('en-KE');}
   function step(c){return 1;}
   function label(c){return c.dataset.unit==='kg'?c.qty+' kg':String(c.qty);}
@@ -506,6 +552,7 @@
     if(!sel.length){bar.classList.remove('show');panel.classList.remove('open');return;}
     sum.innerHTML='🧺 '+sel.length+' item'+(sel.length>1?'s':'')+' · <b>'+fmt(total(sel))+'</b>';
     bar.classList.add('show');
+    save();
     if(panel.classList.contains('open'))renderPanel();
   }
   function weightOf(c){
@@ -581,6 +628,10 @@
     ctot.textContent=fmt(total(sel));
     renderBox();
   }
+  restore(); refresh();
+  ['cprep','ccounty'].forEach(function(id){
+    var el=document.getElementById(id); if(el)el.addEventListener('change',save);
+  });
   document.getElementById('oview').addEventListener('click',function(){renderPanel();panel.classList.add('open');});
   document.getElementById('cclose').addEventListener('click',function(){panel.classList.remove('open');});
   document.getElementById('csend').addEventListener('click',function(){
@@ -594,12 +645,16 @@
       '\n\nItems total: '+fmt(total(sel))+
       (w>0?'\nCatch weight: '+w+' kg':'')+
       (noBox?'\nCooler box: not needed (own arrangement / collection)':'')+
+      (function(){var p=document.getElementById('cprep');return p&&p.value?'\nPreparation: '+p.value:'';})()+
+      (function(){var c=document.getElementById('ccounty');return c&&c.value?'\nDelivery county: '+c.value:'';})()+
       '\n\nName: \nDelivery location: ';
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
+    try{localStorage.removeItem(STORE);}catch(e){}
   });
 })();
 </script>
 <script src="search.js" defer></script>
+<script src="ui.js" defer></script>
 <script src="promo.js" defer></script>
 </body>
 </html>
