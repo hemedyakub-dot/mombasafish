@@ -35,7 +35,7 @@ var PROMO = {
   +'.pmo-b a.pmo-cta{display:block;text-align:center;background:#1FAF54;color:#fff;font-weight:700;text-decoration:none;border-radius:999px;padding:.85rem 1.4rem}'
   +'.pmo-x{position:absolute;top:-2.6rem;right:.1rem;background:rgba(250,246,238,.9);border:0;width:34px;height:34px;border-radius:50%;font-size:1.3rem;line-height:1;cursor:pointer;color:#032A2E}'
   +'.pmo-no{display:block;width:100%;background:none;border:0;color:#4A6467;font-size:.8rem;margin-top:.7rem;cursor:pointer;text-decoration:underline}'
-  +'.pmo-strip{background:#FFB84D;color:#032A2E;text-align:center;font-size:.85rem;font-weight:700;padding:.6rem 1rem}'
+  +'.pmo-strip{background:#FFB84D;color:#032A2E;text-align:center;font-size:.82rem;font-weight:700;padding:.5rem 1rem;position:relative;z-index:1}'
   +'.pmo-strip a{color:#032A2E}';
   var st=document.createElement('style'); st.textContent=css; document.head.appendChild(st);
 

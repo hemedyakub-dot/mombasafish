@@ -28,6 +28,11 @@ a{color:var(--deep)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 @media (prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}}
 
+/* Header hides on scroll down, returns on scroll up */
+.hdr{transition:transform .28s ease}
+.hdr.hide{transform:translateY(-105%)}
+@media (prefers-reduced-motion:reduce){.hdr{transition:none}}
+
 /* Mobile menu */
 .menu-btn{display:none;background:none;border:0;cursor:pointer;padding:.4rem .5rem;border-radius:8px;color:var(--ink)}
 .menu-btn svg{display:block;width:26px;height:26px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round}

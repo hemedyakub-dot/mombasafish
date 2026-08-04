@@ -45,6 +45,21 @@
   });
   window.addEventListener('resize',function(){ if(window.innerWidth>760) setOpen(false); });
 
+  /* 3b. Free the screen while scrolling:
+        close the menu, and slide the header away going down / back on the way up */
+  var lastY=window.pageYOffset, ticking=false;
+  function onScroll(){
+    var y=window.pageYOffset;
+    if(nav.classList.contains('open') && Math.abs(y-lastY)>40) setOpen(false);
+    var down = y>lastY && y>140;
+    var searchOpen=document.querySelector('.srch-wrap.open');
+    hdr.classList.toggle('hide', down && !searchOpen);
+    lastY=y; ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){ticking=true;window.requestAnimationFrame(onScroll);}
+  },{passive:true});
+
   /* 4. Replace emoji icons with accessible labels */
   var s=document.querySelector('.srch-btn');
   if(s){
