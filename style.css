@@ -202,6 +202,15 @@ footer a{color:rgba(242,237,227,.85);text-decoration:none;display:block;padding:
 footer a:hover{color:var(--catch)}
 footer p{color:rgba(242,237,227,.7)}
 footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);font-size:.72rem;color:rgba(242,237,227,.5);letter-spacing:.04em}
+/* Pillar blocks */
+@media(min-width:720px){.spot.rev img{order:2}.spot.rev .sb{order:1}}
+.pillnum{font-family:var(--font-mono);font-size:.75rem;color:var(--coral);letter-spacing:.12em}
+.divtag{display:inline-block;font-size:.68rem;font-weight:700;background:var(--abyss);color:var(--foam);padding:.22rem .65rem;border-radius:999px;letter-spacing:.05em;margin-bottom:.3rem}
+.spot ul{margin:.5rem 0 .6rem 1.1rem;font-size:.9rem;color:rgba(242,237,227,.85)}
+.spot ul li{margin-bottom:.35rem}
+.spot .refs{font-size:.78rem;color:rgba(242,237,227,.6)}
+.spot .refs a{color:var(--foam)}
+
 /* Full-bleed photo band */
 .band{position:relative;isolation:isolate;text-align:center;padding:5rem 1rem;color:#fff;background-size:cover;background-position:center}
 .band::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(3,42,46,.55)}
