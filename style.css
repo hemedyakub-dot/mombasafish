@@ -235,6 +235,7 @@ h3.cat small{font-family:var(--font-body);font-weight:400;color:var(--muted);fon
 /* Product descriptions */
 .card .ds{font-size:.78rem;color:var(--muted);line-height:1.45}
 .catdesc{color:var(--muted);font-size:.9rem;margin:-.3rem 0 1.1rem;max-width:46rem}
+.prephint{color:var(--muted);font-size:.76rem;line-height:1.45;margin:.4rem 0 0}
 
 /* Add to cart */
 .card .add{margin-top:.6rem;background:var(--abyss);color:var(--sand);border:0;border-radius:999px;padding:.6rem .9rem;font-weight:700;font-size:.85rem;cursor:pointer;transition:filter .15s;width:100%}
@@ -313,6 +314,32 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 .cprice .was{font-family:var(--font-mono);font-size:.95rem;color:rgba(242,237,227,.55);text-decoration:line-through}
 .cprice .save{background:var(--foam);color:var(--abyss);font-weight:700;font-size:.78rem;padding:.2rem .6rem;border-radius:999px}
 .combo .note{font-size:.78rem;color:rgba(242,237,227,.6);margin-top:.7rem}
+
+/* ---------- Ready-made boxes (bundles) ---------- */
+.bnds{display:grid;gap:1.15rem;grid-template-columns:1fr;margin-bottom:2.6rem}
+@media(min-width:720px){.bnds{grid-template-columns:1fr 1fr}}
+.bcard{background:var(--abyss);color:var(--sand);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 14px 38px rgba(3,42,46,.2);position:relative}
+.bcard.wide{grid-column:1/-1}
+@media(min-width:720px){.bcard.wide{flex-direction:row}.bcard.wide .bimgs{grid-template-columns:1fr 1fr;width:44%;flex-shrink:0}.bcard.wide .bimgs img{aspect-ratio:auto;height:100%;min-height:132px}.bcard.wide .bbody{width:56%}}
+.bcard.gold{background:linear-gradient(150deg,#08383D 0%,#032A2E 62%);box-shadow:0 18px 46px rgba(3,42,46,.3),0 0 0 2px var(--catch) inset}
+.bimgs{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--deep)}
+.bimgs img{width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center}
+.bimgs .ph3{display:flex;align-items:center;justify-content:center;aspect-ratio:1/1;background:linear-gradient(140deg,#0A5C63,#032A2E);font-family:var(--font-display);color:rgba(127,212,193,.5);font-size:1.1rem}
+.bbody{padding:1.25rem 1.3rem 1.4rem;display:flex;flex-direction:column;flex:1}
+.bcard h3{font-family:var(--font-display);font-size:clamp(1.2rem,3.6vw,1.6rem);color:#fff;line-height:1.14;margin-bottom:.15rem}
+.bcard h3 span{color:var(--catch)}
+.bsw{font-family:var(--font-mono);font-size:.7rem;color:var(--foam);letter-spacing:.1em;text-transform:uppercase;display:block;margin-bottom:.55rem}
+.bdesc{font-size:.88rem;color:rgba(242,237,227,.82);line-height:1.55;margin-bottom:.85rem}
+.blist{list-style:none;margin:0 0 .9rem;padding:0;font-size:.86rem}
+.blist li{padding:.28rem 0;border-bottom:1px dashed rgba(127,212,193,.2);display:flex;justify-content:space-between;gap:.8rem}
+.blist li span{color:rgba(242,237,227,.62);font-family:var(--font-mono);font-size:.78rem;white-space:nowrap}
+.bfoot{margin-top:auto}
+.bmeta{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:.75rem}
+.bmeta i{font-style:normal;background:rgba(127,212,193,.14);color:var(--foam);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.04em;padding:.24rem .6rem;border-radius:999px}
+.bcard .add{background:#1FAF54;color:#fff}
+.bcard .note{font-size:.76rem;color:rgba(242,237,227,.58);margin-top:.6rem;line-height:1.5}
+.bribbon{position:absolute;top:0;right:0;background:var(--coral);color:#fff;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.13em;text-transform:uppercase;padding:.3rem .8rem;border-radius:0 0 0 12px;z-index:2}
+@media(max-width:520px){.bbody{padding:1.05rem 1.05rem 1.2rem}.blist{font-size:.8rem}}
 
 /* Pillar deep sections */
 .pillar{border-top:1px solid var(--line);padding-top:2.4rem;margin-top:2.6rem}
