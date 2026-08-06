@@ -1,16 +1,15 @@
-OCEAN EXPLORERS — Phase B (kids)
-================================
-No .js files, nothing to rename.
+COUNTRYWIDE DELIVERY + TESTIMONIALS
+===================================
+Two files need renaming after upload:
+  babu-js.txt     -> babu.js
+  reviews-js.txt  -> reviews.js
 
-NEW pages -> upload into your ocean/ folder:
-  ocean/game.html     matching game
-  ocean/story.html    boat-to-box story
-  ocean/colour.html   three printable colouring sheets
+The seven HTML files just replace the existing ones (repo root).
 
-REPLACE (footers now link to the new pages):
-  ocean/creatures.html, ocean/classroom.html, ocean/quiz.html, ocean/teachers.html
-
-REPLACE in the repo ROOT:
-  ocean.html    (hub now links to the three new pages)
-  style.css     (styles for the game, story and colouring sheets)
-  sitemap.xml   (76 URLs)
+WHAT CHANGED
+- Every "8 counties" claim is now "countrywide / anywhere in Kenya"
+- Schema areaServed changed from 8 named counties to Country: Kenya
+- Checkout county dropdown now lists all 47 counties
+- Babu no longer refuses Kisumu, Eldoret, Kisii, Meru, Nyeri, Kakamega,
+  Garissa, Lodwar, Kericho or Bungoma — he was turning those customers away
+- Three real customer testimonials now live on the home and shop pages
