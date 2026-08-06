@@ -1,0 +1,8 @@
+BABU ON THE WATER — 2 files to replace
+======================================
+1. babu-js.txt   -> upload to repo ROOT, rename to:  babu.js   (replaces existing)
+2. images/babu-scene.svg  -> upload into images/  (replaces existing)
+
+(babu-avatar.svg is included unchanged, in case you need it.)
+
+Then hard-refresh: Ctrl+Shift+R
