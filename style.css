@@ -516,3 +516,22 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 
 .card h3 a{color:inherit;text-decoration:none}
 .card h3 a:hover{color:var(--coral)}
+
+/* ---------- Cart: what happens next + guarantee ---------- */
+.cnext{border-top:1px solid var(--line);margin-top:1rem;padding-top:.9rem}
+.cnext h4{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:.55rem;font-weight:400}
+.cnext ol{list-style:none;margin:0;padding:0}
+.cnext li{position:relative;padding:.3rem 0 .3rem 1.75rem;font-size:.83rem;line-height:1.5;color:var(--muted)}
+.cnext li b{position:absolute;left:0;top:.3rem;width:1.15rem;height:1.15rem;border-radius:50%;background:var(--sand);color:var(--abyss);font-family:var(--font-mono);font-size:.66rem;display:flex;align-items:center;justify-content:center}
+.cguar{background:var(--abyss);color:var(--sand);border-radius:14px;padding:.85rem 1rem;margin:.9rem 0 1rem}
+.cguar b{color:var(--catch);display:block;font-size:.85rem;margin-bottom:.25rem}
+.cguar p{font-size:.79rem;line-height:1.55;color:rgba(242,237,227,.85);margin:0}
+.cguar a{color:var(--foam)}
+
+/* ---------- Delivery cost table ---------- */
+.deliv{width:100%;border-collapse:collapse;font-size:.9rem;max-width:44rem;margin:1rem 0}
+.deliv th{text-align:left;font-family:var(--font-mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);padding:.5rem .8rem .5rem 0;border-bottom:2px solid var(--line)}
+.deliv td{padding:.6rem .8rem .6rem 0;border-bottom:1px solid var(--line)}
+.deliv td:first-child{font-weight:600;color:var(--abyss)}
+.deliv td.amt{font-family:var(--font-mono);color:var(--deep);white-space:nowrap}
+.deliv tr:hover td{background:var(--sand)}
