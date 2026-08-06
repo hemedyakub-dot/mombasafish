@@ -144,7 +144,7 @@ p.sec-sub{color:var(--muted);margin-bottom:1.7rem;max-width:42rem}
 .card .en{font-size:.78rem;color:var(--muted)}
 .card .pr{font-family:var(--font-mono);color:var(--deep);font-weight:400;font-size:.85rem;margin-top:auto}
 .card .qty{display:flex;align-items:center;gap:.5rem;margin-top:.6rem}
-.card .qty button{width:34px;height:34px;border-radius:10px;border:2px solid var(--abyss);background:var(--white);color:var(--abyss);font-size:1.15rem;cursor:pointer;line-height:1;font-weight:700;transition:all .15s}
+.card .qty button{width:44px;height:44px;border-radius:10px;border:2px solid var(--abyss);background:var(--white);color:var(--abyss);font-size:1.15rem;cursor:pointer;line-height:1;font-weight:700;transition:all .15s}
 .card .qty button:hover{background:var(--abyss);color:var(--sand)}
 .card .qty .n{font-family:var(--font-mono);min-width:2.7rem;text-align:center;font-size:.85rem}
 .card.sel{border-color:var(--coral);box-shadow:0 0 0 2px var(--coral),0 10px 26px rgba(255,107,90,.15)}
@@ -426,7 +426,7 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
   .card .add{margin-top:.35rem;padding:.42rem .2rem;font-size:0;border-radius:9px;min-height:30px}
   .card .add::after{content:"+ Add";font-size:.66rem;letter-spacing:.01em}
   .card .qty{margin-top:.35rem;gap:.22rem;justify-content:space-between}
-  .card .qty button{width:26px;height:26px;font-size:.95rem;border-width:1.5px;border-radius:8px}
+  .card .qty button{width:38px;height:38px;font-size:1rem;border-width:1.5px;border-radius:9px}
   .card .qty .n{font-size:.66rem;min-width:1.9rem}
   .card .meter .lb{width:42px;font-size:.58rem}
   .card .tags{gap:.18rem}
@@ -463,7 +463,7 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 .padd .qty{display:none;align-items:center;gap:.5rem;background:var(--white);border:1px solid var(--line);border-radius:999px;padding:.3rem .5rem}
 .padd.on .qty{display:flex}
 .padd.on .add{display:none}
-.padd .qty button{width:34px;height:34px;border-radius:50%;border:0;background:var(--sand);color:var(--abyss);font-size:1.1rem;cursor:pointer;line-height:1}
+.padd .qty button{width:44px;height:44px;border-radius:50%;border:0;background:var(--sand);color:var(--abyss);font-size:1.1rem;cursor:pointer;line-height:1}
 .padd .qty button:hover{background:var(--foam)}
 .padd .qty .n{min-width:4.2rem;text-align:center;font-family:var(--font-mono);font-size:.9rem;font-weight:700}
 .padd .tocart{font-family:var(--font-mono);font-size:.8rem;color:var(--deep);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px}
@@ -603,3 +603,30 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 .aska b{color:var(--abyss)}
 .askmore{border-top:1px solid var(--line);padding-top:1.4rem;font-size:.92rem;color:var(--muted);line-height:1.7}
 #askfilters{margin-bottom:2rem}
+
+/* ---------- Traceability journey (8 stages) ---------- */
+.trace8{list-style:none;margin:1.4rem 0;padding:0;max-width:46rem;position:relative}
+.trace8::before{content:"";position:absolute;left:1.05rem;top:1.4rem;bottom:1.4rem;width:2px;background:linear-gradient(180deg,var(--foam),var(--catch),var(--coral));opacity:.4}
+.trace8 li{position:relative;margin-bottom:.45rem}
+.tsh{display:flex;align-items:center;gap:.9rem;width:100%;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:.75rem .95rem;cursor:pointer;text-align:left;font-family:var(--font-body);transition:border-color .18s,box-shadow .18s}
+.tsh:hover{border-color:var(--foam);box-shadow:0 4px 14px rgba(3,42,46,.08)}
+.tsh .tn{flex:0 0 auto;width:2.1rem;height:2.1rem;border-radius:50%;background:var(--abyss);color:var(--catch);font-family:var(--font-mono);font-size:.74rem;display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.tsh .tt{flex:1;font-weight:700;font-size:.98rem;color:var(--abyss)}
+.tsh .tc{flex:0 0 auto;color:var(--coral);font-size:1.15rem;line-height:1;transition:transform .18s}
+.trace8 li.open .tsh{border-color:var(--foam);background:var(--sand)}
+.trace8 li.open .tsh .tc{transform:rotate(45deg)}
+.tsb{max-height:0;overflow:hidden;transition:max-height .22s ease}
+.trace8 li.open .tsb{max-height:34rem}
+.tsb p{font-size:.92rem;line-height:1.7;color:var(--ink);margin:.75rem 0 0 3rem;max-width:38rem}
+.tsb .twhy{color:var(--muted);font-size:.85rem;border-left:3px solid var(--foam);padding-left:.8rem;margin-bottom:.9rem}
+@media (prefers-reduced-motion:reduce){.tsb{transition:none}.tsh .tc{transition:none}}
+@media(max-width:520px){.tsb p{margin-left:0}.trace8::before{display:none}}
+
+/* ---------- Mobile tap targets (WCAG 2.5.5) ---------- */
+@media (pointer:coarse){
+  .nav a{padding:.7rem 1rem}
+  .filters button,#askfilters button{min-height:44px;padding:.6rem 1rem}
+  .tsh{min-height:52px}
+  .card .add{min-height:44px}
+  .pfaq summary,.faq summary{min-height:48px;display:flex;align-items:center}
+}

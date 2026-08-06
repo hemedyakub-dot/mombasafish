@@ -37,6 +37,7 @@
     <a href="fishguide.html">Fish Guide</a>
     <a href="ask.html">Ask</a>
     <a href="recipes.html">Recipes</a>
+    <a href="shimoni.html">Why Shimoni</a>
     <a href="wholesale.html">Wholesale</a>
     <a href="track.html">Track Order</a>
     <a href="blog.html">Blog</a>
@@ -83,7 +84,12 @@
       cx.lineTo(W,H);cx.closePath();cx.fillStyle=l.c;cx.fill();
     }
   }
-  function loop(){if(run&&!reduce){t+=.016;draw();}requestAnimationFrame(loop);}
+  var frames=0;
+  function loop(){
+    if(run&&!reduce){t+=.016;draw();}
+    // settle after ~5s: keeps the arrival gesture, stops the battery drain
+    if(++frames < 300) requestAnimationFrame(loop);
+  }
   size();draw();
   if(!reduce)requestAnimationFrame(loop);
   window.addEventListener('resize',function(){size();draw();});
