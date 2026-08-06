@@ -1,9 +1,10 @@
-BABU — cart + arithmetic
-========================
+BABU — deep answers, memory, typo tolerance
+===========================================
 ONE file. Upload babu-js.txt to repo ROOT, rename to:  babu.js
 Then Ctrl+Shift+R.
 
-NEW: he can now add things to the cart and work out prices.
-  "add 2kg nguru"                -> puts it in the cart, shows the running total
-  "nataka kilo mbili za changu"  -> same, in Swahili
-  "how much for 3kg nguru"       -> KES 3,600, and offers to add it
+NEW
+- On a fish page, "how do I cook this?" now works — he reads that fish's
+  own page and quotes its real cooking, storage or nutrition section.
+- He remembers the fish you were just discussing, so "is it bony?" follows on.
+- Typos and swapped letters no longer defeat him ("octopuss", "delivary").
