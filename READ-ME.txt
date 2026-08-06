@@ -1,13 +1,9 @@
-BABU SAMAKI — brain upgrade
-===========================
-1. babu-js.txt  -> upload to repo ROOT, rename to:  babu.js   (replaces existing)
-2. images/babu-scene.svg  -> upload into images/   (rowing animation)
-3. images/babu-avatar.svg -> unchanged, included only if you need it
+BABU — cart + arithmetic
+========================
+ONE file. Upload babu-js.txt to repo ROOT, rename to:  babu.js
+Then Ctrl+Shift+R.
 
-Then hard-refresh: Ctrl+Shift+R
-
-NEW IN THIS VERSION
-- Understands questions asked in Swahili, and answers with a Swahili opener
-- Reads blog.html and recipes.html at runtime, so every new post or recipe
-  you publish is known to him automatically. No file to edit, ever.
-- Shows him rowing his mtumbwi when the chat opens
+NEW: he can now add things to the cart and work out prices.
+  "add 2kg nguru"                -> puts it in the cart, shows the running total
+  "nataka kilo mbili za changu"  -> same, in Swahili
+  "how much for 3kg nguru"       -> KES 3,600, and offers to add it
