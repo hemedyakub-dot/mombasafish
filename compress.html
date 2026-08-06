@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mombasafish — Image Compressor</title>
+<meta name="robots" content="noindex">
+<style>
+body{font-family:system-ui,sans-serif;background:#032A2E;color:#F2EDE3;padding:2rem 1rem;max-width:56rem;margin:0 auto}
+h1{font-size:1.4rem}p{color:#b8c9c5;font-size:.92rem;line-height:1.6}
+button.big{background:#25D366;color:#06281c;border:0;border-radius:999px;padding:1rem 2rem;font-size:1.05rem;font-weight:700;cursor:pointer;margin:1rem 0}
+table{width:100%;border-collapse:collapse;font-size:.84rem;margin-top:1rem}
+td,th{padding:.4rem .5rem;border-bottom:1px solid rgba(127,212,193,.2);text-align:left}
+.ok{color:#7FD4C1}.big-file{color:#FFB84D}.skip{color:#7a9a95}
+</style>
+</head>
+<body>
+<h1>🗜 Mombasafish — Image Compressor</h1>
+<p><b>Run this from the live site</b> (mombasafish.netlify.app/compress.html). It checks every image, and for any file that's too heavy it downloads a compressed replacement with the <b>same filename</b>. Then upload the downloaded files into the repo's <b>images/</b> folder to replace the heavy ones — and delete this compress.html from the repo when done.</p>
+<button class="big" id="go">🗜 Check &amp; compress heavy images</button>
+<table id="tbl"><tr><th>File</th><th>Original</th><th>Compressed</th><th>Status</th></tr></table>
+
+<script>
+var FILES=[
+["logo.jpg",400],["wordmark.png",400],["banner-wide.png",1600],
+["hero-sunset.jpg",1600],["hero-shoreline.jpg",1600],["banner-food.jpg",1600],
+["blue-waves.jpg",1600],["sunset-rocks.jpg",1600],["golden-beach.jpg",1200],
+["jodari.jpg",900],["changu.jpg",800],["kolekole.jpg",800],["mkundaji.jpg",800],
+["nguru.jpg",800],["papa.jpg",800],["pono.jpg",800],["red-snapper.jpg",800],
+["sulisuli.jpg",800],["tafi.jpg",800],["tewa.jpg",800],["kaa.webp",800],
+["lobster.jpg",800],["ngisi.jpg",800],["pweza.jpg",800],
+["prawns-jumbo.jpg",800],["prawns-king.jpg",800],["prawns-tiger.jpg",800],
+["prawns-s1.jpg",800],["prawns-s2.jpg",800],["prawns-cocktail.jpg",800],
+["katashingo.jpg",800],["cooler-5kg.jpg",800],["cooler-7kg.jpg",800],["cooler-15kg.jpg",800],
+["blog-journey.jpg",1000],["blog-recipes.jpg",1000],["blog-blue-economy.jpg",1000],["blog-jodari-ai.jpg",1000]
+];
+var LIMIT=150*1024;
+var tbl=document.getElementById('tbl');
+function kb(n){return (n/1024).toFixed(0)+' KB';}
+function row(name){var tr=document.createElement('tr');tr.innerHTML='<td>'+name+'</td><td class="o">…</td><td class="c">—</td><td class="s">—</td>';tbl.appendChild(tr);return tr;}
+function process(i,done){
+  if(i>=FILES.length){done();return;}
+  var name=FILES[i][0],maxw=FILES[i][1],tr=row(name);
+  fetch('images/'+name).then(function(r){
+    if(!r.ok)throw 0;return r.blob();
+  }).then(function(b){
+    tr.querySelector('.o').textContent=kb(b.size);
+    if(b.size<=LIMIT){tr.querySelector('.s').textContent='✓ already light';tr.querySelector('.s').className='s skip';setTimeout(function(){process(i+1,done);},60);return;}
+    tr.querySelector('.o').className='o big-file';
+    var img=new Image();
+    img.onload=function(){
+      var w=Math.min(img.width,maxw),h=Math.round(img.height*w/img.width);
+      var cv=document.createElement('canvas');cv.width=w;cv.height=h;
+      cv.getContext('2d').drawImage(img,0,0,w,h);
+      cv.toBlob(function(out){
+        if(out&&out.size<b.size*0.9){
+          tr.querySelector('.c').textContent=kb(out.size);
+          var a=document.createElement('a');a.href=URL.createObjectURL(out);
+          a.download=name.replace(/\.(png|webp)$/,'.jpg')===name?name:name;
+          a.download=name;
+          document.body.appendChild(a);a.click();a.remove();
+          tr.querySelector('.s').textContent='⬇ downloaded — replace in repo';
+          tr.querySelector('.s').className='s ok';
+        }else{
+          tr.querySelector('.s').textContent='✓ kept (no real gain)';tr.querySelector('.s').className='s skip';
+        }
+        setTimeout(function(){process(i+1,done);},400);
+      },'image/jpeg',0.8);
+    };
+    img.onerror=function(){tr.querySelector('.s').textContent='error';setTimeout(function(){process(i+1,done);},60);};
+    img.src=URL.createObjectURL(b);
+  }).catch(function(){
+    tr.querySelector('.o').textContent='not found';
+    setTimeout(function(){process(i+1,done);},60);
+  });
+}
+document.getElementById('go').addEventListener('click',function(){
+  tbl.innerHTML='<tr><th>File</th><th>Original</th><th>Compressed</th><th>Status</th></tr>';
+  process(0,function(){alert('Done. Upload every downloaded file into the repo images/ folder (replacing the old ones), then delete compress.html from the repo.');});
+});
+</script>
+</body>
+</html>

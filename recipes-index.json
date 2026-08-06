@@ -1,0 +1,90 @@
+[
+ {
+  "slug": "samaki-wa-kupaka",
+  "sw": "Samaki wa Kupaka",
+  "en": "Coconut-Grilled Fish",
+  "img": "changu.jpg",
+  "prep": 20,
+  "cook": 30,
+  "yield_": "Serves 4",
+  "cat": "Main course",
+  "lede": "The dish the Swahili coast is known for. Fish is grilled once, painted with a thick coconut sauce, then grilled again so the sauce catches and darkens at the edges. <em>Kupaka</em> means to smear — and that is the whole technique."
+ },
+ {
+  "slug": "mchuzi-wa-pweza",
+  "sw": "Mchuzi wa Pweza",
+  "en": "Octopus in Coconut Curry",
+  "img": "pweza.jpg",
+  "prep": 15,
+  "cook": 75,
+  "yield_": "Serves 4",
+  "cat": "Main course",
+  "lede": "Octopus rewards patience and punishes impatience. Simmer it slowly until a knife slides in without resistance, then let it finish in coconut milk. Rushed octopus is rubber; this is not."
+ },
+ {
+  "slug": "nguru-biryani",
+  "sw": "Biryani ya Nguru",
+  "en": "Kingfish Biryani",
+  "img": "nguru-steaks.jpg",
+  "prep": 40,
+  "cook": 60,
+  "yield_": "Serves 6",
+  "cat": "Main course",
+  "lede": "Biryani is the dish of celebration on this coast, and nguru is the fish for it — dense enough to hold its shape through the spicing, the layering and the steam. A softer fish would vanish into the rice."
+ },
+ {
+  "slug": "kamba-wa-nazi",
+  "sw": "Kamba wa Nazi",
+  "en": "Coconut Prawns",
+  "img": "prawns-tiger.jpg",
+  "prep": 15,
+  "cook": 20,
+  "yield_": "Serves 4",
+  "cat": "Main course",
+  "lede": "Fifteen minutes from pan to table, and the most reliable way to make people think you can cook. The only way to ruin it is to leave the prawns in too long."
+ },
+ {
+  "slug": "simusimu-wa-kukaanga",
+  "sw": "Simusimu wa Kukaanga",
+  "en": "Crispy Fried Sardines",
+  "img": "simusimu.jpg",
+  "prep": 10,
+  "cook": 15,
+  "yield_": "Serves 4",
+  "cat": "Snack",
+  "lede": "The cheapest, most nutritious thing on the whole slab, and arguably the best. Fried until the bones go crisp, sardines are eaten whole — which is where the calcium is."
+ },
+ {
+  "slug": "mchuzi-wa-samaki",
+  "sw": "Mchuzi wa Samaki",
+  "en": "Swahili Fish Curry",
+  "img": "tewa.jpg",
+  "prep": 15,
+  "cook": 30,
+  "yield_": "Serves 4",
+  "cat": "Main course",
+  "lede": "The everyday coastal curry — the one that gets made on a Tuesday without anyone thinking about it. Tewa is the classic choice because it flakes into large clean pieces that soak up sauce instead of dissolving into it."
+ },
+ {
+  "slug": "ngisi-wa-kuchoma",
+  "sw": "Ngisi wa Kuchoma",
+  "en": "Grilled Calamari",
+  "img": "ngisi.jpg",
+  "prep": 15,
+  "cook": 8,
+  "yield_": "Serves 4",
+  "cat": "Starter",
+  "lede": "Two minutes on fierce heat and it is perfect. Three and it is ruined. Calamari follows the same law as octopus — very fast or very slow, never the middle."
+ },
+ {
+  "slug": "supu-ya-kome",
+  "sw": "Supu ya Kome",
+  "en": "Coconut Mussel Soup",
+  "img": "kome.jpg",
+  "prep": 20,
+  "cook": 15,
+  "yield_": "Serves 4",
+  "cat": "Soup",
+  "lede": "Ten minutes of cooking and a broth worth mopping up with bread. Mussels make their own stock as they open, which does most of the work for you."
+ }
+]

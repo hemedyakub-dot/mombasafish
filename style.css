@@ -732,3 +732,10 @@ body.oe{font-size:17px}
   body{background:#fff}
   .certinner{border-color:#333;box-shadow:none;page-break-inside:avoid}
 }
+
+/* ---------- Babu Samaki host band ---------- */
+.bshost{display:flex;align-items:flex-start;gap:.9rem;background:var(--sand);border-radius:18px;padding:1rem 1.15rem;margin:1.2rem 0 1.8rem;max-width:44rem}
+.bshost img{width:62px;height:62px;border-radius:50%;flex:0 0 auto}
+.bshost p{margin:0;font-size:.96rem;line-height:1.7;color:var(--ink)}
+.bshost b{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:.25rem;font-weight:400}
+@media(max-width:520px){.bshost{gap:.7rem;padding:.85rem .95rem}.bshost img{width:48px;height:48px}.bshost p{font-size:.9rem}}
