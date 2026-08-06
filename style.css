@@ -594,3 +594,12 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 .rcptips li{position:relative;padding:.5rem 0 .5rem 1.6rem;font-size:.93rem;line-height:1.65;color:var(--muted);border-bottom:1px solid var(--line)}
 .rcptips li::before{content:"→";position:absolute;left:0;color:var(--coral)}
 .rcptips li:last-child{border-bottom:0}
+
+/* ---------- Ask the Fishmonger ---------- */
+.askq{border-top:1px solid var(--line);padding-top:1.6rem;margin-bottom:2rem}
+.askq h2{font-family:var(--font-display);font-size:clamp(1.15rem,3.8vw,1.55rem);color:var(--abyss);line-height:1.2;margin-bottom:.8rem}
+.aska{max-width:44rem;margin-bottom:1.1rem}
+.aska p{font-size:.98rem;line-height:1.75;margin-bottom:.8rem}
+.aska b{color:var(--abyss)}
+.askmore{border-top:1px solid var(--line);padding-top:1.4rem;font-size:.92rem;color:var(--muted);line-height:1.7}
+#askfilters{margin-bottom:2rem}
