@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250" width="400" height="250" role="img" aria-labelledby="st sd">
+<title id="st">Babu Samaki in his mtumbwi</title>
+<desc id="sd">An elder fisherman in a kofia paddling a hand-carved mango-wood dugout canoe at dawn.</desc>
+<circle cx="318" cy="66" r="30" fill="#FFB84D" opacity=".85"/>
+<path d="M0 150 L400 150 L400 250 L0 250 Z" fill="#07474C"/>
+<g fill="none" stroke="#0A5C63" stroke-width="3" stroke-linecap="round">
+<path d="M18 170 Q42 163 66 170 Q90 177 114 170"/>
+<path d="M240 182 Q264 175 288 182 Q312 189 336 182"/>
+<path d="M60 210 Q84 203 108 210 Q132 217 156 210"/>
+<path d="M262 224 Q286 217 310 224 Q334 231 358 224"/>
+</g>
+<path d="M96 176 C130 214 270 214 304 176 C270 190 130 190 96 176 Z" fill="#6B4A2A"/>
+<path d="M96 176 C130 190 270 190 304 176 C270 182 130 182 96 176 Z" fill="#8A6238"/>
+<path d="M212 168 L262 210" stroke="#8A6238" stroke-width="6" stroke-linecap="round"/>
+<path d="M258 202 L276 214 L266 224 L250 210 Z" fill="#6B4A2A"/>
+<path d="M170 176 C168 150 176 132 190 130 C206 128 216 142 216 160 L218 176 Z" fill="#6E4F2E"/>
+<path d="M196 138 L216 152 L214 168" fill="none" stroke="#5A3F24" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+<ellipse cx="190" cy="116" rx="17" ry="20" fill="#6B4526"/>
+<path d="M174 118 C174 135 181 141 190 141 C199 141 206 135 206 118 C205 130 198 134 190 134 C182 134 175 130 174 118 Z" fill="#C9C2B2"/>
+<ellipse cx="183" cy="114" rx="1.9" ry="1.5" fill="#2B1A10"/>
+<ellipse cx="197" cy="114" rx="1.9" ry="1.5" fill="#2B1A10"/>
+<path d="M174 104 Q174 88 190 88 Q206 88 206 104 Z" fill="#E3D6AE"/>
+<path d="M173 101 h34 v7 q-17 3 -34 0 Z" fill="#D2C193"/>
+<path d="M173 101 h34 v1.6 h-34 Z" fill="#BCA974"/>
+<g fill="none" stroke="#8E7B4C" stroke-width="1" stroke-linecap="round"><path d="M178 103 l2 3 l2 -3"/><path d="M187 103 l2 3 l2 -3"/><path d="M196 103 l2 3 l2 -3"/></g>
+<path d="M112 176 Q118 168 126 176" fill="none" stroke="#8A6238" stroke-width="3" stroke-linecap="round"/>
+</svg>

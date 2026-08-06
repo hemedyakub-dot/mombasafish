@@ -1,0 +1,16 @@
+BABU SAMAKI — 3 files, no page edits needed
+===========================================
+
+1. ui-js.txt
+   Upload to your repo ROOT, then rename it to:  ui.js
+   (this REPLACES your existing ui.js — it contains everything
+    ui.js already did, plus Babu Samaki appended at the end)
+
+2. images/babu-avatar.svg    -> upload into your images/ folder
+3. images/babu-scene.svg     -> upload into your images/ folder
+
+That is all. Babu appears on every page automatically, because
+ui.js is already loaded everywhere. He stays away from the
+track, policies and wholesale pages on his own.
+
+Nothing else needs re-uploading.
