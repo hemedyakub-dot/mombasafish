@@ -4,336 +4,390 @@
     <loc>https://mombasafish.com/</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>daily</changefreq>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/catalogue</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>daily</changefreq>
-    <priority>0.9</priority>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fishguide</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/about</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/ecosystem</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.60</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/track</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.50</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/policies</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.30</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/asali-ya-mikoko</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/changu</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/chaza</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/dried-prawns-1kg</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/dried-prawns-500g</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/filleting-service</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/jodari</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/kaa</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/katashingo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/kolekole</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/kome</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/lobster</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/mkundaji</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/mwani-mkavu</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/mwani-msafi</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/ngisi</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/nguru</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/papa</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/pono</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-cocktail</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-jumbo</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-king</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-s1</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-s2</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/prawns-tiger</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/pweza</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/red-snapper</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/red-snapper-fillets</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/salmon</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/simusimu</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/songoro</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/sulisuli</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/sulisuli-kipanga</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/tafi</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/tewa</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/tilapia-fillets</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/una</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/unga-wa-mwani</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/uwono</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/white-clams</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/fish/white-snapper-fillets</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/samaki-wa-kupaka</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/mchuzi-wa-pweza</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/nguru-biryani</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/kamba-wa-nazi</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/simusimu-wa-kukaanga</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/mchuzi-wa-samaki</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/ngisi-wa-kuchoma</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://mombasafish.com/recipes/supu-ya-kome</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/sofia-ghost-fishing</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/sofia-launch</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/cook-nguru</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/cook-jodari</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/blue-economy</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/five-recipes</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
   <url>
     <loc>https://mombasafish.com/blog/boat-to-box</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
   </url>
 </urlset>
