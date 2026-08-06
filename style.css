@@ -739,3 +739,50 @@ body.oe{font-size:17px}
 .bshost p{margin:0;font-size:.96rem;line-height:1.7;color:var(--ink)}
 .bshost b{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:.25rem;font-weight:400}
 @media(max-width:520px){.bshost{gap:.7rem;padding:.85rem .95rem}.bshost img{width:48px;height:48px}.bshost p{font-size:.9rem}}
+
+/* ---------- Kids: matching game ---------- */
+.game{max-width:44rem}
+.gprompt{font-family:var(--font-display);font-size:clamp(1.3rem,5vw,1.9rem);color:var(--abyss);margin-bottom:1rem}
+.gprompt b{color:var(--coral)}
+.gopts{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem}
+.gopts.locked button{pointer-events:none}
+.gopt{padding:0;border:3px solid var(--line);border-radius:16px;overflow:hidden;background:var(--white);cursor:pointer;min-height:44px}
+.gopt img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block}
+.gopt:hover{border-color:var(--foam)}
+.gopt.yes{border-color:#1FAF54}
+.gopt.no{border-color:var(--coral);opacity:.55}
+.gfeed{min-height:3.2rem;margin-top:.9rem;font-size:1rem;line-height:1.6}
+.gfeed.ok{color:#14803C;font-weight:700}
+.gfeed.nope{color:var(--coral)}
+.gdots{display:flex;gap:.4rem;margin-top:.4rem}
+.gdots i{width:12px;height:12px;border-radius:50%;background:var(--line)}
+.gdots i.on{background:var(--catch)}
+.gdone{background:var(--abyss);color:var(--sand);border-radius:18px;padding:1.6rem;text-align:center;max-width:44rem}
+.gdone h2{font-family:var(--font-display);font-size:1.6rem;color:var(--catch);margin-bottom:.5rem}
+.gdone p{margin-bottom:1rem}
+
+/* ---------- Kids: story ---------- */
+.story{display:grid;gap:1.4rem;max-width:46rem}
+.scene{background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.scene img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.scene .sb2{padding:1.1rem 1.3rem 1.3rem}
+.stime{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.12em;color:var(--coral)}
+.scene h2{font-family:var(--font-display);font-size:1.25rem;color:var(--abyss);margin:.25rem 0 .5rem}
+.scene p{font-size:1rem;line-height:1.75}
+
+/* ---------- Kids: colouring ---------- */
+.csheets{display:grid;gap:1.2rem;grid-template-columns:1fr}
+@media(min-width:700px){.csheets{grid-template-columns:repeat(3,1fr)}}
+.csheetwrap{margin:0;background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.csheet{width:100%;height:auto;display:block;background:#fff}
+.csheetwrap figcaption{padding:.9rem 1rem 1.1rem;text-align:center;border-top:1px solid var(--line)}
+.csheetwrap b{display:block;font-family:var(--font-display);font-size:1.05rem;color:var(--abyss)}
+.csheetwrap span{display:block;font-size:.84rem;color:var(--muted);margin-bottom:.7rem}
+@media print{
+  body.printing .annc,body.printing .hdr,body.printing footer,body.printing .crumb,
+  body.printing .kick,body.printing .sec,body.printing .sec-sub,body.printing .bshost,
+  body.printing .oeprivacy,body.printing .oebtn,body.printing .bs-fab,body.printing .bs-panel{display:none!important}
+  body.printing .csheetwrap{display:none!important;border:0}
+  body.printing .csheetwrap.printme{display:block!important;page-break-inside:avoid}
+  body.printing .csheetwrap.printme figcaption{border:0}
+}

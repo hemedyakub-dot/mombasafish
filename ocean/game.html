@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guess the Fish — a matching game | Ocean Explorers</title>
+<meta name="description" content="A picture-matching game for ages 5-10. Learn the Swahili names of Kenya&#x27;s sea creatures — pweza, kaa, nguru, jodari and more.">
+<link rel="canonical" href="https://mombasafish.com/ocean/game">
+<meta property="og:type" content="website"><meta property="og:locale" content="en_KE">
+<meta property="og:site_name" content="MombasaFish">
+<meta property="og:title" content="Guess the Fish — a matching game | Ocean Explorers">
+<meta property="og:description" content="A picture-matching game for ages 5-10. Learn the Swahili names of Kenya&#x27;s sea creatures — pweza, kaa, nguru, jodari and more.">
+<meta property="og:url" content="https://mombasafish.com/ocean/game">
+<meta property="og:image" content="https://mombasafish.com/images/pweza.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="../images/logo.jpg">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body class="oe">
+<div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
+<header class="hdr">
+  <a class="logo" href="../index.html"><img src="../images/logo.jpg" alt="MombasaFish logo" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
+  <nav class="nav">
+    <a href="../index.html">Home</a>
+    <a href="../catalogue.html">Shop</a>
+    <a href="../fishguide.html">Fish Guide</a>
+    <a href="../ask.html">Ask</a>
+    <a href="../recipes.html">Recipes</a>
+    <a href="../shimoni.html">Why Shimoni</a>
+    <a href="../ocean.html" class="on">Ocean Explorers</a>
+    <a href="../wholesale.html">Wholesale</a>
+    <a href="../track.html">Track Order</a>
+    <a href="../blog.html">Blog</a>
+    <a href="../about.html">About</a>
+    <a href="../ecosystem.html">Ecosystem</a>
+  </nav>
+</header>
+
+<div class="wrap">
+<nav class="crumb" aria-label="Breadcrumb"><a href="../index.html">Home</a> › <a href="../ocean.html">Ocean Explorers</a> › <span>Matching game</span></nav>
+<section>
+  <span class="kick">Game · ages 5–10</span>
+  <h1 class="sec">Guess the <span>fish</span></h1>
+  <p class="sec-sub">Babu Samaki says a Swahili name. You tap the right picture. Eight rounds, and nobody loses — if you pick wrongly he simply tells you what it was and lets you try again.</p>
+  <div class="bshost">
+    <img src="../images/babu-avatar.svg" alt="Babu Samaki" width="62" height="62">
+    <p><b>Babu Samaki</b>Sawa. I will say a name, and you will show me which one it is. Take your time, mwanangu. The sea is not going anywhere.</p>
+  </div>
+
+  <div class="game" id="game">
+    <p class="gprompt" id="gprompt">Loading…</p>
+    <div class="gopts" id="gopts"></div>
+    <p class="gfeed" id="gfeed"></p>
+    <div class="gdots" id="gdots"></div>
+  </div>
+  <div class="gdone" id="gdone" hidden>
+    <h2>Vizuri sana. Well done.</h2>
+    <p id="gscore"></p>
+    <p><a class="oebtn hot" href="quiz.html">Now try the quiz →</a> <a class="oebtn" href="#" id="gagain">Play again</a></p>
+  </div>
+  <p style="margin-top:1.6rem"><a class="oebtn" href="../ocean.html">← Ocean Explorers</a> <a class="oebtn" href="creatures.html">Meet the creatures</a></p>
+</section>
+</div>
+
+<script>
+(function(){
+  var SP=[{"n": "Pweza", "w": "the octopus", "i": "pweza.jpg", "f": "Eight arms, three hearts, and blue blood."}, {"n": "Kaa", "w": "the crab", "i": "kaa.jpg", "f": "He wears his skeleton on the outside."}, {"n": "Changu", "w": "the emperor fish", "i": "changu.jpg", "f": "The family favourite. Very few bones."}, {"n": "Nguru", "w": "the kingfish", "i": "nguru.jpg", "f": "Fast, strong, and the fish for biryani."}, {"n": "Jodari", "w": "the tuna", "i": "jodari.jpg", "f": "He never stops swimming, not even to sleep."}, {"n": "Kamba Mkubwa", "w": "the lobster", "i": "lobster.jpg", "f": "No big claws here — all the meat is in the tail."}, {"n": "Ngisi", "w": "the squid", "i": "ngisi.jpg", "f": "He moves by squirting water, like a jet."}, {"n": "Tafi", "w": "the rabbitfish", "i": "tafi.jpg", "f": "He grazes seagrass like a goat grazes a field."}, {"n": "Papa", "w": "the shark", "i": "papa.jpg", "f": "He has no bones at all. Only cartilage."}, {"n": "Simusimu", "w": "the sardine", "i": "simusimu.jpg", "f": "Small, silver, and swims in huge shoals."}, {"n": "Kome", "w": "the mussel", "i": "kome.jpg", "f": "He holds onto the rock and waits for the tide."}, {"n": "Chaza", "w": "the oyster", "i": "chaza.jpg", "f": "Hard shell outside, soft and salty inside."}];
+  var ROUNDS=8, order=[], idx=0, right=0;
+  var prompt=document.getElementById("gprompt"), opts=document.getElementById("gopts"),
+      feed=document.getElementById("gfeed"), dots=document.getElementById("gdots"),
+      done=document.getElementById("gdone"), game=document.getElementById("game");
+  function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+  function start(){order=shuffle(SP).slice(0,ROUNDS);idx=0;right=0;done.hidden=true;game.hidden=false;round();}
+  function round(){
+    feed.textContent=""; feed.className="gfeed";
+    var target=order[idx];
+    var others=shuffle(SP.filter(function(x){return x.n!==target.n;})).slice(0,2);
+    var choices=shuffle([target].concat(others));
+    prompt.innerHTML="Show me <b>"+target.n+"</b>";
+    opts.innerHTML="";
+    choices.forEach(function(c){
+      var b=document.createElement("button");
+      b.type="button"; b.className="gopt";
+      b.innerHTML='<img src="../images/'+c.i+'" alt="" loading="lazy" width="300" height="300">';
+      b.setAttribute("aria-label","Choose picture");
+      b.addEventListener("click",function(){pick(b,c,target);});
+      opts.appendChild(b);
+    });
+    dots.innerHTML="";
+    for(var i=0;i<ROUNDS;i++){var d=document.createElement("i");if(i<idx)d.className="on";dots.appendChild(d);}
+  }
+  function pick(btn,choice,target){
+    if(opts.classList.contains("locked"))return;
+    if(choice.n===target.n){
+      opts.classList.add("locked"); btn.classList.add("yes"); right++;
+      feed.className="gfeed ok"; feed.textContent="Ndiyo. "+target.n+" — "+target.w+". "+target.f;
+      setTimeout(function(){opts.classList.remove("locked");idx++;if(idx<ROUNDS)round();else finish();},1900);
+    } else {
+      btn.classList.add("no");
+      feed.className="gfeed nope"; feed.textContent="Not that one. That is "+choice.n+" — "+choice.w+". Look again.";
+    }
+  }
+  function finish(){
+    game.hidden=true; done.hidden=false;
+    document.getElementById("gscore").textContent="You found "+right+" out of "+ROUNDS+" first time.";
+  }
+  document.getElementById("gagain").addEventListener("click",function(e){e.preventDefault();start();});
+  start();
+})();
+</script>
+<footer>
+  <div class="cols">
+    <div><h2>Ocean Explorers</h2><a href="../ocean.html">Start here</a><a href="../ocean/creatures.html">Sea creatures</a><a href="../ocean/classroom.html">Ocean classroom</a><a href="../ocean/game.html">Matching game</a><a href="../ocean/story.html">The story</a><a href="../ocean/colour.html">Colouring</a><a href="../ocean/quiz.html">Quiz</a><a href="../ocean/teachers.html">Parents &amp; teachers</a></div>
+    <div><h2>MombasaFish</h2><a href="../index.html">Home</a><a href="../catalogue.html">Shop</a><a href="../shimoni.html">Why Shimoni</a><a href="../policies.html">Policies &amp; privacy</a></div>
+    <div><h2>Contact</h2><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="mailto:mombasafish@gmail.com">mombasafish@gmail.com</a></div>
+  </div>
+  <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Ocean Explorers is free to use, in class or at home.<br>© 2026 MombasaFish</p>
+</footer>
+
+<script src="../ui.js" defer></script>
+<script src="../babu.js" defer></script>
+<!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a0dfbad9d92441fe9afdaf972bb97acd"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+</html>

@@ -1,10 +1,16 @@
-BABU — deep answers, memory, typo tolerance
-===========================================
-ONE file. Upload babu-js.txt to repo ROOT, rename to:  babu.js
-Then Ctrl+Shift+R.
+OCEAN EXPLORERS — Phase B (kids)
+================================
+No .js files, nothing to rename.
 
-NEW
-- On a fish page, "how do I cook this?" now works — he reads that fish's
-  own page and quotes its real cooking, storage or nutrition section.
-- He remembers the fish you were just discussing, so "is it bony?" follows on.
-- Typos and swapped letters no longer defeat him ("octopuss", "delivary").
+NEW pages -> upload into your ocean/ folder:
+  ocean/game.html     matching game
+  ocean/story.html    boat-to-box story
+  ocean/colour.html   three printable colouring sheets
+
+REPLACE (footers now link to the new pages):
+  ocean/creatures.html, ocean/classroom.html, ocean/quiz.html, ocean/teachers.html
+
+REPLACE in the repo ROOT:
+  ocean.html    (hub now links to the three new pages)
+  style.css     (styles for the game, story and colouring sheets)
+  sitemap.xml   (76 URLs)
