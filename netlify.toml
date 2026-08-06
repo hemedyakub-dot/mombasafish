@@ -1,0 +1,11 @@
+[[redirects]]
+  from = "https://mombasafishmarket.com/*"
+  to = "https://mombasafish.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.mombasafishmarket.com/*"
+  to = "https://mombasafish.com/:splat"
+  status = 301
+  force = true
