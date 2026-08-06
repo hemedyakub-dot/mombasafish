@@ -535,3 +535,39 @@ footer .fine{max-width:68rem;margin:1.8rem auto 0;font-family:var(--font-mono);f
 .deliv td:first-child{font-weight:600;color:var(--abyss)}
 .deliv td.amt{font-family:var(--font-mono);color:var(--deep);white-space:nowrap}
 .deliv tr:hover td{background:var(--sand)}
+
+/* ---------- Blog index cards ---------- */
+.postgrid{display:grid;gap:1.1rem;grid-template-columns:1fr;margin-top:1.4rem}
+@media(min-width:640px){.postgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1000px){.postgrid{grid-template-columns:repeat(3,1fr)}}
+.pcard{display:flex;flex-direction:column;text-decoration:none;background:var(--white);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pcard:hover{transform:translateY(-4px);box-shadow:0 16px 38px rgba(3,42,46,.16)}
+.pcard img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.pcard .pb{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;flex:1}
+.pcard .pill{display:inline-block;align-self:flex-start;font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;background:var(--sand);color:var(--deep);padding:.22rem .6rem;border-radius:999px;margin-bottom:.55rem}
+.pcard h3{font-family:var(--font-display);font-size:1.02rem;line-height:1.25;color:var(--abyss);margin-bottom:.45rem}
+.pcard p{font-size:.87rem;color:var(--muted);line-height:1.6;margin-bottom:.8rem}
+.pcard .rd{margin-top:auto;font-family:var(--font-mono);font-size:.72rem;color:var(--coral);letter-spacing:.02em}
+
+/* ---------- Article pages ---------- */
+.art{max-width:44rem;margin:0 auto 2rem}
+.artmeta{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;font-family:var(--font-mono);font-size:.74rem;color:var(--muted);margin-bottom:.8rem}
+.artmeta .pill{background:var(--sand);color:var(--deep);padding:.22rem .6rem;border-radius:999px;letter-spacing:.08em;text-transform:uppercase;font-size:.66rem}
+.art h1{font-family:var(--font-display);font-size:clamp(1.7rem,5.5vw,2.6rem);line-height:1.12;color:var(--abyss);margin-bottom:.7rem}
+.artlede{font-size:1.08rem;line-height:1.65;color:var(--deep);font-weight:600;margin-bottom:1.4rem}
+.arthero{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:18px;box-shadow:0 16px 40px rgba(3,42,46,.16);margin-bottom:1.8rem}
+.artbody p{font-size:1.02rem;line-height:1.78;margin-bottom:1.1rem}
+.artbody h2{font-family:var(--font-display);font-size:clamp(1.15rem,3.4vw,1.45rem);color:var(--abyss);margin:1.9rem 0 .7rem}
+.artbody ul,.artbody ol{margin:0 0 1.1rem 1.2rem}
+.artbody li{margin-bottom:.5rem;line-height:1.7}
+.artbody a{color:var(--deep);text-decoration:underline;text-underline-offset:2px}
+.artshop{border-top:1px solid var(--line);margin-top:2.2rem;padding-top:1.6rem}
+.artshop h2{font-family:var(--font-display);font-size:1.15rem;color:var(--abyss);margin-bottom:.9rem}
+.morelist{list-style:none;margin:0;padding:0;max-width:44rem}
+.morelist li{border-bottom:1px solid var(--line)}
+.morelist a{display:block;padding:.85rem 0;text-decoration:none}
+.morelist b{display:block;color:var(--abyss);font-size:.98rem;line-height:1.35;margin-bottom:.2rem}
+.morelist span{font-family:var(--font-mono);font-size:.72rem;color:var(--muted)}
+.morelist a:hover b{color:var(--coral)}
+.card .sum{font-size:.78rem;color:var(--muted);line-height:1.5;margin:.4rem 0 .1rem}
+@media(max-width:760px){.card .sum{display:none}}
