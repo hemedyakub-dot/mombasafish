@@ -1,2 +1,75 @@
-https://mombasafishmarket.com/* https://mombasafish.com/:splat 301!
-https://mombasafishmarket.com/* https://mombasafish.com/:splat 301!
+# ===================================================================
+#  Old Shopify URLs -> MombasaFish
+#  mombasafishmarket.com/<path> arrives here with the path intact,
+#  so every old Shopify address needs somewhere real to land.
+#  Netlify reads these top to bottom; the first match wins.
+# ===================================================================
+
+# ---- products: mapped one by one to their new pages ----
+/products/changu-emperor-fish                    /fish/changu                  301!
+/products/jodari-tuna-fish                       /fish/jodari                  301!
+/products/nguru-king-fish                        /fish/nguru                   301!
+/products/kolekole-trevally-fish                 /fish/kolekole                301!
+/products/tewa-grouper-fish                      /fish/tewa                    301!
+/products/tafi-rabbit-fish                       /fish/tafi                    301!
+/products/pono-parrot-fish                       /fish/pono                    301!
+/products/red-snapper                            /fish/red-snapper             301!
+/products/mkundaji-red-mullet                    /fish/mkundaji                301!
+/products/papa-mbichi-shark-steak                /fish/papa                    301!
+/products/sulisuli-sail-fish                     /fish/sulisuli                301!
+/products/sulisuli-kipanga-swordfish             /fish/sulisuli-kipanga        301!
+/products/songoro-cobia                          /fish/songoro                 301!
+/products/simusimu-sardines                      /fish/simusimu                301!
+/products/uwono-anchovies                        /fish/uwono                   301!
+/products/una-indian-mackerel                    /fish/una                     301!
+/products/pweza-octopus                          /fish/pweza                   301!
+/products/ngisi-calamari                         /fish/ngisi                   301!
+/products/crab                                   /fish/kaa                     301!
+/products/lobster                                /fish/lobster                 301!
+/products/prawns-jumbo                           /fish/prawns-jumbo            301!
+/products/prawns-king                            /fish/prawns-king             301!
+/products/prawns-tiger                           /fish/prawns-tiger            301!
+/products/prawns-s1                              /fish/prawns-s1               301!
+/products/prawns-s2                              /fish/prawns-s2               301!
+/products/prawns-cocktail                        /fish/prawns-cocktail         301!
+/products/katashingo-dried-anchovies             /fish/katashingo              301!
+/products/mwani-mkavu-dried-seamoss-uncleaned    /fish/mwani-mkavu             301!
+/products/mwani-mkavu-msafi-dried-seamoss-cleaned /fish/mwani-msafi            301!
+/products/unga-wa-mwani-seamoss-powder           /fish/unga-wa-mwani           301!
+/products/asali-ya-mikoko-mangrove-honey         /fish/asali-ya-mikoko         301!
+/products/eps-foam-coolers-max-5-kg              /catalogue                    301!
+/products/ets-foam-cooler-max-7-kg               /catalogue                    301!
+/products/ets-foam-cooler-max-15-kg              /catalogue                    301!
+/products/tip                                    /catalogue                    301!
+
+# anything else that was a product
+/products/*                                      /catalogue                    301!
+
+# ---- collections ----
+/collections/all                                 /catalogue                    301!
+/collections/whole-fish                          /catalogue                    301!
+/collections/prawns                              /catalogue                    301!
+/collections/shellfish                           /catalogue                    301!
+/collections/*                                   /catalogue                    301!
+
+# ---- shop plumbing ----
+/cart                                            /catalogue                    301!
+/cart/*                                          /catalogue                    301!
+/search                                          /catalogue                    301!
+/checkouts/*                                     /catalogue                    301!
+/account                                         /track                        301!
+/account/*                                       /track                        301!
+
+# ---- content pages ----
+/pages/about                                     /about                        301!
+/pages/about-us                                  /about                        301!
+/pages/contact                                   /about                        301!
+/pages/faq                                       /ask                          301!
+/pages/*                                         /                             301!
+/blogs/news/*                                    /blog                         301!
+/blogs/*                                         /blog                         301!
+/policies/*                                      /policies                     301!
+
+# ---- Shopify system paths: send them home rather than 404 ----
+/apps/*                                          /                             301!
+/tools/*                                         /                             301!
