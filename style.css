@@ -803,3 +803,6 @@ body.oe{font-size:17px}
 .qcpack{font-size:.92rem;line-height:1.65;color:var(--abyss);margin-bottom:.7rem}
 .qcpack b{color:var(--deep)}
 .qcguar{font-size:.88rem;line-height:1.6;color:var(--muted)}
+
+.boxhint{background:#FBF8F2;border:1px solid var(--line);border-left:3px solid var(--coral);border-radius:10px;padding:.8rem 1rem;font-size:.92rem;color:var(--abyss);margin:0 0 1.6rem}
+.boxhint a{color:var(--deep);font-weight:600}
