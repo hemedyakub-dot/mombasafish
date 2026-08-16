@@ -1161,6 +1161,13 @@
     });
     return {lines:out, total:t};
   }
+  function orderNote(note){
+    var src='', land='';
+    try{ src=sessionStorage.getItem('mf_src')||''; land=sessionStorage.getItem('mf_land')||''; }catch(e){}
+    var tag=src?('via: '+src+(land&&land!=='/catalogue'&&land!=='/catalogue.html'?' · landed: '+land:'')):'';
+    var out=[note,tag].filter(Boolean).join('  |  ');
+    return out?out.slice(0,500):null;
+  }
   function fail(m){ errEl.textContent=m; errEl.hidden=false; btn.disabled=false; btn.textContent='Place order';
                     errEl.scrollIntoView({block:'nearest',behavior:'smooth'}); }
 
@@ -1189,7 +1196,7 @@
       headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY},
       body:JSON.stringify({p_name:name,p_phone:phone,p_county:county,p_items:items,
         p_delivery_type:/mombasa/i.test(county)?'mombasa':'upcountry',
-        p_destination:place||county,p_notes:note||null})
+        p_destination:place||county,p_notes:orderNote(note)})
     }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok,body:j}; }); })
     .then(function(res){
       if(!res.ok){
