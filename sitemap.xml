@@ -180,6 +180,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+<url>
+    <loc>https://mombasafish.com/fish/tengesi</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <url>
     <loc>https://mombasafish.com/fish/kome</loc>
     <lastmod>2026-08-06</lastmod>

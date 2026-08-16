@@ -22,6 +22,28 @@
 <style>.hero.hero-photo{--hero-img:url("images/hero-sunset.jpg");min-height:46vh}
 .hero.hero-photo::before{background-image:linear-gradient(180deg,rgba(3,42,46,.45) 0%,rgba(3,42,46,.68) 100%),var(--hero-img)}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Shop Seafood","item":"https://mombasafish.com/catalogue"}]}</script>
+<style>
+.ordf{border-top:1px solid var(--line);margin-top:1.4rem;padding-top:1.2rem}
+.ordf h4{font-family:var(--font-body);font-size:1rem;color:var(--abyss);margin-bottom:.8rem}
+.ordgrid{display:grid;gap:.8rem;grid-template-columns:1fr}
+@media(min-width:560px){.ordgrid{grid-template-columns:1fr 1fr}.ordgrid .wide{grid-column:1/-1}}
+.ordgrid label{display:block;font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:.3rem}
+.ordgrid label span{text-transform:none;letter-spacing:0}
+.ordgrid input{width:100%;padding:.7rem .8rem;border:1px solid var(--line);border-radius:10px;font:400 .95rem/1.3 Inter,system-ui,sans-serif;background:#fff;color:var(--abyss);min-height:44px}
+.ordgrid input:focus{outline:2px solid var(--deep);outline-offset:1px}
+.ordf .btn{margin-top:1rem}
+.ordsmall{font-size:.8rem;color:var(--muted);text-align:center;margin-top:.5rem}
+.orderr{margin-top:.7rem;background:#FDECEC;border:1px solid #E7B4B4;color:#8A2323;border-radius:10px;padding:.7rem .85rem;font-size:.9rem}
+.ordalt{text-align:center;font-size:.82rem;color:var(--muted);margin:1.1rem 0 .5rem}
+.ordok{margin-top:1.2rem;background:var(--abyss);color:var(--sand);border-radius:16px;padding:1.3rem}
+.ordok h4{font-family:var(--font-display);color:var(--catch);font-size:1.25rem;margin-bottom:.5rem}
+.ordok .ordnum{display:flex;flex-wrap:wrap;gap:.6rem;margin:.9rem 0}
+.ordok .ordnum div{background:rgba(255,255,255,.1);border-radius:10px;padding:.6rem .9rem;flex:1 1 auto}
+.ordok .ordnum b{display:block;font-family:var(--font-mono);font-size:1.05rem;color:#fff;letter-spacing:.04em}
+.ordok .ordnum span{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
+.ordok p{font-size:.9rem;line-height:1.6}
+.ordok a{color:var(--foam)}
+</style>
 </head>
 <body>
 
@@ -819,13 +841,14 @@
   <div class="ctotal"><span>Total (items)</span><span id="ctot"></span></div>
   <p class="cnote">Cooler box &amp; transport are confirmed on WhatsApp and charged at cost. Pay by M-Pesa after we confirm your order.</p>
 
+<section class="psec qcp"><h2>Checked before the box is closed</h2><p class="qcl">Every fish is looked over by hand before it is packed. These are the four things we check, and they are the same four you should check when it reaches you.</p><ul class="qcgrid"><li><b>Eyes</b><span>Clear and full. Never cloudy or sunken.</span></li><li><b>Gills</b><span>Lifted and looked at. Deep red, not brown or grey.</span></li><li><b>Flesh</b><span>Pressed with a finger. It springs back.</span></li><li><b>Smell</b><span>Clean sea. Never ammonia.</span></li></ul><div class="qcprov"><div><span>Landed at</span><b>Shimoni and the Pemba Channel, Kwale County</b></div><div><span>Caught by</span><b>Handline and small-net fishing from open wooden boats</b></div></div><p class="qcpack"><b>Then it is packed.</b> On ice, in a sealed EPS cooler that holds cold for up to 72 hours. Mombasa goes the same day by rider; everywhere else travels by express courier or bus.</p><p class="qcguar">Do these four checks yourself when it arrives. If any of them fails, send one photograph within 24 hours and we replace the item or refund it &mdash; we never ask you to send fish back. <a href="policies.html">Read the guarantee</a>.</p></section>
   <div class="cnext">
     <h4>What happens next</h4>
     <ol>
-      <li><b>1</b> Your cart becomes a WhatsApp message. Nothing is charged.</li>
+      <li><b>1</b> You place the order here. Nothing is charged, and you get an order number straight away.</li>
       <li><b>2</b> We reply with availability and your full total — fish, cooler, transport.</li>
       <li><b>3</b> You pay by M-Pesa only after you have seen that total.</li>
-      <li><b>4</b> We pack on ice and send you an order number and tracking code.</li>
+      <li><b>4</b> We pack on ice, and you follow it on the tracking page.</li>
     </ol>
   </div>
 
@@ -834,6 +857,22 @@
     <p>If anything arrives that isn't right — not fresh, short weight, wrong item — send us a photo within 24 hours and we replace it or refund that item. We never ask you to send fish back. <a href="policies.html">Read the guarantee</a>.</p>
   </div>
 
+  <form class="ordf" id="ordf" novalidate>
+    <h4>Place your order</h4>
+    <div class="ordgrid">
+      <div><label for="oname">Your name</label><input id="oname" name="name" type="text" autocomplete="name" maxlength="80" required></div>
+      <div><label for="ophone">Phone (M-Pesa)</label><input id="ophone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="07xx xxx xxx" required></div>
+      <div class="wide"><label for="oplace">Town, estate or stage</label><input id="oplace" name="place" type="text" maxlength="60" placeholder="e.g. South C, Nairobi"></div>
+      <div class="wide"><label for="onote">Anything we should know <span>(optional)</span></label><input id="onote" name="note" type="text" maxlength="200" placeholder="e.g. deliver Saturday morning"></div>
+    </div>
+    <button class="btn btn-primary" style="width:100%" id="osend" type="submit">Place order</button>
+    <p class="ordsmall">No payment now. We confirm availability and your total first.</p>
+    <p class="orderr" id="orderr" role="alert" hidden></p>
+  </form>
+
+  <div class="ordok" id="ordok" role="status" aria-live="polite" hidden></div>
+
+  <p class="ordalt">Prefer to talk first?</p>
   <button class="btn btn-wa" style="width:100%" id="csend">Check out on WhatsApp</button>
 </div>
 
@@ -997,6 +1036,81 @@
       '\n\nName: \nDelivery location: ';
     window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
     try{localStorage.removeItem(STORE);}catch(e){}
+  });
+})();
+</script>
+
+<script>
+(function(){
+  var SB='https://tcpqbrchpxpshmqprbkv.supabase.co';
+  var KEY='sb_publishable_7YLqP3JMq8AFZQl4XF--bw_itOMj1gA';
+  var f=document.getElementById('ordf'); if(!f) return;
+  var errEl=document.getElementById('orderr'), okEl=document.getElementById('ordok'),
+      btn=document.getElementById('osend');
+
+  function cartLines(){
+    var out=[], t=0;
+    document.querySelectorAll('.card').forEach(function(c){
+      var q=c.qty||0; if(!q) return;
+      var unit=c.dataset.unit==='kg'?' kg':' pc';
+      var cost=q*(+c.dataset.price);
+      t+=cost;
+      out.push(c.dataset.name+' — '+q+unit+' — KES '+cost.toLocaleString());
+    });
+    return {lines:out, total:t};
+  }
+  function fail(m){ errEl.textContent=m; errEl.hidden=false; btn.disabled=false; btn.textContent='Place order';
+                    errEl.scrollIntoView({block:'nearest',behavior:'smooth'}); }
+
+  f.addEventListener('submit', function(ev){
+    ev.preventDefault(); errEl.hidden=true;
+    var cart=cartLines();
+    if(!cart.lines.length) return fail('Your basket is empty — add something first.');
+    var name=document.getElementById('oname').value.trim();
+    var phone=document.getElementById('ophone').value.replace(/\s/g,'');
+    var county=(document.getElementById('ccounty')||{}).value||'';
+    var place=document.getElementById('oplace').value.trim();
+    var note=document.getElementById('onote').value.trim();
+    if(name.length<2) return fail('Please give us a name for the order.');
+    if(!/^(\+?254|0)[17][0-9]{8}$/.test(phone)) return fail('That phone number does not look right. Use 07xx xxx xxx or 01xx xxx xxx.');
+    if(!county) return fail('Please choose your delivery county above.');
+
+    var prep=(document.getElementById('cprep')||{}).value||'';
+    var items=cart.lines.join('; ')
+      + ' | Items total: KES '+cart.total.toLocaleString()
+      + (prep?' | Prep: '+prep:'')
+      + ' | Placed on website';
+
+    btn.disabled=true; btn.textContent='Sending…';
+    fetch(SB+'/rest/v1/rpc/mfm_place_order',{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY},
+      body:JSON.stringify({p_name:name,p_phone:phone,p_county:county,p_items:items,
+        p_delivery_type:/mombasa/i.test(county)?'mombasa':'upcountry',
+        p_destination:place||county,p_notes:note||null})
+    }).then(function(r){ return r.json().then(function(j){ return {ok:r.ok,body:j}; }); })
+    .then(function(res){
+      if(!res.ok){
+        var m=(res.body&&(res.body.message||res.body.hint))||'Something went wrong. Please try WhatsApp.';
+        return fail(m);
+      }
+      var row=Array.isArray(res.body)?res.body[0]:res.body;
+      if(!row||!row.order_number) return fail('Order did not save. Please use WhatsApp so we do not lose it.');
+      f.hidden=true;
+      document.querySelector('.ordalt').textContent='Anything else? Message us:';
+      okEl.hidden=false;
+      okEl.innerHTML='<h4>Order received, '+name.split(' ')[0].replace(/[<>&]/g,'')+'</h4>'
+        +'<p>Write these down or screenshot this — you need both to track your order.</p>'
+        +'<div class="ordnum"><div><span>Order number</span><b>'+row.order_number+'</b></div>'
+        +'<div><span>Tracking code</span><b>'+row.tracking_code+'</b></div></div>'
+        +'<p>Nothing has been charged. We will message you shortly with what is available and your full total — fish, cooler box and transport — and you pay by M-Pesa only after that.</p>'
+        +'<p style="margin-top:.7rem"><a href="track.html">Track this order →</a></p>';
+      okEl.scrollIntoView({block:'center',behavior:'smooth'});
+      try{localStorage.removeItem('mf_cart_v1');}catch(e){}
+      var wa=document.getElementById('csend');
+      if(wa) wa.dataset.order=row.order_number;
+    })
+    .catch(function(){ fail('No connection. Check your internet, or order on WhatsApp.'); });
   });
 })();
 </script>

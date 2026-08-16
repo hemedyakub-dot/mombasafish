@@ -786,3 +786,20 @@ body.oe{font-size:17px}
   body.printing .csheetwrap.printme{display:block!important;page-break-inside:avoid}
   body.printing .csheetwrap.printme figcaption{border:0}
 }
+
+/* Quality checks panel */
+.qcp{border:1px solid var(--line);border-radius:16px;padding:1.4rem;background:#FBF8F2}
+.qcp h2{margin-bottom:.4rem}
+.qcp .qcl{color:var(--muted);font-size:.92rem;line-height:1.6;margin-bottom:1.1rem;max-width:46rem}
+.qcgrid{list-style:none;display:grid;gap:.7rem;grid-template-columns:1fr;margin:0 0 1.1rem}
+@media(min-width:620px){.qcgrid{grid-template-columns:1fr 1fr}}
+.qcgrid li{background:#fff;border:1px solid var(--line);border-radius:12px;padding:.75rem .9rem}
+.qcgrid b{display:block;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:.25rem}
+.qcgrid span{font-size:.9rem;line-height:1.5;color:var(--abyss)}
+.qcprov{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
+.qcprov div{flex:1 1 14rem;background:var(--abyss);color:var(--sand);border-radius:12px;padding:.7rem .9rem}
+.qcprov span{display:block;font-family:var(--font-mono);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;opacity:.72;margin-bottom:.2rem}
+.qcprov b{font-weight:600;font-size:.9rem;line-height:1.4}
+.qcpack{font-size:.92rem;line-height:1.65;color:var(--abyss);margin-bottom:.7rem}
+.qcpack b{color:var(--deep)}
+.qcguar{font-size:.88rem;line-height:1.6;color:var(--muted)}
