@@ -181,6 +181,12 @@
     <priority>0.80</priority>
   </url>
 <url>
+    <loc>https://mombasafish.com/coast</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
+<url>
     <loc>https://mombasafish.com/fish/tengesi</loc>
     <lastmod>2026-08-06</lastmod>
     <changefreq>weekly</changefreq>
