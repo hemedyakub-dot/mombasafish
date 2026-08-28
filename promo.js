@@ -4,7 +4,7 @@
    Set  on: false  to switch the popup off completely.
    ============================================================ */
 var PROMO = {
-  on:        false,                                  // true = show popup, false = off
+  on:        true,                                  // true = show popup, false = off
   id:        "bwanaharusi-aug2026",                 // CHANGE THIS every new promo (resets who has seen it)
   image:     "images/lobster.jpg",                  // picture in the popup (leave "" for no picture)
   kicker:    "Signature box",                       // small line above the headline
@@ -12,7 +12,7 @@ var PROMO = {
   text:      "Kingfish, lobster, crab, tiger prawns and calamari — 6 kg of the whole ocean for KES 9,500 instead of 10,700. Built for the day that matters.",
   button:    "See the box",                         // button text
   link:      "catalogue.html#bwanaharusi",
-  delay:     6000,                                  // wait 6 seconds before showing (gives people time to look around)
+  delay:     60000,                                  // wait 60 seconds before showing (gives people time to look around)
   showAgainAfterDays: 3,                            // if dismissed, don't show again for 3 days
 
   /* PINNED STRIP — always-visible bar under the header */
