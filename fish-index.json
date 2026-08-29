@@ -460,5 +460,16 @@
   "cat": "Whole Fish",
   "name": "Barracuda (Tengesi)",
   "desc": "Long, lean hunter with firm white flesh that holds its shape. Thick steaks for the grill, chunks for curry, or fried."
+ },
+ {
+  "slug": "mkizi",
+  "title": "White Mullet",
+  "sub": "Mkizi",
+  "price": 600,
+  "unit": "kg",
+  "img": "mkizi.jpg",
+  "cat": "Whole Fish",
+  "name": "White Mullet (Mkizi)",
+  "desc": "Silver inshore fish with firm white flesh and a taste of its own — never bland. Fry it whole until the skin crisps, or score it and put it over charcoal."
  }
 ]

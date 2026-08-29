@@ -210,6 +210,12 @@
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+<url>
+    <loc>https://mombasafish.com/fish/mkizi</loc>
+    <lastmod>2026-08-06</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
+  </url>
   <url>
     <loc>https://mombasafish.com/fish/mwani-mkavu</loc>
     <lastmod>2026-08-06</lastmod>
