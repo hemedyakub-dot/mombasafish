@@ -1032,8 +1032,14 @@
     }catch(e){}
   }
   function fmt(x){return 'KES '+Math.round(x).toLocaleString('en-KE');}
-  function step(c){return 1;}
-  function label(c){return c.dataset.unit==='kg'?c.qty+' kg':String(c.qty);}
+
+  /* half a kilo is the smallest we pack, so that is the step.
+     0.5 is exact in binary, so repeated +/- never drifts. */
+  function step(c){return c.dataset.unit==='kg'?0.5:1;}
+  function label(c){
+    if(c.dataset.unit!=='kg') return String(c.qty);
+    return (Number.isInteger(c.qty)?c.qty:c.qty.toFixed(1))+' kg';
+  }
   function paint(c){
     c.querySelector('.n').textContent=label(c);
     c.classList.toggle('sel',c.qty>0);
@@ -1041,16 +1047,38 @@
   }
   cards.forEach(function(c){
     c.qty=0;
-    c.querySelector('.add').addEventListener('click',function(){c.qty=c.dataset.unit==='kg'?1:1;paint(c);});
+    c.querySelector('.add').addEventListener('click',function(){c.qty=1;paint(c);});
     c.querySelector('.pl').addEventListener('click',function(){c.qty=c.qty+step(c);paint(c);});
     c.querySelector('.mn').addEventListener('click',function(){c.qty=Math.max(0,c.qty-step(c));paint(c);});
+
+    /* type any weight, for the customer shopping to a budget */
+    if(c.dataset.unit==='kg'){
+      var n=c.querySelector('.n');
+      if(n){
+        n.setAttribute('contenteditable','true');
+        n.setAttribute('inputmode','decimal');
+        n.setAttribute('role','textbox');
+        n.setAttribute('aria-label','Weight in kilos for '+c.dataset.name);
+        n.title='Tap to type any weight, e.g. 2.5';
+        n.style.cursor='text';
+        n.addEventListener('focus',function(){ n.textContent=c.qty?String(c.qty):''; });
+        n.addEventListener('keydown',function(e){ if(e.key==='Enter'){e.preventDefault();n.blur();} });
+        n.addEventListener('blur',function(){
+          var v=parseFloat(String(n.textContent).replace(/[^0-9.]/g,''));
+          if(!isFinite(v)||v<0) v=0;
+          v=Math.round(v*10)/10;
+          if(v>0&&v<0.5) v=0.5;
+          c.qty=v; paint(c);
+        });
+      }
+    }
   });
   function selected(){return cards.filter(function(c){return c.qty>0;});}
   function total(sel){return sel.reduce(function(t,c){return t+c.qty*(+c.dataset.price);},0);}
   function refresh(){
     var sel=selected();
     if(!sel.length){bar.classList.remove('show');panel.classList.remove('open');return;}
-    sum.innerHTML='🧺 '+sel.length+' item'+(sel.length>1?'s':'')+' · <b>'+fmt(total(sel))+'</b>';
+    sum.innerHTML='&#129506; '+sel.length+' item'+(sel.length>1?'s':'')+' &middot; <b>'+fmt(total(sel))+'</b>';
     bar.classList.add('show');
     save();
     if(panel.classList.contains('open'))renderPanel();
@@ -1060,7 +1088,10 @@
     if(c.dataset.unit==='kg')return c.qty;
     return c.qty*(parseFloat(c.dataset.weight||0));
   }
-  function totalWeight(){return selected().reduce(function(t,c){return t+weightOf(c);},0);}
+  /* rounded: oyster packs of 0.06 kg used to produce 0.42000000000000004 */
+  function totalWeight(){
+    return Math.round(selected().reduce(function(t,c){return t+weightOf(c);},0)*10)/10;
+  }
   function boxCards(){return cards.filter(function(c){return c.dataset.box;});}
   function boxCapacity(){return boxCards().reduce(function(t,c){return t+c.qty*parseFloat(c.dataset.box);},0);}
   function pickBox(w){
@@ -1074,8 +1105,8 @@
     if(w<=0){box.style.display='none';return;}
     box.style.display='block';
     if(noBox){
-      box.innerHTML='<div class="fbh"><b>🧊 Your FishBox</b><span class="fbw">'+w+' kg</span></div>'+
-        '<p class="fbmsg"><span class="fbok">✓ No cooler box needed.</span> We\'ll pack your '+w+' kg on ice without a box — for Mombasa deliveries, collection at the shop, or if you\'re bringing your own cooler.</p>'+
+      box.innerHTML='<div class="fbh"><b>&#129482; Your FishBox</b><span class="fbw">'+w+' kg</span></div>'+
+        '<p class="fbmsg"><span class="fbok">&#10003; No cooler box needed.</span> We\'ll pack your '+w+' kg on ice without a box &mdash; for Mombasa deliveries, collection at the shop, or if you\'re bringing your own cooler.</p>'+
         '<button class="fbadd" id="fbundo">I do need a cooler after all</button>';
       document.getElementById('fbundo').addEventListener('click',function(){noBox=false;renderBox();});
       return;
@@ -1087,31 +1118,31 @@
     if(cap===0){
       var rec=pickBox(w);
       if(rec&&parseFloat(rec.dataset.box)>=w){
-        msg='Your catch weighs <b>'+w+' kg</b>. You\'ll need the <b>'+rec.dataset.box+' kg cooler</b> to keep it cold all the way — up to 72 hours in transit.';
-        btn='<button class="fbadd" data-add="'+rec.dataset.box+'">Add '+rec.dataset.box+' kg cooler — KES '+(+rec.dataset.price).toLocaleString()+'</button>';
+        msg='Your catch weighs <b>'+w+' kg</b>. You\'ll need the <b>'+rec.dataset.box+' kg cooler</b> to keep it cold all the way &mdash; up to 72 hours in transit.';
+        btn='<button class="fbadd" data-add="'+rec.dataset.box+'">Add '+rec.dataset.box+' kg cooler &mdash; KES '+(+rec.dataset.price).toLocaleString()+'</button>';
       }else{
-        var n=Math.ceil(w/15);
-        msg='Your catch weighs <b>'+w+' kg</b> — that needs <b>'+n+' × 15 kg coolers</b>. Add them below, or message us and we\'ll pack it the best way.';
-        btn='<button class="fbadd" data-add="15" data-n="'+n+'">Add '+n+' × 15 kg cooler</button>';
+        var n2=Math.ceil(w/15);
+        msg='Your catch weighs <b>'+w+' kg</b> &mdash; that needs <b>'+n2+' &times; 15 kg coolers</b>. Add them below, or message us and we\'ll pack it the best way.';
+        btn='<button class="fbadd" data-add="15" data-n="'+n2+'">Add '+n2+' &times; 15 kg cooler</button>';
       }
     }else if(w>cap){
-      var extra=w-cap, rec2=pickBox(extra);
-      msg='Your box is <b>full</b>. '+w+' kg won\'t fit in '+cap+' kg of cooler — you need '+(Math.round(extra*10)/10)+' kg more space.';
-      if(rec2)btn='<button class="fbadd" data-add="'+rec2.dataset.box+'">Add a '+rec2.dataset.box+' kg cooler — KES '+(+rec2.dataset.price).toLocaleString()+'</button>';
+      var extra=Math.round((w-cap)*10)/10, rec2=pickBox(extra);
+      msg='Your box is <b>full</b>. '+w+' kg won\'t fit in '+cap+' kg of cooler &mdash; you need '+extra+' kg more space.';
+      if(rec2)btn='<button class="fbadd" data-add="'+rec2.dataset.box+'">Add a '+rec2.dataset.box+' kg cooler &mdash; KES '+(+rec2.dataset.price).toLocaleString()+'</button>';
     }else{
-      msg='<span class="fbok">✓ Your FishBox fits.</span> '+w+' kg packed in '+cap+' kg of cooler space, on ice for up to 72 hours.';
+      msg='<span class="fbok">&#10003; Your FishBox fits.</span> '+w+' kg packed in '+cap+' kg of cooler space, on ice for up to 72 hours.';
     }
     var decline=(cap===0)?'<button class="fbadd" id="fbno" style="background:none;color:var(--muted);border:1.5px solid var(--line);margin-left:.4rem">No cooler needed</button>':'';
-    box.innerHTML='<div class="fbh"><b>🧊 Your FishBox</b><span class="fbw">'+w+' kg / '+ref+' kg</span></div>'+
+    box.innerHTML='<div class="fbh"><b>&#129482; Your FishBox</b><span class="fbw">'+w+' kg / '+ref+' kg</span></div>'+
       '<div class="fbar '+cls+'"><i style="width:'+pct+'%"></i></div>'+
       '<p class="fbmsg">'+msg+'</p>'+btn+decline;
     var no=document.getElementById('fbno');
     if(no)no.addEventListener('click',function(){noBox=true;renderBox();});
     var b=box.querySelector('.fbadd');
     if(b)b.addEventListener('click',function(){
-      var size=b.dataset.add, n=parseInt(b.dataset.n||'1',10);
+      var size=b.dataset.add, n3=parseInt(b.dataset.n||'1',10);
       var target=cards.filter(function(c){return c.dataset.box===size;})[0];
-      if(target){target.qty+=n;paint(target);}
+      if(target){target.qty+=n3;paint(target);}
     });
   }
   function renderPanel(){
@@ -1119,7 +1150,7 @@
     sel.forEach(function(c){
       var row=document.createElement('div');row.className='citem';
       row.innerHTML='<span class="nm">'+c.dataset.name+'<small>'+fmt(+c.dataset.price)+(c.dataset.unit==='kg'?' / kg':' each')+'</small></span>'+
-        '<button class="st cm">−</button><span class="cq">'+label(c)+'</span><button class="st cp">+</button>'+
+        '<button class="st cm">&minus;</button><span class="cq">'+label(c)+'</span><button class="st cp">+</button>'+
         '<span class="lt">'+fmt(c.qty*(+c.dataset.price))+'</span>';
       row.querySelector('.cp').addEventListener('click',function(){c.qty=c.qty+step(c);paint(c);});
       row.querySelector('.cm').addEventListener('click',function(){c.qty=Math.max(0,c.qty-step(c));paint(c);});
@@ -1134,22 +1165,44 @@
   });
   document.getElementById('oview').addEventListener('click',function(){renderPanel();panel.classList.add('open');});
   document.getElementById('cclose').addEventListener('click',function(){panel.classList.remove('open');});
-  document.getElementById('csend').addEventListener('click',function(){
-    var sel=selected();if(!sel.length)return;
+
+  /* Checkout on WhatsApp now records the order first, instead of
+     opening a chat and quietly throwing the basket away. */
+  var waBtn=document.getElementById('csend');
+  function waMessage(sel,ref){
     var lines=sel.map(function(c){
-      var q=c.dataset.unit==='kg'?c.qty+' kg':c.qty+' pc';
+      var q=c.dataset.unit==='kg'?label(c):c.qty+' pc';
       return '• '+c.dataset.name+' — '+q+' — '+fmt(c.qty*(+c.dataset.price));
     });
     var w=totalWeight();
-    var msg='Hello MombasaFish! I would like to order:\n\n'+lines.join('\n')+
-      '\n\nItems total: '+fmt(total(sel))+
-      (w>0?'\nCatch weight: '+w+' kg':'')+
-      (noBox?'\nCooler box: not needed (own arrangement / collection)':'')+
-      (function(){var p=document.getElementById('cprep');return p&&p.value?'\nPreparation: '+p.value:'';})()+
-      (function(){var c=document.getElementById('ccounty');return c&&c.value?'\nDelivery county: '+c.value:'';})()+
-      '\n\nName: \nDelivery location: ';
-    window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(msg),'_blank');
-    try{localStorage.removeItem(STORE);}catch(e){}
+    var prep=(document.getElementById('cprep')||{}).value||'';
+    var cty=(document.getElementById('ccounty')||{}).value||'';
+    return (ref?'Order '+ref+'\n\n':'')
+      +'Hello MombasaFish! I would like to order:\n\n'+lines.join('\n')
+      +'\n\nItems total: '+fmt(total(sel))
+      +(w>0?'\nCatch weight: '+w+' kg':'')
+      +(noBox?'\nCooler box: not needed (own arrangement / collection)':'')
+      +(prep?'\nPreparation: '+prep:'')
+      +(cty?'\nDelivery county: '+cty:'')
+      +(ref?'\n\nThis order is already saved on the website.'
+           :'\n\nName: \nDelivery location: ');
+  }
+  if(waBtn) waBtn.addEventListener('click',function(){
+    var sel=selected(); if(!sel.length) return;
+    var ref=waBtn.dataset.order;
+    if(ref){
+      window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(waMessage(sel,ref)),'_blank');
+      return;
+    }
+    /* No order yet. Send them to the form so it is actually recorded.
+       The basket is deliberately NOT cleared here. */
+    waBtn.dataset.wantwa='1';
+    var ff=document.getElementById('ordf');
+    if(ff){
+      ff.scrollIntoView({block:'center',behavior:'smooth'});
+      var nm=document.getElementById('oname');
+      if(nm) setTimeout(function(){ try{nm.focus();}catch(e){} },420);
+    }
   });
 })();
 </script>
@@ -1229,7 +1282,10 @@
       okEl.scrollIntoView({block:'center',behavior:'smooth'});
       try{localStorage.removeItem('mf_cart_v1');}catch(e){}
       var wa=document.getElementById('csend');
-      if(wa) wa.dataset.order=row.order_number;
+      if(wa){
+        wa.dataset.order=row.order_number;
+        if(wa.dataset.wantwa==='1'){ wa.dataset.wantwa=''; try{ wa.click(); }catch(e){} }
+      }
     })
     .catch(function(){ fail('No connection. Check your internet, or order on WhatsApp.'); });
   });
