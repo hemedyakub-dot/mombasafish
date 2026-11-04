@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coastal Naturals — Design Proposal v2</title>
+<style>
+:root{--abyss:#04282C;--deep:#0A5056;--mid:#0E6B6F;--foam:#7FD4C1;--gold:#D9B063;
+ --weed:#4E8C6A;--sand:#EFE4CE;--cream:#FBF8F2;--ink:#0B2E31;--muted:#7A9093;--line:rgba(239,228,206,.22)}
+*{box-sizing:border-box}
+body{margin:0;font:400 16px/1.6 Inter,system-ui,sans-serif;color:var(--ink);background:var(--cream)}
+h1,h2,h3,h4{margin:0;font-weight:600;letter-spacing:-.01em}
+.wrap{max-width:1240px;margin:0 auto;padding:0 22px}
+.mono{font:400 .66rem/1 ui-monospace,monospace;letter-spacing:.14em;text-transform:uppercase}
+.rib{background:#111;color:#EFE4CE;padding:.6rem;text-align:center}
+.rib .mono{color:var(--foam)}
+
+/* header */
+.hd{position:absolute;top:0;left:0;right:0;z-index:30;display:flex;align-items:center;gap:1.6rem;
+ padding:1.1rem 2rem;color:#fff}
+.brand{display:flex;align-items:center;gap:.6rem;font:600 .95rem/1.1 Inter,sans-serif;letter-spacing:.04em}
+.brand svg{width:30px;height:30px}
+.brand span{display:block;font-weight:400;font-size:.76rem;letter-spacing:.22em;color:var(--foam)}
+.nav{display:flex;gap:1.5rem;margin-left:2.4rem;font-size:.9rem}
+.nav a{color:rgba(255,255,255,.88);text-decoration:none}
+.nav a:hover{color:var(--foam)}
+.hicons{margin-left:auto;display:flex;gap:1rem;align-items:center;font-size:1.05rem}
+.pill{background:var(--gold);color:#04282C;border-radius:999px;font:600 .66rem/1 Inter,sans-serif;padding:.2rem .4rem}
+@media(max-width:900px){.nav,.hicons{display:none}}
+
+/* hero + orbit */
+.hero{position:relative;min-height:min(880px,112vh);
+ background:linear-gradient(100deg,rgba(4,40,44,.86) 0%,rgba(4,40,44,.5) 46%,rgba(4,40,44,.3) 100%),
+ url('https://mombasafish.com/images/mwani-farm.jpg') center/cover;color:#fff;overflow:hidden}
+.htext{position:relative;z-index:10;padding:7.5rem 0 0;max-width:34rem}
+.htext h1{font-size:clamp(2.3rem,5.6vw,4rem);line-height:1.03;letter-spacing:-.025em}
+.htext .it{font-style:italic;font-weight:400;font-size:clamp(1.1rem,2.6vw,1.6rem);color:var(--sand);margin:.7rem 0 .9rem;display:block;line-height:1.3}
+.htext p{color:rgba(255,255,255,.8);font-size:.95rem;max-width:26rem}
+.hcta{display:flex;gap:.7rem;margin-top:1.5rem;flex-wrap:wrap}
+.hcta a{text-decoration:none;border-radius:999px;padding:.8rem 1.5rem;font:500 .9rem Inter,sans-serif;min-height:46px;display:inline-flex;align-items:center;gap:.4rem}
+.g1{background:linear-gradient(135deg,var(--gold),#C9994F);color:#2A1B06}
+.g2{border:1px solid rgba(255,255,255,.5);color:#fff}
+
+.stage{position:relative;width:min(560px,86vw);aspect-ratio:1;margin:-1rem auto 0;z-index:12}
+.ring{position:absolute;inset:14%;border:1px solid rgba(217,176,99,.45);border-radius:50%}
+.ring.b{inset:6%;border-color:rgba(127,212,193,.22)}
+.spin{position:absolute;inset:0;animation:sp 60s linear infinite}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes usp{from{transform:rotate(calc(var(--a)*-1))}to{transform:rotate(calc((var(--a)*-1) - 360deg))}}
+.core{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:33%;aspect-ratio:1;border-radius:50%;
+ display:grid;place-content:center;text-align:center;
+ background:radial-gradient(circle at 40% 34%,rgba(14,107,111,.95),rgba(4,40,44,.96));
+ border:1px solid rgba(217,176,99,.5);box-shadow:0 0 60px rgba(127,212,193,.2),inset 0 0 36px rgba(127,212,193,.1)}
+.core b{font:600 clamp(.72rem,1.9vw,.95rem)/1.25 Inter,sans-serif;letter-spacing:.06em;color:#fff}
+.core b i{display:block;font-style:normal;font-weight:400;color:var(--foam)}
+.core svg{width:26px;height:26px;margin:0 auto .3rem;display:block;opacity:.85}
+.node{position:absolute;left:50%;top:50%;width:0;height:0;border:0;background:none;padding:0;cursor:pointer;
+ transform:rotate(var(--a)) translateY(calc(min(560px,86vw) * -0.335))}
+.counter{position:absolute;left:0;top:0;transform-origin:center;transform:rotate(calc(var(--a)*-1));
+ animation:usp 60s linear infinite}
+.disc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(62px,11.6vw,96px);
+ aspect-ratio:1;border-radius:50%;overflow:hidden;display:block;border:2px solid var(--c);
+ box-shadow:0 0 0 4px rgba(4,40,44,.6),0 0 24px color-mix(in srgb,var(--c) 50%,transparent);transition:transform .3s}
+.disc img{width:100%;height:100%;object-fit:cover}
+.disc.ph{background:repeating-linear-gradient(45deg,#2A4A4E,#2A4A4E 7px,#20393C 7px,#20393C 14px)}
+.lab{position:absolute;left:50%;top:calc(50% + clamp(36px,6.4vw,54px));transform:translateX(-50%);
+ width:max-content;max-width:9rem;text-align:center;font:500 .78rem/1.25 Inter,sans-serif;color:#fff;
+ text-shadow:0 2px 8px rgba(0,0,0,.6);pointer-events:none}
+.node:hover .disc,.node:focus-visible .disc{transform:translate(-50%,-50%) scale(1.12)}
+.node:focus-visible .disc{outline:3px solid var(--gold);outline-offset:4px}
+.paused .spin,.paused .counter{animation-play-state:paused}
+.octl{position:relative;z-index:14;display:flex;gap:.5rem;justify-content:center;margin-top:.4rem}
+.octl button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;
+ padding:.5rem 1rem;font:500 .8rem Inter,sans-serif;cursor:pointer;min-height:42px}
+
+.promise{position:relative;z-index:14;text-align:center;padding:1.6rem 0 2.6rem;color:#fff}
+.promise b{font:600 clamp(1.05rem,2.6vw,1.45rem) Inter,sans-serif;font-style:italic}
+.promise .tl{display:flex;gap:1.4rem;justify-content:center;flex-wrap:wrap;margin-top:.5rem;
+ font:400 .76rem Inter,sans-serif;color:rgba(255,255,255,.72)}
+
+/* sections */
+.sec{padding:3.4rem 0}
+.sh{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-bottom:1.3rem;flex-wrap:wrap}
+.sh h2{font-size:clamp(1.3rem,3.2vw,1.8rem)}
+.sh a{color:var(--weed);text-decoration:none;font-size:.88rem}
+.rowbox{position:relative}
+.track{display:flex;gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding:.3rem .2rem 1rem}
+.track::-webkit-scrollbar{height:5px}.track::-webkit-scrollbar-thumb{background:rgba(11,46,49,.16);border-radius:9px}
+.pcard{position:relative;flex:0 0 clamp(190px,56vw,215px);scroll-snap-align:start;background:#fff;
+ border:1px solid rgba(11,46,49,.09);border-radius:14px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.pcard:hover,.pcard:focus{transform:translateY(-3px);box-shadow:0 12px 28px rgba(4,40,44,.13);outline:none}
+.fav{position:absolute;top:.5rem;right:.5rem;z-index:3;width:30px;height:30px;border-radius:50%;border:0;
+ background:rgba(255,255,255,.9);cursor:pointer;font-size:.95rem;color:var(--deep)}
+.shot{aspect-ratio:1;background:var(--sand);overflow:hidden}
+.shot img{width:100%;height:100%;object-fit:cover}
+.shot.ph{display:grid;place-items:center;color:#9FB0B2;font:400 .66rem/1.5 ui-monospace,monospace;
+ text-align:center;letter-spacing:.1em;text-transform:uppercase;
+ background:repeating-linear-gradient(45deg,#F2EADB,#F2EADB 9px,#E9DFCB 9px,#E9DFCB 18px)}
+.pb{padding:.7rem .8rem .85rem}
+.pb h4{font-size:.9rem;line-height:1.3}
+.from{margin:.2rem 0 .5rem;font-size:.76rem;color:var(--weed)}
+.pf{display:flex;align-items:center;justify-content:space-between;gap:.4rem}
+.price{font:600 .9rem Inter,sans-serif}
+.price.na{font-weight:400;font-size:.74rem;color:var(--muted);font-style:italic}
+.stk{font:400 .58rem/1 ui-monospace,monospace;letter-spacing:.07em;text-transform:uppercase;padding:.26rem .45rem;border-radius:999px}
+.stk.ok{background:rgba(78,140,106,.14);color:var(--weed)}
+.stk.no{background:rgba(11,46,49,.07);color:var(--muted)}
+
+/* product detail */
+.pd{background:#F4EFE4;padding:3.2rem 0}
+.pdg{display:grid;gap:1.6rem;grid-template-columns:1fr}
+@media(min-width:900px){.pdg{grid-template-columns:300px 1fr 330px}}
+.pdshot{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--sand)}
+.pdshot.ph{display:grid;place-items:center;color:#9FB0B2;font:400 .7rem ui-monospace,monospace;letter-spacing:.1em;text-transform:uppercase;
+ background:repeating-linear-gradient(45deg,#F2EADB,#F2EADB 11px,#E9DFCB 11px,#E9DFCB 22px)}
+.pdmain h2{font-size:clamp(1.5rem,4vw,2.1rem)}
+.pdmeta{display:flex;gap:1.2rem;flex-wrap:wrap;margin:.5rem 0 .8rem;font-size:.84rem;color:var(--weed)}
+.pdmain p.d{font-size:.92rem;color:#4A6467;max-width:30rem}
+.vrow{display:flex;gap:.7rem;align-items:center;margin:1.2rem 0}
+.vrow select,.qty{border:1px solid rgba(11,46,49,.2);border-radius:9px;padding:.6rem .8rem;font:400 .88rem Inter,sans-serif;background:#fff;min-height:44px}
+.qty{display:inline-flex;align-items:center;gap:.8rem}
+.addc{background:var(--weed);color:#fff;border:0;border-radius:10px;padding:.85rem 1.6rem;font:500 .92rem Inter,sans-serif;cursor:pointer;min-height:48px}
+.origin{background:#FBF8F2;border:1px solid rgba(217,176,99,.5);border-radius:16px;padding:1.2rem 1.3rem}
+.origin h3{font-size:1rem;margin-bottom:.8rem;display:flex;align-items:center;gap:.4rem}
+.orow{display:flex;justify-content:space-between;gap:.8rem;padding:.44rem 0;border-bottom:1px solid rgba(11,46,49,.07);font-size:.82rem}
+.orow:last-of-type{border:0}
+.orow b{font-weight:400;color:var(--muted)}
+.orow span{text-align:right;font-weight:500}
+.vft{display:block;margin-top:.9rem;color:var(--weed);text-decoration:none;font-size:.85rem;font-weight:500}
+
+/* journey */
+.jsec{padding:2.6rem 0;background:#EDF4F0}
+.jrow{display:flex;align-items:center;gap:.3rem;overflow-x:auto;padding:1rem .2rem}
+.jstep{flex:0 0 auto;text-align:center;width:86px}
+.jdisc{width:66px;height:66px;border-radius:50%;overflow:hidden;display:grid;place-items:center;margin:0 auto .45rem;
+ border:2px solid rgba(78,140,106,.35);background:var(--sand)}
+.jdisc img{width:100%;height:100%;object-fit:cover}
+.jph{font:400 .52rem ui-monospace,monospace;color:#9FB0B2;text-transform:uppercase;letter-spacing:.08em}
+.jstep b{font:500 .72rem/1.25 Inter,sans-serif;display:block}
+.jarrow{color:var(--weed);flex:0 0 auto;opacity:.5}
+
+/* producer */
+.prod{display:grid;gap:1.4rem;grid-template-columns:1fr;background:#fff;border:1px solid rgba(11,46,49,.09);border-radius:18px;overflow:hidden}
+@media(min-width:800px){.prod{grid-template-columns:1fr 1fr}}
+.prod .ph2{min-height:260px;background:var(--sand)}
+.prod .ph2 img{width:100%;height:100%;object-fit:cover;display:block}
+.prbody{padding:1.6rem 1.8rem 1.8rem}
+.prbody h3{font-size:clamp(1.2rem,3vw,1.6rem)}
+.prloc{color:var(--weed);font-size:.86rem;margin:.3rem 0 .8rem}
+.badges{display:flex;gap:1.3rem;margin:1.1rem 0;flex-wrap:wrap;font-size:.72rem;color:var(--muted);text-align:center}
+.badges div b{display:block;font-size:1.1rem;color:var(--weed)}
+.prbtn{background:var(--deep);color:#fff;border:0;border-radius:10px;padding:.8rem 1.4rem;font:500 .88rem Inter,sans-serif;cursor:pointer;min-height:46px}
+
+.note{background:#FFFDF6;border-left:3px solid var(--gold);border-radius:0 12px 12px 0;padding:1.1rem 1.3rem;margin:1.4rem 0}
+.note b{display:block;margin-bottom:.3rem;font-size:.92rem}
+.note p{margin:.3rem 0 0;font-size:.88rem;color:#4A6467}
+.ft{background:var(--abyss);color:rgba(239,228,206,.72);text-align:center;padding:2.4rem 1rem;font-size:.85rem}
+@media(prefers-reduced-motion:reduce){.spin,.counter{animation:none!important}.pcard,.disc{transition:none}}
+</style></head><body>
+
+<div class="rib"><span class="mono">Design proposal v2 · built to your comp · not deployed · no production change</span></div>
+
+<header class="hero">
+  <div class="hd">
+    <div class="brand">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7FD4C1" stroke-width="1.6"><path d="M12 21c0-6 3-10 7-12-5 0-8 2-9 5-1-4-4-6-8-6 4 3 6 7 6 13z"/></svg>
+      <div>COASTAL<span>NATURALS</span></div>
+    </div>
+    <nav class="nav"><a>Home</a><a>Shop</a><a>Producers</a><a>Our Origins</a><a>Traceability</a><a>About</a></nav>
+    <div class="hicons">&#9906; <span>&#128722;</span><span class="pill">0</span> &#9711;</div>
+  </div>
+
+  <div class="wrap"><div class="htext">
+    <h1>COASTAL<br>NATURALS</h1>
+    <span class="it">Discover the Treasures<br>of Our Coast.</span>
+    <p>Explore authentic coastal products, discover their origins and connect with the communities behind them.</p>
+    <div class="hcta"><a class="g1" href="#coll">Explore Collections &#8594;</a><a class="g2" href="#prod">Discover Our Producers</a></div>
+  </div></div>
+
+  <div class="stage" id="stage">
+    <div class="ring b"></div><div class="ring"></div>
+    <div class="spin" id="spin">
+        <button class="node" style="--a:-90.0deg;--c:#7FD4C1" aria-label="Sea Moss and Marine Botanicals">
+          <span class="counter"><span class="disc "><img src="https://mombasafish.com/images/mwani-fresh.jpg" alt="" loading="lazy"></span><span class="lab">Sea Moss &amp; Marine Botanicals</span></span>
+        </button>
+        <button class="node" style="--a:-18.0deg;--c:#E8A33D" aria-label="Coastal Honey">
+          <span class="counter"><span class="disc "><img src="https://mombasafish.com/images/asali-mikoko.jpg" alt="" loading="lazy"></span><span class="lab">Coastal Honey</span></span>
+        </button>
+        <button class="node" style="--a:54.0deg;--c:#9FD6B4" aria-label="Coastal Cosmetics">
+          <span class="counter"><span class="disc  ph"></span><span class="lab">Coastal Cosmetics</span></span>
+        </button>
+        <button class="node" style="--a:126.0deg;--c:#D9C3A0" aria-label="Coastal Treasures">
+          <span class="counter"><span class="disc  ph"></span><span class="lab">Coastal Treasures</span></span>
+        </button>
+        <button class="node" style="--a:198.0deg;--c:#6FC3D4" aria-label="Community Producers">
+          <span class="counter"><span class="disc "><img src="https://mombasafish.com/images/pillar-community.jpg" alt="" loading="lazy"></span><span class="lab">Community Producers</span></span>
+        </button>
+    </div>
+    <div class="core">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7FD4C1" stroke-width="1.5"><path d="M12 21c0-6 3-10 7-12-5 0-8 2-9 5-1-4-4-6-8-6 4 3 6 7 6 13z"/></svg>
+      <b>COASTAL<i>NATURALS</i></b>
+    </div>
+  </div>
+  <div class="octl"><button id="pause" aria-pressed="false">Pause orbit</button></div>
+
+  <div class="promise">
+    <b>Know Where It Comes From.</b>
+    <div class="tl"><span>Traceable products</span><span>|</span><span>Verified producers</span><span>|</span><span>Authentic coastal origins</span></div>
+  </div>
+</header>
+
+<section class="sec"><div class="wrap">
+  <div class="sh"><h2>Featured Coastal Products</h2><a>View All Products &#8594;</a></div>
+  <div class="track">
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Sea Moss Gel">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Sea Moss Gel</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price na">price on enquiry</span><span class="stk no">Not yet listed</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Mangrove Honey">&#9825;</button>
+          <div class="shot "><img src="https://mombasafish.com/images/asali-mikoko.jpg" alt="" loading="lazy"></div>
+          <div class="pb"><h4>Mangrove Honey</h4><p class="from">From Shimoni coast</p>
+          <div class="pf"><span class="price">KES 900</span><span class="stk ok">In stock</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Sea Moss Powder">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Sea Moss Powder</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price">KES 2,000</span><span class="stk ok">In stock</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Sea Moss Face Cream">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Sea Moss Face Cream</h4><p class="from">From Coastal producers</p>
+          <div class="pf"><span class="price na">price on enquiry</span><span class="stk no">Not yet listed</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Cowrie Shells">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Cowrie Shells</h4><p class="from">From origin to confirm</p>
+          <div class="pf"><span class="price na">price on enquiry</span><span class="stk no">Not yet listed</span></div></div>
+        </article></div>
+</div></section>
+
+<section class="sec" id="coll" style="padding-top:0"><div class="wrap">
+  <div class="sh"><h2>Sea Moss Collection</h2><a>View collection &#8594;</a></div>
+  <div class="track">
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Cleaned Dried Sea Moss">&#9825;</button>
+          <div class="shot "><img src="https://mombasafish.com/images/mwani-msafi.jpg" alt="" loading="lazy"></div>
+          <div class="pb"><h4>Cleaned Dried Sea Moss</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price">KES 900</span><span class="stk ok">In stock</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Uncleaned Dried Sea Moss">&#9825;</button>
+          <div class="shot "><img src="https://mombasafish.com/images/mwani-mkavu.jpg" alt="" loading="lazy"></div>
+          <div class="pb"><h4>Uncleaned Dried Sea Moss</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price">KES 600</span><span class="stk ok">In stock</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Sea Moss Powder">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Sea Moss Powder</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price">KES 2,000</span><span class="stk ok">In stock</span></div></div>
+        </article>
+        <article class="pcard" tabindex="0">
+          <button class="fav" aria-label="Save Sea Moss Gel">&#9825;</button>
+          <div class="shot  ph"><span>photo<br>needed</span></div>
+          <div class="pb"><h4>Sea Moss Gel</h4><p class="from">From Kibuyuni, Kwale</p>
+          <div class="pf"><span class="price na">price on enquiry</span><span class="stk no">Not yet listed</span></div></div>
+        </article></div>
+  <div class="note"><b>Prices shown are the four that are real.</b>
+  <p>Cleaned 900, uncleaned 600, powder 2,000 a kilo and mangrove honey 900 a jar are live on your site today. Sea moss gel, the face cream and cowrie shells read "price on enquiry" and "not yet listed" because they do not exist as products yet. Your brief said not to invent prices or availability.</p></div>
+</div></section>
+
+<section class="pd"><div class="wrap">
+  <div class="pdg">
+    <div><div class="pdshot ph">product photography needed</div></div>
+    <div class="pdmain">
+      <h2>Sea Moss Powder</h2>
+      <div class="pdmeta"><span>&#9679; Kibuyuni, Kwale</span><span>Batch: CN-SM-2026-0001</span></div>
+      <p class="d">Nutrient-rich sea moss, carefully cleaned, dried and milled by coastal producers.</p>
+      <div class="vrow">
+        <select aria-label="Pack size"><option>100 g</option><option>250 g</option><option>1 kg</option></select>
+        <span class="qty">&#8722; 1 &#43;</span>
+      </div>
+      <button class="addc">&#128722;&nbsp; Add to Cart</button>
+    </div>
+    <aside class="origin">
+      <h3>&#9679; Discover Its Origin</h3>
+      <div class="orow"><b>Country</b><span>Kenya</span></div>
+      <div class="orow"><b>County</b><span>Kwale</span></div>
+      <div class="orow"><b>Community</b><span>Kibuyuni</span></div>
+      <div class="orow"><b>Producer</b><span>to be confirmed</span></div>
+      <div class="orow"><b>Species</b><span>Eucheuma sp.</span></div>
+      <div class="orow"><b>Processing</b><span>Cleaned, dried, milled</span></div>
+      <div class="orow"><b>Batch reference</b><span>CN-SM-2026-0001</span></div>
+      <a class="vft">View Full Traceability &#8594;</a>
+    </aside>
+  </div>
+</div></section>
+
+<section class="jsec"><div class="wrap">
+  <div class="sh"><h2>Product Journey: From Ocean to You</h2></div>
+  <div class="jrow"><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/mwani-farm.jpg" alt="" loading="lazy"></span><b>Cultivation</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/mwani-fresh.jpg" alt="" loading="lazy"></span><b>Collection</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/mwani-msafi.jpg" alt="" loading="lazy"></span><b>Cleaning</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/mwani-mkavu.jpg" alt="" loading="lazy"></span><b>Drying</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><span class="jph">photo</span></span><b>Milling</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><span class="jph">photo</span></span><b>Quality check</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/cooler-7kg.jpg" alt="" loading="lazy"></span><b>Packaging</b></div><span class="jarrow">&#8594;</span><div class="jstep"><span class="jdisc"><img src="https://mombasafish.com/images/cooler-15kg.jpg" alt="" loading="lazy"></span><b>Distribution</b></div></div>
+</div></section>
+
+<section class="sec" id="prod"><div class="wrap">
+  <div class="sh"><h2>Discover Our Producers</h2><a>View Community Map &#8594;</a></div>
+  <div class="prod">
+    <div class="ph2"><img src="https://mombasafish.com/images/pillar-community.jpg" alt="Coastal producer community"></div>
+    <div class="prbody">
+      <h3>Producer name to be confirmed</h3>
+      <p class="prloc">&#9679; Kibuyuni, Kwale, Kenya</p>
+      <p style="font-size:.92rem;color:#4A6467">A community group of coastal seaweed farmers producing sea moss through ocean farming. <em>This story is a placeholder — the real one has to come from the producers themselves, with their permission.</em></p>
+      <div class="badges">
+        <div><b>&#10003;</b>Verified producer</div><div><b>&#9679;</b>Sea moss products</div><div><b>&#9733;</b>Community enterprise</div>
+      </div>
+      <button class="prbtn">View Producer Profile</button>
+    </div>
+  </div>
+  <div class="note"><b>Every name and photograph on this card is a placeholder.</b>
+  <p>The comp names a Kibuyuni seaweed cooperative, Mwazaro for honey and the Lamu coast for cowrie shells. Kibuyuni and Mwazaro are real places in Kwale, but whether those groups are your suppliers, and whether they consent to being photographed and named on your site, is yours to confirm. Note also that your own product copy puts the mangrove honey on the Shimoni coast, not Mwazaro — one of the two is wrong.</p></div>
+</div></section>
+
+<footer class="ft"><div class="wrap">Coastal Naturals — design proposal v2 for mombasafish.com<br>
+Awaiting approval before any production change</div></footer>
+
+<script>
+const stage=document.getElementById('stage');let p=false;
+document.getElementById('pause').addEventListener('click',e=>{p=!p;stage.classList.toggle('paused',p);
+ e.target.textContent=p?'Resume orbit':'Pause orbit';e.target.setAttribute('aria-pressed',String(p));});
+</script>
+</body></html>
