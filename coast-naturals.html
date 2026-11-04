@@ -3,317 +3,446 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Coast Naturals · Sea Moss, Mangrove Honey &amp; Coastal Products · MombasaFish</title>
-<meta name="description" content="Sea moss farmed and sun-dried on the Kenyan coast, rare mangrove honey from the Shimoni forests, and the coastal products behind them. Know where it comes from.">
+<title>Coastal Naturals · Nature's Treasures, Coastal Origins · MombasaFish</title>
+<meta name="description" content="A curated marketplace for natural products from East African coastal communities — sea moss farmed and sun-dried on the Kenyan shore, and mangrove honey from the Shimoni forests.">
 <link rel="canonical" href="https://mombasafish.com/coast-naturals">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_KE">
 <meta property="og:site_name" content="MombasaFish">
-<meta property="og:title" content="Coast Naturals · Discover the Treasures of Our Coast">
-<meta property="og:description" content="Sea moss, mangrove honey and coastal products from the Kenyan coast — and the communities behind them.">
+<meta property="og:title" content="Coastal Naturals · Nature's Treasures, Coastal Origins">
+<meta property="og:description" content="Natural products from East African coastal producers — sea moss, mangrove honey and the communities behind them.">
 <meta property="og:url" content="https://mombasafish.com/coast-naturals">
 <meta property="og:image" content="https://mombasafish.com/images/mwani-farm.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="icon" href="images/logo.jpg">
 <link rel="preload" as="image" href="images/mwani-farm.jpg" fetchpriority="high">
-<link rel="stylesheet" href="style.css">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Coast Naturals","item":"https://mombasafish.com/coast-naturals"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Coastal Naturals","item":"https://mombasafish.com/coast-naturals"}]}</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"Coastal Naturals","itemListElement":[
+{"@type":"ListItem","position":1,"item":{"@type":"Product","name":"Dried Sea Moss — Cleaned","url":"https://mombasafish.com/fish/mwani-msafi","image":"https://mombasafish.com/images/mwani-msafi.jpg","offers":{"@type":"Offer","price":"900","priceCurrency":"KES","availability":"https://schema.org/InStock"}}},
+{"@type":"ListItem","position":2,"item":{"@type":"Product","name":"Dried Sea Moss — Uncleaned","url":"https://mombasafish.com/fish/mwani-mkavu","image":"https://mombasafish.com/images/mwani-mkavu.jpg","offers":{"@type":"Offer","price":"600","priceCurrency":"KES","availability":"https://schema.org/InStock"}}},
+{"@type":"ListItem","position":3,"item":{"@type":"Product","name":"Sea Moss Powder","url":"https://mombasafish.com/fish/unga-wa-mwani","offers":{"@type":"Offer","price":"2000","priceCurrency":"KES","availability":"https://schema.org/InStock"}}},
+{"@type":"ListItem","position":4,"item":{"@type":"Product","name":"Mangrove Honey — 500g jar","url":"https://mombasafish.com/fish/asali-ya-mikoko","image":"https://mombasafish.com/images/asali-mikoko.jpg","offers":{"@type":"Offer","price":"900","priceCurrency":"KES","availability":"https://schema.org/InStock"}}}
+]}</script>
 <style>
-/* ---- Coast Naturals, scoped to this page ---- */
-.cn{--cnDeep:#07474C;--cnMid:#0E6B6F;--cnFoam:#7FD4C1;--cnGold:#D9B063;--cnWeed:#4E8C6A}
-.cnhero{position:relative;min-height:min(820px,108vh);display:flex;flex-direction:column;
- background:linear-gradient(100deg,rgba(4,40,44,.88) 0%,rgba(4,40,44,.55) 48%,rgba(4,40,44,.32) 100%),
- url("images/mwani-farm.jpg") center/cover;color:#fff;overflow:hidden;padding-bottom:2rem}
-.cnhw{max-width:1240px;margin:0 auto;padding:4.4rem 22px 0;width:100%}
-.cnht{max-width:33rem}
-.cnht h1{font-family:var(--font-display,inherit);font-size:clamp(2.2rem,6vw,3.9rem);line-height:1.02;letter-spacing:-.02em;margin:0}
-.cnht .cnit{display:block;font-style:italic;font-weight:400;font-size:clamp(1.05rem,2.5vw,1.55rem);color:#EFE4CE;margin:.7rem 0 .9rem;line-height:1.3}
-.cnht p{color:rgba(255,255,255,.82);font-size:.96rem;max-width:26rem;margin:0}
-.cncta{display:flex;gap:.7rem;margin-top:1.5rem;flex-wrap:wrap}
-.cncta a{text-decoration:none;border-radius:999px;padding:.82rem 1.5rem;font:500 .92rem Inter,system-ui,sans-serif;min-height:46px;display:inline-flex;align-items:center;gap:.35rem}
-.cng1{background:linear-gradient(135deg,#D9B063,#C9994F);color:#2A1B06}
-.cng2{border:1px solid rgba(255,255,255,.5);color:#fff}
-.cnstage{position:relative;width:min(540px,84vw);aspect-ratio:1;margin:.6rem auto 0}
-.cnring{position:absolute;inset:14%;border:1px solid rgba(217,176,99,.42);border-radius:50%}
-.cnring.b{inset:5%;border-color:rgba(127,212,193,.2)}
-.cnspin{position:absolute;inset:0;animation:cnsp 60s linear infinite}
-@keyframes cnsp{to{transform:rotate(360deg)}}
-@keyframes cnusp{from{transform:rotate(calc(var(--a)*-1))}to{transform:rotate(calc((var(--a)*-1) - 360deg))}}
-.cncore{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:34%;aspect-ratio:1;border-radius:50%;
- display:grid;place-content:center;text-align:center;padding:.4rem;
- background:radial-gradient(circle at 40% 34%,rgba(14,107,111,.96),rgba(4,40,44,.97));
- border:1px solid rgba(217,176,99,.5);box-shadow:0 0 56px rgba(127,212,193,.2),inset 0 0 34px rgba(127,212,193,.1)}
-.cncore b{font:600 clamp(.68rem,1.8vw,.9rem)/1.25 Inter,sans-serif;letter-spacing:.07em;color:#fff}
-.cncore b i{display:block;font-style:normal;font-weight:400;color:#7FD4C1}
-.cnnode{position:absolute;left:50%;top:50%;width:0;height:0;border:0;background:none;padding:0;cursor:pointer;
- transform:rotate(var(--a)) translateY(calc(min(540px,84vw) * -0.33))}
-.cnctr{position:absolute;left:0;top:0;transform-origin:center;transform:rotate(calc(var(--a)*-1));animation:cnusp 60s linear infinite}
-.cndisc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:clamp(58px,11vw,90px);aspect-ratio:1;
- border-radius:50%;overflow:hidden;display:block;border:2px solid var(--c);
- box-shadow:0 0 0 4px rgba(4,40,44,.6),0 0 22px color-mix(in srgb,var(--c) 50%,transparent);transition:transform .3s}
-.cndisc img{width:100%;height:100%;object-fit:cover}
-.cndisc.soon{background:repeating-linear-gradient(45deg,#2A4A4E,#2A4A4E 7px,#20393C 7px,#20393C 14px)}
-.cnlab{position:absolute;left:50%;top:calc(50% + clamp(34px,6.2vw,52px));transform:translateX(-50%);width:max-content;
- max-width:8.8rem;text-align:center;font:500 .76rem/1.25 Inter,sans-serif;color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.65);pointer-events:none}
-.cnlab i{display:block;font-style:normal;font-size:.63rem;color:rgba(255,255,255,.6)}
-.cnnode:hover .cndisc,.cnnode:focus-visible .cndisc{transform:translate(-50%,-50%) scale(1.12)}
-.cnnode:focus-visible .cndisc{outline:3px solid #D9B063;outline-offset:4px}
-.cnpaused .cnspin,.cnpaused .cnctr{animation-play-state:paused}
-.cnctl{display:flex;justify-content:center;margin-top:.3rem}
-.cnctl button{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;border-radius:999px;
- padding:.5rem 1.1rem;font:500 .8rem Inter,sans-serif;cursor:pointer;min-height:44px}
-.cnpromise{text-align:center;padding:1.2rem 22px 0;color:#fff}
-.cnpromise b{font:600 clamp(1rem,2.5vw,1.4rem) Inter,sans-serif;font-style:italic}
-.cnpromise span{display:block;margin-top:.4rem;font:400 .76rem Inter,sans-serif;color:rgba(255,255,255,.7)}
-.cntrack{display:flex;gap:1rem;overflow-x:auto;padding:.3rem .2rem 1rem;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
-.cntrack::-webkit-scrollbar{height:5px}
-.cntrack::-webkit-scrollbar-thumb{background:rgba(11,46,49,.16);border-radius:9px}
-.cnp{position:relative;flex:0 0 clamp(196px,58vw,224px);scroll-snap-align:start;background:#fff;
- border:1px solid rgba(11,46,49,.1);border-radius:15px;overflow:hidden;text-decoration:none;color:inherit;
- display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
-.cnp:hover,.cnp:focus-visible{transform:translateY(-3px);box-shadow:0 12px 28px rgba(4,40,44,.14);outline:none}
-.cnshot{aspect-ratio:1;background:#EFE4CE;overflow:hidden}
-.cnshot img{width:100%;height:100%;object-fit:cover}
-.cnshot.soon{display:grid;place-items:center;color:#9FB0B2;font:400 .64rem/1.5 "IBM Plex Mono",monospace;
- text-align:center;letter-spacing:.1em;text-transform:uppercase;
- background:repeating-linear-gradient(45deg,#F4ECDC,#F4ECDC 9px,#EBE0CA 9px,#EBE0CA 18px)}
-.cnpb{padding:.75rem .85rem .9rem;display:flex;flex-direction:column;flex:1}
-.cnpb h3{font-family:var(--font-body,inherit);font-size:.92rem;line-height:1.3;margin:0}
-.cnfrom{margin:.22rem 0 .55rem;font-size:.75rem;color:#4E8C6A}
-.cnpf{display:flex;align-items:center;justify-content:space-between;gap:.4rem;margin-top:auto}
-.cnprice{font:600 .9rem Inter,sans-serif;color:#04282C}
-.cnprice.na{font-weight:400;font-size:.74rem;color:#7A9093;font-style:italic}
-.cnstk{font:400 .56rem/1 "IBM Plex Mono",monospace;letter-spacing:.07em;text-transform:uppercase;padding:.26rem .45rem;border-radius:999px}
-.cnstk.ok{background:rgba(78,140,106,.14);color:#4E8C6A}
-.cnstk.no{background:rgba(11,46,49,.07);color:#7A9093}
-.cnjourney{display:flex;align-items:center;gap:.25rem;overflow-x:auto;padding:1rem .2rem}
-.cnstep{flex:0 0 auto;text-align:center;width:88px}
-.cnsd{width:64px;height:64px;border-radius:50%;overflow:hidden;display:grid;place-items:center;margin:0 auto .45rem;
- border:2px solid rgba(78,140,106,.35);background:#EFE4CE}
-.cnsd img{width:100%;height:100%;object-fit:cover}
-.cnsd span{font:400 .5rem "IBM Plex Mono",monospace;color:#9FB0B2;text-transform:uppercase}
-.cnstep b{font:500 .72rem/1.25 Inter,sans-serif;display:block}
-.cnarr{color:#4E8C6A;opacity:.45;flex:0 0 auto}
-.cnsplit{display:grid;gap:1.3rem;grid-template-columns:1fr;align-items:center}
-@media(min-width:820px){.cnsplit{grid-template-columns:1fr 1fr}}
-.cnsplit img{width:100%;border-radius:16px;display:block;aspect-ratio:4/3;object-fit:cover}
-.cnnote{background:#FFFDF6;border-left:3px solid #D9B063;border-radius:0 12px 12px 0;padding:1rem 1.2rem;margin:1.2rem 0}
-.cnnote b{display:block;margin-bottom:.25rem}
-.cnnote p{margin:.25rem 0 0;font-size:.9rem;color:#4A6467}
-@media(prefers-reduced-motion:reduce){.cnspin,.cnctr{animation:none!important}.cnp,.cndisc{transition:none}}
+:root{
+  --green:#173E35; --ivory:#F5F1E8; --glass:#8EAAA0; --sand:#D9C8AA;
+  --char:#242B29; --white:#fff;
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;
+  --sans:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--ivory);color:var(--char);font:400 16px/1.75 var(--sans);
+ -webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3,h4{margin:0;font-family:var(--serif);font-weight:400;letter-spacing:.004em;line-height:1.14}
+.w{max-width:1200px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.eyebrow{font:500 .66rem/1 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--glass)}
+.lede{font-size:1.02rem;line-height:1.85;color:#48534F;max-width:38rem}
+
+/* ---------- parent bar: the route back to MombasaFish ---------- */
+.parent{background:var(--char);color:#C9D3CF;font:400 .74rem/1 var(--sans);letter-spacing:.04em}
+.parent .w{display:flex;align-items:center;justify-content:space-between;gap:1rem;min-height:38px;padding-top:.5rem;padding-bottom:.5rem}
+.parent a{color:#C9D3CF;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem}
+.parent a:hover{color:var(--white)}
+.parent strong{font-weight:600;color:var(--white)}
+
+/* ---------- premium navigation ---------- */
+.nav{position:sticky;top:0;z-index:60;background:rgba(245,241,232,.94);backdrop-filter:blur(10px);
+ border-bottom:1px solid rgba(23,62,53,.1)}
+.nav .w{display:flex;align-items:center;gap:clamp(.8rem,2.4vw,2rem);min-height:76px}
+.brand{text-decoration:none;flex:0 0 auto;line-height:1}
+.brand b{display:block;font-family:var(--serif);font-size:1.32rem;letter-spacing:.07em;color:var(--green);font-weight:600}
+.brand span{display:block;font:500 .54rem/1 var(--sans);letter-spacing:.34em;text-transform:uppercase;color:var(--glass);margin-top:.28rem}
+.navl{display:flex;gap:clamp(.9rem,2vw,1.7rem);margin-left:auto;align-items:center}
+.navl a{text-decoration:none;font:400 .83rem/1 var(--sans);color:var(--char);padding:.5rem 0;border-bottom:1px solid transparent;transition:border-color .2s,color .2s}
+.navl a:hover,.navl a:focus-visible{color:var(--green);border-bottom-color:var(--green)}
+.navl a.cart{border:1px solid rgba(23,62,53,.3);border-radius:2px;padding:.55rem 1rem}
+.navl a.cart:hover{background:var(--green);color:var(--ivory);border-color:var(--green)}
+.navtoggle{display:none;margin-left:auto;background:none;border:1px solid rgba(23,62,53,.3);border-radius:2px;
+ padding:.6rem .9rem;font:500 .78rem var(--sans);color:var(--green);cursor:pointer;min-height:44px}
+@media(max-width:940px){
+  .navl{position:fixed;inset:114px 0 auto;background:var(--ivory);flex-direction:column;align-items:stretch;
+   gap:0;padding:0 clamp(20px,5vw,48px) 1.4rem;border-bottom:1px solid rgba(23,62,53,.12);display:none}
+  .navl.open{display:flex}
+  .navl a{padding:1rem 0;border-bottom:1px solid rgba(23,62,53,.08);font-size:.95rem}
+  .navl a.cart{margin-top:.9rem;text-align:center;border:1px solid rgba(23,62,53,.3)}
+  .navtoggle{display:block}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:clamp(540px,86vh,860px);display:flex;align-items:flex-end;
+ background:linear-gradient(180deg,rgba(23,62,53,.25) 0%,rgba(23,62,53,.52) 55%,rgba(23,62,53,.86) 100%),
+ url("images/mwani-farm.jpg") center 38%/cover;color:var(--ivory)}
+.hero .w{padding-top:7rem;padding-bottom:clamp(3rem,7vw,5.6rem)}
+.hero .eyebrow{color:var(--sand)}
+.hero h1{font-size:clamp(2.5rem,7.2vw,5.1rem);margin:1.1rem 0 0;max-width:15ch;line-height:1.04}
+.hero h1 em{font-style:italic;color:var(--sand)}
+.hero p{margin:1.3rem 0 0;max-width:34rem;color:rgba(245,241,232,.86);font-size:1rem;line-height:1.8}
+.herocta{margin-top:2rem;display:flex;gap:.8rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;text-decoration:none;
+ font:500 .84rem/1 var(--sans);letter-spacing:.07em;text-transform:uppercase;padding:1.05rem 2rem;
+ border-radius:2px;min-height:50px;transition:background .2s,color .2s,border-color .2s;cursor:pointer;border:1px solid transparent}
+.btn-solid{background:var(--ivory);color:var(--green)}
+.btn-solid:hover{background:var(--sand)}
+.btn-ghost{border-color:rgba(245,241,232,.5);color:var(--ivory)}
+.btn-ghost:hover{background:rgba(245,241,232,.12)}
+.btn-green{background:var(--green);color:var(--ivory)}
+.btn-green:hover{background:#0F2C26}
+.btn-line{border-color:rgba(23,62,53,.35);color:var(--green)}
+.btn-line:hover{background:var(--green);color:var(--ivory)}
+
+/* ---------- sections ---------- */
+section{padding:clamp(3.6rem,8vw,7rem) 0}
+.sechead{max-width:44rem;margin-bottom:clamp(2rem,4vw,3.2rem)}
+.sechead h2{font-size:clamp(1.9rem,4.4vw,3rem);margin:.9rem 0 0}
+.sechead p{margin:1rem 0 0}
+.rule{height:1px;background:rgba(23,62,53,.14);border:0;margin:0}
+
+/* ---------- collections ---------- */
+.cols{display:grid;gap:1px;background:rgba(23,62,53,.12);grid-template-columns:1fr}
+@media(min-width:620px){.cols{grid-template-columns:1fr 1fr}}
+@media(min-width:1040px){.cols{grid-template-columns:repeat(4,1fr)}}
+.col{position:relative;background:var(--ivory);text-decoration:none;display:flex;flex-direction:column;
+ min-height:340px;overflow:hidden}
+.colimg{flex:1;overflow:hidden;background:var(--green)}
+.colimg img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.col:hover .colimg img,.col:focus-visible .colimg img{transform:scale(1.045)}
+.coltype{flex:1;display:grid;place-items:center;background:var(--green);color:var(--sand);
+ font-family:var(--serif);font-size:1.5rem;font-style:italic;text-align:center;padding:1.4rem}
+.colb{padding:1.5rem 1.6rem 1.7rem;background:var(--ivory)}
+.colb h3{font-size:1.3rem}
+.colb span{display:block;margin-top:.5rem;font:400 .76rem/1 var(--sans);letter-spacing:.14em;
+ text-transform:uppercase;color:var(--glass)}
+.col:focus-visible{outline:2px solid var(--green);outline-offset:-2px}
+
+/* ---------- products ---------- */
+.prods{display:grid;gap:clamp(1.4rem,3vw,2.6rem);grid-template-columns:repeat(2,1fr)}
+@media(min-width:900px){.prods{grid-template-columns:repeat(4,1fr)}}
+.prod{text-decoration:none;display:flex;flex-direction:column}
+.prodimg{aspect-ratio:3/4;overflow:hidden;background:var(--sand);margin-bottom:1.1rem}
+.prodimg img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.2,.7,.3,1)}
+.prod:hover .prodimg img,.prod:focus-visible .prodimg img{transform:scale(1.04)}
+/* no photograph yet: an editorial plate, not a broken placeholder */
+.prodimg.plate{display:grid;place-items:center;background:var(--green);padding:1.6rem;text-align:center}
+.prodimg.plate span{font-family:var(--serif);font-style:italic;font-size:1.35rem;color:var(--sand);line-height:1.3}
+.prodorigin{font:400 .68rem/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--glass)}
+.prod h3{font-size:1.24rem;margin:.6rem 0 .4rem}
+.prodmeta{font-size:.84rem;color:#5B6764;margin:0 0 .9rem}
+.prodfoot{margin-top:auto;display:flex;align-items:baseline;justify-content:space-between;gap:.7rem;
+ padding-top:.8rem;border-top:1px solid rgba(23,62,53,.14)}
+.price{font-family:var(--serif);font-size:1.3rem;color:var(--green)}
+.price small{font-family:var(--sans);font-size:.72rem;color:#6C7874}
+.price.soon{font-size:.86rem;font-style:italic;color:#6C7874}
+.stock{font:400 .62rem/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--glass)}
+.stock.no{color:#9AA5A1}
+.prod:focus-visible{outline:2px solid var(--green);outline-offset:4px}
+
+/* ---------- editorial split ---------- */
+.split{display:grid;gap:clamp(1.8rem,4vw,4rem);grid-template-columns:1fr;align-items:center}
+@media(min-width:880px){.split{grid-template-columns:1fr 1fr}.split.flip>*:first-child{order:2}}
+.split img{aspect-ratio:4/5;object-fit:cover;width:100%}
+.split h2{font-size:clamp(1.7rem,3.6vw,2.5rem);margin-bottom:1rem}
+.split p+p{margin-top:1rem}
+
+/* ---------- process ---------- */
+.steps{display:grid;gap:1px;background:rgba(23,62,53,.12);grid-template-columns:repeat(2,1fr)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--ivory);padding:1.7rem 1.4rem 1.9rem}
+.step b{display:block;font-family:var(--serif);font-size:2rem;color:var(--sand);line-height:1;margin-bottom:.7rem}
+.step h4{font-size:1.1rem;margin-bottom:.4rem}
+.step p{margin:0;font-size:.87rem;line-height:1.7;color:#5B6764}
+
+/* ---------- dark band ---------- */
+.band{background:var(--green);color:var(--ivory)}
+.band .eyebrow{color:var(--sand)}
+.band .lede,.band p{color:rgba(245,241,232,.82)}
+.band h2{color:var(--ivory)}
+.band .rule{background:rgba(245,241,232,.2)}
+
+/* ---------- trust ---------- */
+.trust{display:grid;gap:1px;background:rgba(245,241,232,.18);grid-template-columns:1fr}
+@media(min-width:720px){.trust{grid-template-columns:repeat(3,1fr)}}
+.tcell{background:var(--green);padding:1.7rem 1.5rem}
+.tcell h4{font-size:1.15rem;margin-bottom:.5rem;color:var(--ivory)}
+.tcell p{margin:0;font-size:.87rem;line-height:1.7}
+
+/* ---------- footer ---------- */
+footer{background:var(--char);color:#AEB9B5;font-size:.86rem;padding:clamp(3rem,6vw,4.6rem) 0 2.4rem}
+.fgrid{display:grid;gap:2.2rem;grid-template-columns:1fr}
+@media(min-width:720px){.fgrid{grid-template-columns:1.4fr 1fr 1fr 1fr}}
+footer h4{font-family:var(--sans);font:500 .68rem/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;
+ color:var(--sand);margin-bottom:1rem}
+footer a{display:block;color:#AEB9B5;text-decoration:none;padding:.3rem 0}
+footer a:hover{color:var(--white)}
+.fbrand b{font-family:var(--serif);font-size:1.3rem;color:var(--ivory);letter-spacing:.06em;display:block}
+.fbrand p{margin:.8rem 0 0;max-width:24rem;line-height:1.75}
+.fbot{margin-top:2.6rem;padding-top:1.6rem;border-top:1px solid rgba(174,185,181,.2);
+ display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;font-size:.78rem}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 </head>
-<body class="cn">
+<body>
 
-<div class="annc">Fresh catch daily · Order on WhatsApp <a href="https://wa.me/254787668888">0787 668 888</a> · Pay with M-Pesa</div>
+<div class="parent">
+  <div class="w">
+    <a href="index.html">&#8592; <strong>MombasaFish</strong> &middot; fresh seafood</a>
+    <a href="https://wa.me/254787668888">0787 668 888</a>
+  </div>
+</div>
 
-<header class="hdr">
-  <a class="logo" href="index.html"><img src="images/logo.jpg" alt="MombasaFish logo" width="34" height="34" fetchpriority="high" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
-  <nav class="nav">
-    <a href="index.html">Home</a>
-    <a href="catalogue.html">Shop</a>
-    <a href="coast-naturals.html" class="on">Coast Naturals</a>
-    <a href="fishguide.html">Fish Guide</a>
-    <a href="ask.html">Ask</a>
-    <a href="recipes.html">Recipes</a>
-    <a href="shimoni.html">Why Shimoni</a>
-    <a href="coast.html">Ocean Hub</a>
-    <a href="wholesale.html">Wholesale</a>
-    <a href="track.html">Track Order</a>
-    <a href="about.html">About</a>
-  </nav>
+<nav class="nav">
+  <div class="w">
+    <a class="brand" href="coast-naturals.html"><b>COASTAL NATURALS</b><span>East African Coast</span></a>
+    <button class="navtoggle" id="navtoggle" aria-expanded="false" aria-controls="navl">Menu</button>
+    <div class="navl" id="navl">
+      <a href="catalogue.html">Shop</a>
+      <a href="#seamoss">Sea Moss &amp; Seaweed</a>
+      <a href="#honey">Coastal Honey</a>
+      <a href="#care">Natural Care</a>
+      <a href="#producers">Our Producers</a>
+      <a href="#story">Our Story</a>
+      <a class="cart" href="catalogue.html#boxes">Cart</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="w">
+    <p class="eyebrow">A curated coastal marketplace</p>
+    <h1>Nature's treasures.<br><em>Coastal origins.</em></h1>
+    <p>Natural products grown, gathered and processed by producers along the East African coast — brought together, and brought to you, by MombasaFish.</p>
+    <div class="herocta">
+      <a class="btn btn-solid" href="#collections">Shop the collection</a>
+      <a class="btn btn-ghost" href="#producers">Meet the producers</a>
+    </div>
+  </div>
 </header>
 
-<section class="cnhero">
-  <div class="cnhw">
-    <div class="cnht">
-      <h1>COAST<br>NATURALS</h1>
-      <span class="cnit">Discover the Treasures of Our Coast.</span>
-      <p>Explore authentic coastal products, discover their origins and connect with the communities behind them.</p>
-      <div class="cncta">
-        <a class="cng1" href="#collections">Explore Collections &#8594;</a>
-        <a class="cng2" href="#origins">Discover Our Origins</a>
+<section id="collections">
+  <div class="w">
+    <div class="sechead">
+      <p class="eyebrow">The collections</p>
+      <h2>Four collections, one coastline</h2>
+      <p class="lede">Two are stocked today. Two are being built with producers along the coast — we would rather show you an honest empty shelf than a promise we cannot keep.</p>
+    </div>
+  </div>
+  <div class="w">
+    <div class="cols">
+      <a class="col" href="#seamoss">
+        <div class="colimg"><img src="images/mwani-fresh.jpg" alt="Freshly harvested sea moss" loading="lazy" width="800" height="1000"></div>
+        <div class="colb"><h3>Sea Moss &amp; Seaweed</h3><span>Three products</span></div>
+      </a>
+      <a class="col" href="#honey">
+        <div class="colimg"><img src="images/asali-mikoko.jpg" alt="Mangrove honey in a jar" loading="lazy" width="800" height="1200"></div>
+        <div class="colb"><h3>Coastal Honey</h3><span>One product</span></div>
+      </a>
+      <a class="col" href="#care">
+        <div class="coltype">Being made<br>with producers</div>
+        <div class="colb"><h3>Natural Care</h3><span>In development</span></div>
+      </a>
+      <a class="col" href="#care">
+        <div class="coltype">Being gathered<br>along the coast</div>
+        <div class="colb"><h3>Coastal Harvest</h3><span>In development</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="seamoss">
+  <div class="w">
+    <div class="sechead">
+      <p class="eyebrow">Sea moss &amp; seaweed</p>
+      <h2>Grown on racks, dried by the sun</h2>
+      <p class="lede">Farmed in the shallows along this coast, cut by hand at low tide and dried on the shore. Three forms, depending on how much work you want to do before it reaches the pot.</p>
+    </div>
+    <div class="prods">
+      <a class="prod" href="fish/mwani-msafi.html">
+        <div class="prodimg"><img src="images/mwani-msafi.jpg" alt="Cleaned dried sea moss" loading="lazy" width="800" height="1066"></div>
+        <p class="prodorigin">Kenyan coast</p>
+        <h3>Dried Sea Moss — Cleaned</h3>
+        <p class="prodmeta">Washed, sorted and sun-dried. Soak and blend straight away.</p>
+        <div class="prodfoot"><span class="price">KES 900 <small>/ kg</small></span><span class="stock">In stock</span></div>
+      </a>
+      <a class="prod" href="fish/mwani-mkavu.html">
+        <div class="prodimg"><img src="images/mwani-mkavu.jpg" alt="Uncleaned dried sea moss" loading="lazy" width="800" height="1066"></div>
+        <p class="prodorigin">Kenyan coast</p>
+        <h3>Dried Sea Moss — Uncleaned</h3>
+        <p class="prodmeta">Natural form, as it comes off the drying racks. Rinse and soak before use.</p>
+        <div class="prodfoot"><span class="price">KES 600 <small>/ kg</small></span><span class="stock">In stock</span></div>
+      </a>
+      <a class="prod" href="fish/unga-wa-mwani.html">
+        <div class="prodimg plate"><span>Sea Moss<br>Powder</span></div>
+        <p class="prodorigin">Kenyan coast</p>
+        <h3>Sea Moss Powder</h3>
+        <p class="prodmeta">Milled fine. A spoonful, with no soaking or blending.</p>
+        <div class="prodfoot"><span class="price">KES 2,000 <small>/ kg</small></span><span class="stock">In stock</span></div>
+      </a>
+      <a class="prod" href="#care">
+        <div class="prodimg plate"><span>Sea Moss<br>Gel</span></div>
+        <p class="prodorigin">In development</p>
+        <h3>Sea Moss Gel</h3>
+        <p class="prodmeta">Being developed with producers. Not yet available to order.</p>
+        <div class="prodfoot"><span class="price soon">Not yet listed</span><span class="stock no">Coming</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<hr class="rule">
+
+<section id="honey">
+  <div class="w">
+    <div class="split">
+      <img src="images/asali-mikoko.jpg" alt="Mangrove honey" loading="lazy" width="800" height="1000">
+      <div>
+        <p class="eyebrow">Coastal honey</p>
+        <h2>From the mangrove forests behind Shimoni</h2>
+        <p class="lede">Bees working mangrove blossom make a honey that is darker and deeper than anything from inland hives. It comes from the same stretch of coast our boats fish, in a sealed 500g jar.</p>
+        <div class="prodfoot" style="max-width:22rem;margin-top:1.8rem">
+          <span class="price">KES 900 <small>/ 500g jar</small></span><span class="stock">In stock</span>
+        </div>
+        <p style="margin-top:1.6rem"><a class="btn btn-line" href="fish/asali-ya-mikoko.html">View product</a></p>
       </div>
     </div>
   </div>
+</section>
 
-  <div class="cnstage" id="cnstage">
-    <div class="cnring b"></div><div class="cnring"></div>
-    <div class="cnspin" id="cnspin">
-      <a class="cnnode" style="--a:-90deg;--c:#7FD4C1" href="#seamoss" aria-label="Sea Moss and Marine Botanicals, 3 products">
-        <span class="cnctr"><span class="cndisc"><img src="images/mwani-fresh.jpg" alt="" loading="lazy"></span>
-        <span class="cnlab">Sea Moss<i>3 products</i></span></span></a>
-      <a class="cnnode" style="--a:-18deg;--c:#E8A33D" href="#honey" aria-label="Coastal Honey, 1 product">
-        <span class="cnctr"><span class="cndisc"><img src="images/asali-mikoko.jpg" alt="" loading="lazy"></span>
-        <span class="cnlab">Coastal Honey<i>1 product</i></span></span></a>
-      <a class="cnnode" style="--a:54deg;--c:#9FD6B4" href="#coming" aria-label="Coastal Cosmetics, in development">
-        <span class="cnctr"><span class="cndisc soon"></span>
-        <span class="cnlab">Cosmetics<i>in development</i></span></span></a>
-      <a class="cnnode" style="--a:126deg;--c:#D9C3A0" href="#coming" aria-label="Coastal Treasures, in development">
-        <span class="cnctr"><span class="cndisc soon"></span>
-        <span class="cnlab">Treasures<i>in development</i></span></span></a>
-      <a class="cnnode" style="--a:198deg;--c:#6FC3D4" href="#origins" aria-label="Community Producers">
-        <span class="cnctr"><span class="cndisc"><img src="images/pillar-community.jpg" alt="" loading="lazy"></span>
-        <span class="cnlab">Producers<i>the coast</i></span></span></a>
+<hr class="rule">
+
+<section id="story">
+  <div class="w">
+    <div class="sechead">
+      <p class="eyebrow">Origin &amp; process</p>
+      <h2>How sea moss reaches the jar</h2>
+      <p class="lede">Every step happens on this coast. Nothing is heated and nothing is bleached — cleaned moss goes golden because the sun does it.</p>
     </div>
-    <div class="cncore"><b>COAST<i>NATURALS</i></b></div>
-  </div>
-  <div class="cnctl"><button id="cnpause" type="button" aria-pressed="false">Pause</button></div>
-
-  <div class="cnpromise">
-    <b>Know Where It Comes From.</b>
-    <span>Farmed and dried on this coast &middot; sold by the people who handle it</span>
-  </div>
-</section>
-
-<div class="wrap">
-
-<section id="collections">
-  <span class="kick">The collections</span>
-  <h2 class="sec">What the coast <span>is offering</span></h2>
-  <p class="sec-sub">Four products are on the shelf today. Two more collections are being built, and we would rather show you an empty shelf than a promise we cannot keep.</p>
-</section>
-
-<section id="seamoss">
-  <h3 class="cat">Sea Moss <small>&middot; Mwani &middot; farmed on our shoreline racks</small></h3>
-  <p class="catdesc">Grown on racks in the shallows, cut by hand, washed and sun-dried on the shore. Three forms, depending on how much work you want to do before it reaches the pot.</p>
-  <div class="cntrack">
-    <a class="cnp" href="fish/mwani-msafi.html">
-      <div class="cnshot"><img src="images/mwani-msafi.jpg" alt="Cleaned dried sea moss" loading="lazy"></div>
-      <div class="cnpb"><h3>Dried Sea Moss &mdash; Cleaned</h3>
-      <p class="cnfrom">Washed, sorted, sun-dried golden</p>
-      <div class="cnpf"><span class="cnprice">KES 900 / kg</span><span class="cnstk ok">In stock</span></div></div>
-    </a>
-    <a class="cnp" href="fish/mwani-mkavu.html">
-      <div class="cnshot"><img src="images/mwani-mkavu.jpg" alt="Uncleaned dried sea moss" loading="lazy"></div>
-      <div class="cnpb"><h3>Dried Sea Moss &mdash; Uncleaned</h3>
-      <p class="cnfrom">Natural form &mdash; rinse and soak</p>
-      <div class="cnpf"><span class="cnprice">KES 600 / kg</span><span class="cnstk ok">In stock</span></div></div>
-    </a>
-    <a class="cnp" href="fish/unga-wa-mwani.html">
-      <div class="cnshot soon">photograph<br>coming</div>
-      <div class="cnpb"><h3>Sea Moss Powder</h3>
-      <p class="cnfrom">Ground fine &mdash; a spoonful, no soaking</p>
-      <div class="cnpf"><span class="cnprice">KES 2,000 / kg</span><span class="cnstk ok">In stock</span></div></div>
-    </a>
-    <a class="cnp" href="catalogue.html#boxes" id="coming">
-      <div class="cnshot soon">not yet<br>listed</div>
-      <div class="cnpb"><h3>Sea Moss Gel</h3>
-      <p class="cnfrom">In development</p>
-      <div class="cnpf"><span class="cnprice na">not yet available</span><span class="cnstk no">Coming</span></div></div>
-    </a>
-  </div>
-</section>
-
-<section id="honey">
-  <h3 class="cat">Coastal Honey <small>&middot; Asali ya Mikoko</small></h3>
-  <p class="catdesc">Dark honey from the mangrove forests of the Shimoni coast &mdash; a flavour ordinary honey cannot match, in a sealed 500g jar.</p>
-  <div class="cntrack">
-    <a class="cnp" href="fish/asali-ya-mikoko.html">
-      <div class="cnshot"><img src="images/asali-mikoko.jpg" alt="Mangrove honey" loading="lazy"></div>
-      <div class="cnpb"><h3>Mangrove Honey</h3>
-      <p class="cnfrom">Shimoni mangrove forests &middot; 500g jar</p>
-      <div class="cnpf"><span class="cnprice">KES 900 / jar</span><span class="cnstk ok">In stock</span></div></div>
-    </a>
-    <a class="cnp" href="catalogue.html">
-      <div class="cnshot soon">not yet<br>listed</div>
-      <div class="cnpb"><h3>Wild Forest Honey</h3>
-      <p class="cnfrom">In development</p>
-      <div class="cnpf"><span class="cnprice na">not yet available</span><span class="cnstk no">Coming</span></div></div>
-    </a>
-  </div>
-</section>
-
-<section id="origins">
-  <span class="kick">Discover our origins</span>
-  <h2 class="sec">Where it <span>comes from</span></h2>
-  <div class="cnsplit">
-    <img src="images/mwani-farm.jpg" alt="Sea moss drying racks on the shore" loading="lazy" width="950" height="1266">
-    <div>
-      <p>The sea moss is farmed on racks in the shallow water along this coast, cut by hand at low tide and carried up to the shore to dry in the sun. Nothing is heated and nothing is bleached &mdash; the cleaned moss goes golden because the sun does it, not a chemical.</p>
-      <p>The honey comes from hives in the mangrove forests behind Shimoni, the same stretch of water our boats fish. Mangrove blossom is what gives it the dark colour and the depth.</p>
-      <p style="margin-bottom:0"><a href="shimoni.html">More about Shimoni and this coast &#8594;</a></p>
+    <div class="steps">
+      <div class="step"><b>01</b><h4>Cultivation</h4><p>Lines and racks are set in the shallows, where the moss grows on the tide.</p></div>
+      <div class="step"><b>02</b><h4>Harvest</h4><p>Cut by hand at low tide and carried up the beach in baskets.</p></div>
+      <div class="step"><b>03</b><h4>Washing &amp; drying</h4><p>Rinsed, sorted and spread on the shore to dry in the open sun.</p></div>
+      <div class="step"><b>04</b><h4>Packing</h4><p>Weighed and sealed, then sent out with the same cold-chain deliveries as the fish.</p></div>
     </div>
   </div>
 </section>
 
-<section>
-  <span class="kick">Product journey</span>
-  <h2 class="sec">From the water <span>to the jar</span></h2>
-  <p class="sec-sub">This is the route sea moss takes. Every step happens on this coast.</p>
-  <div class="cnjourney">
-    <div class="cnstep"><span class="cnsd"><img src="images/mwani-farm.jpg" alt="" loading="lazy"></span><b>Farming</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><img src="images/mwani-fresh.jpg" alt="" loading="lazy"></span><b>Harvest</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><img src="images/mwani-msafi.jpg" alt="" loading="lazy"></span><b>Washing</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><img src="images/mwani-mkavu.jpg" alt="" loading="lazy"></span><b>Sun drying</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><span>photo</span></span><b>Milling</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><span>photo</span></span><b>Packing</b></div>
-    <span class="cnarr">&#8594;</span>
-    <div class="cnstep"><span class="cnsd"><img src="images/cooler-7kg.jpg" alt="" loading="lazy"></span><b>Delivery</b></div>
-  </div>
-</section>
-
-<section>
-  <span class="kick">The communities</span>
-  <h2 class="sec">The people <span>behind it</span></h2>
-  <div class="cnsplit">
-    <div>
-      <p>Seaweed farming on this coast is done largely by women's groups, working the racks at low tide and drying the crop on the shore. The mangrove honey comes from beekeepers working the forest behind Shimoni.</p>
-      <p>We are building proper producer profiles &mdash; names, photographs and the story of each group, published with their permission and not before. If you grow, harvest or process something on this coast and want it carried here, talk to us.</p>
-      <p style="margin-bottom:0"><a class="btn btn-wa" href="https://wa.me/254787668888?text=Hello%20MombasaFish%20%E2%80%94%20I%20would%20like%20to%20talk%20about%20Coast%20Naturals" style="margin-top:.4rem">Talk to us on WhatsApp</a></p>
+<section class="band" id="producers">
+  <div class="w">
+    <div class="split flip">
+      <img src="images/pillar-community.jpg" alt="Coastal community at work" loading="lazy" width="900" height="1125">
+      <div>
+        <p class="eyebrow">Our producers</p>
+        <h2>The people this marketplace exists for</h2>
+        <p class="lede">Seaweed farming on this coast is done largely by women's groups, working the racks at low tide and drying the crop on the shore. The mangrove honey comes from beekeepers working the forest behind Shimoni.</p>
+        <p class="lede">We are building proper producer profiles — names, photographs, locations and the story of each group — and we will publish them with each producer's permission, and not before. Until then we would rather name no one than put words in anyone's mouth.</p>
+        <p style="margin-top:1.8rem"><a class="btn btn-solid" href="https://wa.me/254787668888?text=Hello%20MombasaFish%20%E2%80%94%20I%20am%20a%20producer%20interested%20in%20Coastal%20Naturals">Producers: talk to us</a></p>
+      </div>
     </div>
-    <img src="images/pillar-community.jpg" alt="Coastal community at work" loading="lazy">
   </div>
 </section>
 
-<section>
-  <h2 class="sec">Order <span>coast naturals</span></h2>
-  <p class="sec-sub">Everything on this page is on the shop page, priced by the kilo or the jar, and travels in the same sealed cooler as the fish.</p>
-  <p><a class="btn btn-foam" href="catalogue.html#boxes">Open the shop &#8594;</a></p>
+<section id="care">
+  <div class="w">
+    <div class="sechead">
+      <p class="eyebrow">Quality &amp; trust</p>
+      <h2>What we can tell you, and what we cannot</h2>
+      <p class="lede">A marketplace is only worth as much as what it is willing to admit. Here is where we actually stand today.</p>
+    </div>
+  </div>
+  <div class="w">
+    <div class="trust" style="background:rgba(23,62,53,.12)">
+      <div class="tcell" style="background:var(--ivory);color:var(--char)">
+        <h4 style="color:var(--green)">Who makes what</h4>
+        <p style="color:#5B6764">MombasaFish is the marketplace, not the manufacturer. Products here are grown, gathered and processed by coastal producers. Where we handle a step ourselves — drying, milling, packing — we say so on the product page.</p>
+      </div>
+      <div class="tcell" style="background:var(--ivory);color:var(--char)">
+        <h4 style="color:var(--green)">Certification</h4>
+        <p style="color:#5B6764">We hold no third-party certification for these products yet, so none is displayed. When a certificate exists you will see the issuer and the number, not a badge.</p>
+      </div>
+      <div class="tcell" style="background:var(--ivory);color:var(--char)">
+        <h4 style="color:var(--green)">Health claims</h4>
+        <p style="color:#5B6764">Sea moss is a food, and we describe it as one. We make no medical or nutritional claims, and we will not repeat the ones circulating online.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
-</div>
+<hr class="rule">
+
+<section>
+  <div class="w" style="text-align:center">
+    <p class="eyebrow">Order</p>
+    <h2 style="font-size:clamp(1.9rem,4.4vw,3rem);margin:.9rem 0 1.1rem">Everything here is on the shop page</h2>
+    <p class="lede" style="margin:0 auto 2rem">Priced by the kilo or the jar, and carried in the same sealed cooler as the seafood. Nothing is charged until we confirm what is available and what the total comes to.</p>
+    <a class="btn btn-green" href="catalogue.html">Open the shop</a>
+  </div>
+</section>
 
 <footer>
-  <div class="cols">
-    <div><h2>Pages</h2>
-      <a href="index.html">Home</a><a href="catalogue.html">Shop</a><a href="track.html">Track Order</a><a href="about.html">About</a></div>
-    <div><h2>Contact</h2><a href="https://wa.me/254787668888">WhatsApp: 0787 668 888</a><a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">📍 Mombasa Fish Shop — Google Maps</a><a href="policies.html">Policies &amp; privacy</a><p style="font-size:.82rem;margin-top:.4rem">Payment: M-Pesa</p></div>
-    <div><h2>Follow us</h2><div class="social"><a href="https://web.facebook.com/mombasafishmarket">Facebook</a><a href="https://instagram.com/mombasafishmarket">Instagram</a><a href="https://youtube.com/mombasafish">YouTube</a><a href="https://tiktok.com/@mombasafish">TikTok</a><a href="https://x.com/mombasa_fish">X</a></div></div>
+  <div class="w">
+    <div class="fgrid">
+      <div class="fbrand">
+        <b>COASTAL NATURALS</b>
+        <p>A curated marketplace for natural products from East African coastal communities. Operated by MombasaFish, Mombasa, Kenya — marketplace and commercial partner to the producers listed here, not the manufacturer of their products.</p>
+      </div>
+      <div>
+        <h4>Shop</h4>
+        <a href="catalogue.html">All products</a>
+        <a href="#seamoss">Sea Moss &amp; Seaweed</a>
+        <a href="#honey">Coastal Honey</a>
+        <a href="track.html">Track an order</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="#story">Origin &amp; process</a>
+        <a href="#producers">Our producers</a>
+        <a href="shimoni.html">Why Shimoni</a>
+        <a href="about.html">About MombasaFish</a>
+      </div>
+      <div>
+        <h4>Help</h4>
+        <a href="https://wa.me/254787668888">WhatsApp 0787 668 888</a>
+        <a href="catalogue.html#delivery">Delivery &amp; transport</a>
+        <a href="policies.html">Policies &amp; returns</a>
+        <a href="https://maps.app.goo.gl/NTLTpW95RUBnPDsh9">Find the shop</a>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 MombasaFish &middot; Mombasa, Kenya</span>
+      <span>
+        <a href="https://web.facebook.com/mombasafishmarket" style="display:inline;padding:0">Facebook</a> &middot;
+        <a href="https://instagram.com/mombasafishmarket" style="display:inline;padding:0">Instagram</a> &middot;
+        <a href="https://tiktok.com/@mombasafish" style="display:inline;padding:0">TikTok</a>
+      </span>
+    </div>
   </div>
-  <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
 </footer>
 
 <script>
 (function(){
-  var stage=document.getElementById('cnstage'), btn=document.getElementById('cnpause');
-  if(!stage||!btn) return;
-  var paused=false;
-  btn.addEventListener('click',function(){
-    paused=!paused;
-    stage.classList.toggle('cnpaused',paused);
-    btn.textContent=paused?'Resume':'Pause';
-    btn.setAttribute('aria-pressed',String(paused));
+  var t=document.getElementById('navtoggle'), m=document.getElementById('navl');
+  if(!t||!m) return;
+  t.addEventListener('click',function(){
+    var open=m.classList.toggle('open');
+    t.setAttribute('aria-expanded',String(open));
+    t.textContent=open?'Close':'Menu';
   });
-  /* if the visitor prefers reduced motion the CSS already stops it;
-     reflect that in the button so it does not lie about the state */
-  try{
-    if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-      btn.hidden=true;
+  /* close the mobile menu after jumping to a section */
+  m.addEventListener('click',function(e){
+    if(e.target.tagName==='A'&&m.classList.contains('open')){
+      m.classList.remove('open'); t.setAttribute('aria-expanded','false'); t.textContent='Menu';
     }
-  }catch(e){}
+  });
 })();
 </script>
 <script src="search.js" defer></script>
 <script src="ui.js" defer></script>
-<script src="promo.js" defer></script>
 <script src="babu.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a0dfbad9d92441fe9afdaf972bb97acd"}'></script><!-- End Cloudflare Web Analytics -->
 </body>
