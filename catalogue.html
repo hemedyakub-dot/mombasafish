@@ -43,6 +43,15 @@
 .ordok .ordnum span{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;opacity:.75}
 .ordok p{font-size:.9rem;line-height:1.6}
 .ordok a{color:var(--foam)}
+/* The floating WhatsApp button (.mfwa, injected by ui.js) is fixed at
+   bottom:18px right:18px with z-index 129. The cart bar is a full-width bar at
+   bottom:0 with z-index 60 — so the WhatsApp button sat ON TOP of the
+   "View cart" button and swallowed the tap. Lift it while the bar is showing. */
+.mfwa{transition:bottom .22s ease,opacity .18s ease}
+body.cart-open .mfwa{bottom:96px}
+body.cart-sheet .mfwa{opacity:0;pointer-events:none}
+@media(max-width:480px){body.cart-open .mfwa{bottom:88px}}
+@media(prefers-reduced-motion:reduce){.mfwa{transition:none}}
 </style>
 </head>
 <body>
@@ -1077,9 +1086,14 @@
   function total(sel){return sel.reduce(function(t,c){return t+c.qty*(+c.dataset.price);},0);}
   function refresh(){
     var sel=selected();
-    if(!sel.length){bar.classList.remove('show');panel.classList.remove('open');return;}
+    if(!sel.length){
+      bar.classList.remove('show');panel.classList.remove('open');
+      document.body.classList.remove('cart-open','cart-sheet');
+      return;
+    }
     sum.innerHTML='&#129506; '+sel.length+' item'+(sel.length>1?'s':'')+' &middot; <b>'+fmt(total(sel))+'</b>';
     bar.classList.add('show');
+    document.body.classList.add('cart-open');
     save();
     if(panel.classList.contains('open'))renderPanel();
   }
@@ -1163,8 +1177,12 @@
   ['cprep','ccounty'].forEach(function(id){
     var el=document.getElementById(id); if(el)el.addEventListener('change',save);
   });
-  document.getElementById('oview').addEventListener('click',function(){renderPanel();panel.classList.add('open');});
-  document.getElementById('cclose').addEventListener('click',function(){panel.classList.remove('open');});
+  document.getElementById('oview').addEventListener('click',function(){
+    renderPanel();panel.classList.add('open');document.body.classList.add('cart-sheet');
+  });
+  document.getElementById('cclose').addEventListener('click',function(){
+    panel.classList.remove('open');document.body.classList.remove('cart-sheet');
+  });
 
   /* Checkout on WhatsApp now records the order first, instead of
      opening a chat and quietly throwing the basket away. */
