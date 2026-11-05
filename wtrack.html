@@ -181,7 +181,7 @@
     if (o.payment_status === 'paid') pay = '<span class="wt-pill good">Payment confirmed</span>';
     else if (o.payment_status === 'part_paid') pay = '<span class="wt-pill warn">Part paid</span>';
     else if (o.payment_status === 'refunded') pay = '<span class="wt-pill">Refunded</span>';
-    else if (['quote_accepted','confirmed','processing','ready','dispatched'].indexOf(o.status) >= 0) pay = '<span class="wt-pill warn">Payment pending</span>';
+    else if (['quote_accepted','confirmed','processing','ready','dispatched','delivered'].indexOf(o.status) >= 0) pay = '<span class="wt-pill warn">Payment pending</span>';   // delivered on credit still owes
     var h = '<section class="wt-card wt-head"><span class="kick">Wholesale consignment</span><p class="wt-ref">' + esc(o.ref) + '</p>' +
       '<div class="wt-pills"><span class="wt-pill ' + st[1] + '">' + esc(st[0]) + '</span>' + pay + '</div>' +
       '<dl class="wt-facts"><div><dt>Ordered</dt><dd>' + when(o.ordered_on) + '</dd></div>' +
