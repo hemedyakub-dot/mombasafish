@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Track your consignment | MombasaFish Wholesale</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="referrer" content="no-referrer">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/images/logo.jpg">
+<link rel="stylesheet" href="/style.css">
+<style>
+[hidden]{display:none!important}
+.wt>*{min-width:0}
+.wt{max-width:46rem;margin:0 auto;padding:1.4rem 1rem 3rem;display:grid;gap:1.1rem}
+.wt-card{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.25rem;box-shadow:0 2px 10px rgba(3,42,46,.05)}
+.wt-card h2{font-family:var(--font-display);font-size:1.1rem;color:var(--abyss);margin:0 0 .8rem}
+.wt-head{background:var(--abyss);color:var(--sand);border:0}
+.wt-head .kick{color:var(--catch)}
+.wt-ref{font-family:var(--font-mono);font-size:clamp(1.3rem,5vw,1.8rem);color:#fff;margin:.1rem 0 .7rem;letter-spacing:.04em}
+.wt-pills{display:flex;gap:.45rem;flex-wrap:wrap;margin-bottom:.9rem}
+.wt-pill{font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.35rem .7rem;border-radius:999px;background:rgba(255,255,255,.12);color:#fff}
+.wt-pill.good{background:#1f8f5f;color:#fff}.wt-pill.warn{background:var(--catch);color:var(--abyss)}.wt-pill.bad{background:#c0392b;color:#fff}
+.wt-facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem;margin:0}
+.wt-facts div{display:grid;gap:.1rem}
+.wt-facts dt{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(242,237,227,.7)}
+.wt-facts dd{margin:0;font-weight:600;color:#fff}
+.wt-banner{border-radius:14px;padding:1rem 1.1rem;font-weight:600}
+.wt-banner.bad{background:#fde8e5;color:#8a1c10}.wt-banner.info{background:#fff1d6;color:#5c3a00}
+.wt-steps{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.wt-steps li{display:grid;grid-template-columns:28px 1fr;gap:.75rem;align-items:start;position:relative;padding-bottom:.9rem}
+.wt-steps li:not(:last-child)::after{content:"";position:absolute;left:13px;top:28px;bottom:0;width:2px;background:var(--line)}
+.wt-steps li.done:not(:last-child)::after{background:var(--deep)}
+.wt-dot{width:28px;height:28px;border-radius:50%;border:2px solid rgba(3,42,46,.25);background:#fff;display:grid;place-items:center;font-family:var(--font-mono);font-size:.7rem;color:var(--muted)}
+.wt-steps li.done .wt-dot{background:var(--deep);border-color:var(--deep);color:#fff}
+.wt-steps li.now .wt-dot{background:var(--coral);border-color:var(--coral);color:#fff;box-shadow:0 0 0 5px rgba(255,107,90,.18)}
+.wt-steps b{display:block;color:var(--ink);padding-top:.2rem}
+.wt-steps li.todo b{color:var(--muted);font-weight:600}
+.wt-steps li.now small{color:var(--coral);font-family:var(--font-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+.wt-dim .wt-steps{opacity:.45}
+.wt-tablewrap{overflow-x:auto}
+.wt-table{width:100%;border-collapse:collapse;font-size:.88rem}
+.wt-table th,.wt-table td{padding:.55rem .4rem;border-bottom:1px solid var(--line);text-align:right}
+.wt-table td{white-space:nowrap}
+.wt-qline{display:grid;gap:.5rem;padding:.2rem 0 .9rem;border-bottom:1px solid var(--line);margin-bottom:.9rem}
+.wt-qline:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.wt-qgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(96px,1fr));gap:.5rem;margin:0}
+.wt-qgrid div{background:var(--cream);border-radius:10px;padding:.5rem .6rem}
+.wt-qgrid dt{font-family:var(--font-mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.wt-qgrid dd{margin:0;font-weight:700;color:var(--ink)}
+.wt-qgrid .out{background:#ffe6e2}.wt-qgrid .out dd{color:#b3261e}
+.wt-table th:first-child,.wt-table td:first-child{text-align:left;white-space:normal}
+.wt-table th{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
+.wt-table td.out{color:var(--coral);font-weight:700}
+.wt-quote .wt-total{font-family:var(--font-display);font-size:1.4rem;color:var(--abyss);margin:.6rem 0 .2rem}
+.wt-quote .btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.9rem}
+.wt-quote textarea{font:inherit;width:100%;box-sizing:border-box;border:1px solid rgba(3,42,46,.28);border-radius:10px;padding:.7rem .85rem;min-height:48px;margin-top:.6rem}
+.wt-pay{background:var(--cream);border-radius:14px;padding:1rem;margin-top:.9rem}
+.wt-pay .till{font-family:var(--font-mono);font-size:1.5rem;color:var(--abyss);font-weight:700}
+.wt-ship{border:1px solid var(--line);border-radius:14px;padding:.9rem 1rem;display:grid;gap:.3rem;margin-bottom:.6rem}
+.wt-ship .r1{display:flex;justify-content:space-between;gap:.6rem;flex-wrap:wrap}
+.wt-ship .r1 b{font-family:var(--font-mono)}
+.wt-ship .loc{font-size:.85rem;color:var(--muted)}
+.wt-log{list-style:none;margin:0;padding:0;display:grid;gap:.55rem}
+.wt-log li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;font-size:.9rem}
+.wt-log time{font-family:var(--font-mono);font-size:.74rem;color:var(--muted);white-space:nowrap;padding-top:.15rem}
+.wt-meta{font-size:.8rem;color:var(--muted);text-align:center}
+.wt-help{display:flex;gap:.6rem;flex-wrap:wrap;justify-content:center}
+.wt-err{background:#fde8e5;color:#8a1c10;border-radius:10px;padding:.8rem 1rem}
+.btn-sm{padding:.75rem 1.3rem;font-size:.95rem}
+.wt-ghost{background:transparent;color:var(--abyss);border:2px solid var(--abyss)}
+.wh-hint{font-size:.82rem;color:var(--muted)}
+.wt-pill.neutral{background:var(--sand);color:var(--deep)}
+</style>
+</head>
+<body>
+<div class="annc">Wholesale · Questions? <a href="https://wa.me/254787668888">0787 668 888</a> · We reply the same day</div>
+<header class="hdr">
+  <a class="logo" href="/"><img src="/images/logo.jpg" alt="MombasaFish logo" width="34" height="34" style="width:34px;height:34px;border-radius:8px;object-fit:cover"><span class="wm">Mombasa<em>Fish</em></span></a>
+  <nav class="nav">
+    <a href="/">Home</a>
+    <a href="/catalogue">Shop</a>
+    <a href="/wholesale" class="on">Wholesale</a>
+    <a href="/track">Track Order</a>
+    <a href="/about">About</a>
+  </nav>
+</header>
+
+<main class="wt" id="wt">
+  <div class="wt-card"><p>Loading your consignment…</p></div>
+</main>
+
+<footer>
+  <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Connecting the coast to every market<br>WhatsApp 0787 668 888 · mombasafish@gmail.com</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var SB = 'https://tcpqbrchpxpshmqprbkv.supabase.co';
+  var KEY = 'sb_publishable_7YLqP3JMq8AFZQl4XF--bw_itOMj1gA';
+  var WA = '254787668888', TILL = '9948037', TILL_NAME = 'Hemed Yakub';
+  var POLL_MS = 30000;
+  var STEPS = ['Order received','Order confirmed','Production assigned','Processing and drying','Quality verification',
+               'Weighed and packaged','Awaiting dispatch','Dispatched from Shimoni','In transit','Delivered'];
+  var STATUS = {requested:['Request received',''], quote_issued:['Quotation issued','warn'], quote_accepted:['Quotation accepted','good'],
+    quote_declined:['Quotation declined','bad'], confirmed:['Order confirmed','good'], processing:['Processing',''],
+    ready:['Ready for dispatch',''], dispatched:['Dispatched',''], delivered:['Delivered','good'], cancelled:['Cancelled','bad']};
+  var MODE = {bus:'Bus / parcel service', truck:'Truck', pickup:'Pickup', boat:'Boat', courier:'Courier', motorbike:'Motorbike', collection:'Collection', other:'Other'};
+  var SHIP = {planned:'Being loaded', dispatched:'Dispatched', in_transit:'In transit', delayed:'Delayed', delivered:'Delivered'};
+
+  var box = document.getElementById('wt');
+  var m = location.pathname.match(/\/track\/([0-9a-fA-F]{32})\/?$/) || location.search.match(/[?&]t=([0-9a-fA-F]{32})/);
+  var token = m ? m[1].toLowerCase() : null;
+  var timer = null, busy = false, last = null;
+
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function num(n){ return Number(n || 0).toLocaleString('en-KE', {maximumFractionDigits: 2}); }
+  function kes(n){ return 'KES ' + num(n); }
+  function when(t, withTime){
+    if (!t) return '';
+    var d = new Date(t); if (isNaN(d)) return esc(t);
+    var o = {timeZone: 'Africa/Nairobi', day: 'numeric', month: 'short', year: 'numeric'};
+    if (withTime) { o.hour = '2-digit'; o.minute = '2-digit'; }
+    return d.toLocaleString('en-KE', o);
+  }
+  function rpc(fn, body){
+    return fetch(SB + '/rest/v1/rpc/' + fn, {
+      method: 'POST', headers: {'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'},
+      body: JSON.stringify(body)
+    }).then(function(r){
+      return r.json().catch(function(){ return null; }).then(function(j){ if (!r.ok) throw new Error((j && j.message) || 'Something went wrong.'); return j; });
+    }, function(){ throw new Error('offline'); });
+  }
+
+  function steps(o){
+    var dead = o.cancelled || o.declined;
+    return '<ol class="wt-steps">' + STEPS.map(function(label, i){
+      var n = i + 1, cls = dead ? 'todo' : (n < o.stage || o.stage === 10 ? 'done' : (n === o.stage ? 'now' : 'todo'));
+      return '<li class="' + cls + '"><span class="wt-dot">' + (cls === 'done' ? '&#10003;' : n) + '</span><div><b>' + esc(label) + '</b>' +
+        (cls === 'now' ? '<small>Current stage</small>' : '') + '</div></li>';
+    }).join('') + '</ol>';
+  }
+
+  function quoteCard(o){
+    var q = o.quote; if (!q) return '';
+    var rows = (q.lines || []).map(function(l){
+      return '<tr><td>' + esc(l.product) + '</td><td>' + num(l.kg) + ' kg</td><td>' + kes(l.price_per_kg) + '</td><td>' + kes(l.value != null ? l.value : l.kg * l.price_per_kg) + '</td></tr>';
+    }).join('');
+    var h = '<section class="wt-card wt-quote"><h2>Quotation ' + (q.version > 1 ? '(version ' + q.version + ')' : '') + '</h2>' +
+      '<div class="wt-tablewrap"><table class="wt-table"><thead><tr><th>Product</th><th>Quantity</th><th>Price</th><th>Value</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+      '<p>Goods ' + kes(q.goods_kes) + ' · Transport ' + kes(q.transport_kes) + '</p>' +
+      '<p class="wt-total">Total ' + kes(q.total_kes) + '</p>' +
+      (q.note ? '<p>' + esc(q.note) + '</p>' : '');
+    if (q.status === 'issued' && !q.expired && !o.cancelled) {
+      h += '<p class="wh-hint">Valid until ' + when(q.valid_until) + '. Accepting confirms the order; payment comes next.</p>' +
+        '<label class="wh-hint" for="wtNote">Message to us (optional)</label><textarea id="wtNote" maxlength="500" rows="2"></textarea>' +
+        '<div class="btns"><button class="btn btn-coral btn-sm" data-q="accept" data-id="' + q.id + '">Accept quotation</button>' +
+        '<button class="btn wt-ghost btn-sm" data-q="decline" data-id="' + q.id + '">Decline</button></div>' +
+        '<p class="wt-err" id="wtQErr" hidden></p>';
+    } else if (q.status === 'issued' && q.expired) {
+      h += '<div class="wt-banner info">This quotation expired on ' + when(q.valid_until) + '. Message us for a fresh one.</div>';
+    } else if (q.status === 'accepted') {
+      h += '<p><b>You accepted this quotation.</b></p>';
+      if (o.payment_status !== 'paid') {
+        h += '<div class="wt-pay"><p><b>How to pay</b></p><p>Lipa na M-Pesa · Buy Goods Till</p><p class="till">' + TILL + '</p>' +
+          '<p>' + TILL_NAME + ' · Amount ' + kes(q.total_kes) + (o.payment_status === 'part_paid' ? ' (part already received)' : '') + '</p>' +
+          '<p class="wh-hint">Then send the M-Pesa message with your reference ' + esc(o.ref) + ' to WhatsApp 0787 668 888. Payment shows here once we confirm it.</p></div>';
+      }
+    } else if (q.status === 'declined') {
+      h += '<p><b>You declined this quotation.</b> Message us if you would like another.</p>';
+    }
+    return h + '</section>';
+  }
+
+  function render(o){
+    last = o;
+    var st = STATUS[o.status] || [o.status, ''];
+    var pay = '';
+    if (o.payment_status === 'paid') pay = '<span class="wt-pill good">Payment confirmed</span>';
+    else if (o.payment_status === 'part_paid') pay = '<span class="wt-pill warn">Part paid</span>';
+    else if (o.payment_status === 'refunded') pay = '<span class="wt-pill">Refunded</span>';
+    else if (['quote_accepted','confirmed','processing','ready','dispatched'].indexOf(o.status) >= 0) pay = '<span class="wt-pill warn">Payment pending</span>';
+    var h = '<section class="wt-card wt-head"><span class="kick">Wholesale consignment</span><p class="wt-ref">' + esc(o.ref) + '</p>' +
+      '<div class="wt-pills"><span class="wt-pill ' + st[1] + '">' + esc(st[0]) + '</span>' + pay + '</div>' +
+      '<dl class="wt-facts"><div><dt>Ordered</dt><dd>' + when(o.ordered_on) + '</dd></div>' +
+      '<div><dt>' + (o.delivery_mode === 'collection' ? 'Buyer in' : 'Going to') + '</dt><dd>' + esc(o.destination) + '</dd></div>' +
+      '<div><dt>Type</dt><dd>' + (o.kind === 'quote' ? 'Quotation request' : 'Order at listed prices') + '</dd></div>' +
+      '<div><dt>Stage</dt><dd>' + esc(o.stage_label) + '</dd></div></dl></section>';
+
+    if (o.cancelled) h += '<div class="wt-banner bad">This order was cancelled. Message us on WhatsApp if you have questions.</div>';
+    if (o.declined) h += '<div class="wt-banner bad">This quotation was declined, so the order is closed.</div>';
+
+    h += quoteCard(o);
+    h += '<section class="wt-card' + (o.cancelled || o.declined ? ' wt-dim' : '') + '"><h2>Progress</h2>' + steps(o) + '</section>';
+
+    var qty = (o.lines || []).map(function(l){
+      var cell = function(label, v, cls){ return '<div class="' + (cls || '') + '"><dt>' + label + '</dt><dd>' + v + '</dd></div>'; };
+      var part = Number(l.outstanding_kg) > 0 && Number(l.dispatched_kg) > 0;
+      return '<div class="wt-qline"><b>' + esc(l.product) + '</b><dl class="wt-qgrid">' +
+        cell('Requested', num(l.requested_kg) + ' kg') +
+        cell('Confirmed', l.confirmed_kg == null ? 'Not yet' : num(l.confirmed_kg) + ' kg') +
+        cell('Prepared', num(l.prepared_kg) + ' kg') +
+        cell('Dispatched', num(l.dispatched_kg) + ' kg') +
+        cell('Delivered', num(l.delivered_kg) + ' kg') +
+        cell('Still to send', num(l.outstanding_kg) + ' kg', part ? 'out' : '') + '</dl></div>';
+    }).join('');
+    h += '<section class="wt-card"><h2>Quantities</h2>' + qty + '</section>';
+
+    if (o.shipments && o.shipments.length) {
+      h += '<section class="wt-card"><h2>Shipments</h2>' + o.shipments.map(function(s){
+        return '<div class="wt-ship"><div class="r1"><b>' + esc(s.ref) + '</b><span class="wt-pill ' + (s.status === 'delivered' ? 'good' : s.status === 'delayed' ? 'warn' : 'neutral') + '">' + esc(SHIP[s.status] || s.status) + '</span></div>' +
+          '<div>' + num(s.kg) + ' kg · ' + esc(MODE[s.mode] || s.mode) + (s.dispatched_at ? ' · left Shimoni ' + when(s.dispatched_at, true) : '') + '</div>' +
+          (s.eta && s.status !== 'delivered' ? '<div>Expected ' + when(s.eta) + '</div>' : '') +
+          (s.delivered_at ? '<div>Delivered ' + when(s.delivered_at, true) + '</div>' : '') +
+          (s.last_location ? '<div class="loc">Last confirmed: ' + esc(s.last_location) + (s.last_location_at ? ', ' + when(s.last_location_at, true) : '') + '</div>' : '') +
+          '</div>';
+      }).join('') + '<p class="wh-hint">Locations are confirmed by our team with the carrier. We do not use live GPS, so the last confirmed point is shown.</p></section>';
+    }
+
+    var log = (o.timeline || []).slice().reverse();
+    if (log.length) h += '<section class="wt-card"><h2>Updates</h2><ul class="wt-log">' + log.map(function(e){
+      return '<li><time>' + when(e.at, true) + '</time><span>' + esc(e.text) + '</span></li>'; }).join('') + '</ul></section>';
+
+    h += '<div class="wt-help"><a class="btn btn-wa btn-sm" href="https://wa.me/' + WA + '?text=' + encodeURIComponent('Hello MombasaFish, about my wholesale order ' + o.ref + '.') + '">Ask about this order</a></div>' +
+      '<p class="wt-meta" id="wtMeta">Checked ' + new Date().toLocaleTimeString('en-KE', {timeZone: 'Africa/Nairobi', hour: '2-digit', minute: '2-digit'}) + ' · this page updates by itself every 30 seconds</p>';
+    var note = document.getElementById('wtNote'), keep = note ? note.value : '';
+    box.innerHTML = h;
+    var n2 = document.getElementById('wtNote'); if (n2 && keep) n2.value = keep;
+  }
+
+  function fatal(msg){
+    box.innerHTML = '<section class="wt-card"><h2>We could not open this tracking link</h2><p class="wt-err">' + esc(msg) + '</p>' +
+      '<p>Check that you copied the whole link. For shop and home-delivery orders use the <a href="/track">order tracker</a>.</p>' +
+      '<div class="wt-help"><a class="btn btn-wa btn-sm" href="https://wa.me/' + WA + '">Message us on WhatsApp</a><a class="btn wt-ghost btn-sm" href="/wholesale">Wholesale home</a></div></section>';
+  }
+
+  function load(){
+    if (busy || document.hidden) return;
+    busy = true;
+    rpc('mfm_w_track', {p_token: token}).then(function(o){ render(o); }).catch(function(e){
+      if (e.message === 'offline') {
+        if (last) { var mt = document.getElementById('wtMeta'); if (mt) mt.textContent = 'No connection — showing the last update. Retrying…'; }
+        else fatal('We could not reach our system. Check your connection and refresh.');
+      } else { clearInterval(timer); fatal(e.message); }
+    }).then(function(){ busy = false; });
+  }
+
+  box.addEventListener('click', function(e){
+    var b = e.target.closest('[data-q]'); if (!b) return;
+    var accept = b.getAttribute('data-q') === 'accept';
+    if (!b.dataset.sure) {
+      b.dataset.sure = '1';
+      b.textContent = accept ? 'Tap again to confirm acceptance' : 'Tap again to decline';
+      return;
+    }
+    var note = (document.getElementById('wtNote') || {}).value || null;
+    box.querySelectorAll('[data-q]').forEach(function(x){ x.disabled = true; });
+    rpc('mfm_w_respond_quote', {p_token: token, p_quote_id: Number(b.getAttribute('data-id')), p_accept: accept, p_note: note})
+      .then(render).catch(function(err){
+        var q = document.getElementById('wtQErr'); if (q) { q.textContent = err.message === 'offline' ? 'No connection. Try again.' : err.message; q.hidden = false; }
+        box.querySelectorAll('[data-q]').forEach(function(x){ x.disabled = false; });
+      });
+  });
+
+  if (!token) { fatal('This link is missing its tracking code.'); return; }
+  load();
+  timer = setInterval(load, POLL_MS);
+  document.addEventListener('visibilitychange', function(){ if (!document.hidden) load(); });
+})();
+</script>
+<script src="/ui.js" defer></script>
+</body>
+</html>

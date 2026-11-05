@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Wholesale &amp; Trade Supply · Restaurants and Hotels | MombasaFish</title>
-<meta name="description" content="Seafood supply for restaurants, hotels and caterers across Kenya. Standing weekly orders, cut to your specification, landed by small boats at Shimoni.">
+<title>Wholesale Seafood · Katashingo, Dried Fish &amp; Fresh Fish from Shimoni | MombasaFish</title>
+<meta name="description" content="Wholesale katashingo, dried fish and fresh fish from Shimoni to markets across Kenya. Order or request a quotation online and track your consignment to your town.">
 <link rel="canonical" href="https://mombasafish.com/wholesale">
 <meta property="og:type" content="website"><meta property="og:locale" content="en_KE">
 <meta property="og:site_name" content="MombasaFish">
-<meta property="og:title" content="Wholesale &amp; Trade Supply · MombasaFish">
-<meta property="og:description" content="Standing seafood supply for kitchens — restaurants, hotels, caterers. Cut to your specification, delivered cold countrywide.">
+<meta property="og:title" content="Wholesale Seafood from Shimoni · MombasaFish">
+<meta property="og:description" content="Katashingo, dried fish and fresh fish in wholesale volumes. Order or request a quote online and track your consignment from Shimoni.">
 <meta property="og:url" content="https://mombasafish.com/wholesale">
 <meta property="og:image" content="https://mombasafish.com/images/catch-of-day.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -19,6 +19,76 @@
 <link rel="preload" as="image" href="images/catch-of-day.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
 <style>.hero.hero-photo{--hero-img:url("images/catch-of-day.jpg");min-height:52vh}</style>
+<style>
+/* ---- Wholesale portal (scoped .wh-) ---- */
+.wh-sec [hidden],#whOk[hidden],#whForm[hidden],#whRecent[hidden]{display:none!important}
+.wh-sec{scroll-margin-top:5rem}
+.hero .wh-ghost,.wh-ok .wh-ghost{background:transparent;color:#fff;border:2px solid #fff}
+.wh-cats{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:0 0 1.3rem}
+.wh-cat{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;border:1px solid var(--line);background:var(--white);border-radius:999px;padding:0 1.05rem;min-height:44px;cursor:pointer;color:var(--ink)}
+.wh-cat[aria-pressed="true"]{background:var(--abyss);color:var(--sand);border-color:var(--abyss)}
+.wh-group{margin-bottom:1.8rem}
+.wh-group>h3{font-family:var(--font-display);font-size:1.15rem;color:var(--abyss);margin:0 0 .8rem}
+.wh-grid{display:grid;gap:1rem;grid-template-columns:repeat(auto-fill,minmax(240px,1fr))}
+.wh-card{background:var(--white);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 2px 10px rgba(3,42,46,.05)}
+.wh-card.feat{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.wh-card .im{background:var(--sand);min-height:180px}
+.wh-card img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.wh-card .bd{padding:1.1rem 1.15rem 1.2rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+.wh-card h4{font-family:var(--font-display);font-size:1.05rem;color:var(--abyss);margin:0;line-height:1.25}
+.wh-card.feat h4{font-size:clamp(1.25rem,3.4vw,1.6rem)}
+.wh-sw{font-family:var(--font-mono);font-size:.72rem;color:var(--muted);letter-spacing:.06em}
+.wh-desc{font-size:.92rem;color:var(--ink);margin:0}
+.wh-price{font-weight:700;color:var(--deep);margin:0}
+.wh-price.q{color:var(--muted);font-weight:600}
+.wh-facts{list-style:none;padding:0;margin:0;display:grid;gap:.2rem;font-size:.85rem;color:var(--muted)}
+.wh-av{align-self:flex-start;font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .65rem;border-radius:999px;background:var(--sand);color:var(--deep)}
+.wh-av.available{background:#dff3ea;color:#0b5e3c}
+.wh-av.limited{background:#fff1d6;color:#7a4a00}
+.wh-card .btn{margin-top:auto;align-self:flex-start;padding:.7rem 1.3rem;font-size:.95rem}
+.wh-empty{border:1px dashed rgba(3,42,46,.3);border-radius:16px;padding:1.1rem 1.2rem;color:var(--muted);background:var(--cream);margin:0}
+.wh-flow{list-style:none;padding:0;margin:0;display:grid;gap:.6rem;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));counter-reset:f}
+.wh-flow li{counter-increment:f;background:var(--white);border:1px solid var(--line);border-radius:14px;padding:.85rem .9rem;display:grid;gap:.2rem}
+.wh-flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--font-mono);font-size:.7rem;color:var(--coral)}
+.wh-flow b{color:var(--abyss)}
+.wh-flow span{font-size:.82rem;color:var(--muted)}
+.wh-form{background:var(--white);border:1px solid var(--line);border-radius:18px;padding:1.3rem;display:grid;gap:1.5rem}
+.wh-form fieldset{border:0;padding:0;margin:0;display:grid;gap:.8rem;min-width:0}
+.wh-form legend{font-family:var(--font-mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--coral);margin-bottom:.7rem;padding:0}
+.wh-row{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.wh-form label{display:grid;gap:.3rem;font-size:.86rem;font-weight:600;color:var(--ink)}
+.wh-form input,.wh-form select,.wh-form textarea,.wh-trackrow input{font:inherit;font-weight:400;padding:.7rem .85rem;border:1px solid rgba(3,42,46,.28);border-radius:10px;background:#fff;color:var(--ink);min-height:48px;width:100%;box-sizing:border-box}
+.wh-form input:focus,.wh-form select:focus,.wh-form textarea:focus,.wh-trackrow input:focus{outline:2px solid var(--deep);outline-offset:1px}
+.wh-lines{display:grid;gap:.6rem}
+.wh-line{display:grid;grid-template-columns:minmax(0,2fr) minmax(90px,.8fr) minmax(0,1.3fr) auto;gap:.55rem;align-items:end;background:var(--cream);border-radius:12px;padding:.75rem}
+.wh-line .wh-lp{grid-column:1/-1;font-size:.8rem;color:var(--muted);font-weight:400;margin:0}
+.wh-x{border:0;background:transparent;color:#b3261e;font-weight:700;cursor:pointer;min-height:48px;padding:0 .7rem;font-size:.9rem}
+.wh-add{border:1px dashed var(--deep);background:transparent;color:var(--deep);border-radius:12px;padding:.8rem;font:inherit;font-weight:700;cursor:pointer;min-height:48px}
+.wh-choice{display:flex;gap:.6rem;flex-wrap:wrap}
+.wh-choice label{display:flex;align-items:center;gap:.55rem;border:1px solid var(--line);border-radius:12px;padding:0 1rem;min-height:48px;cursor:pointer;font-weight:600;background:#fff}
+.wh-choice label.off{opacity:.55;cursor:not-allowed}
+.wh-choice input{width:18px;height:18px;min-height:0;margin:0}
+.wh-hint{font-size:.82rem;color:var(--muted);font-weight:400}
+.wh-err{background:#fde8e5;color:#8a1c10;border-radius:10px;padding:.8rem 1rem;margin:0}
+.wh-ok{background:var(--abyss);color:var(--sand);border-radius:18px;padding:1.5rem;display:grid;gap:.75rem}
+.wh-ok .kick{color:var(--catch)}
+.wh-ref{font-family:var(--font-mono);font-size:clamp(1.2rem,4vw,1.6rem);color:#fff;margin:0;letter-spacing:.04em}
+.wh-ok code{background:rgba(255,255,255,.1);padding:.7rem .85rem;border-radius:8px;display:block;word-break:break-all;font-family:var(--font-mono);font-size:.85rem;color:#fff}
+.wh-okbtns{display:flex;gap:.6rem;flex-wrap:wrap}
+.wh-trackform{display:grid;gap:.4rem;max-width:40rem}
+.wh-trackform label{font-size:.86rem;font-weight:600}
+.wh-trackrow{display:flex;gap:.5rem}
+.wh-trackrow .btn{padding:0 1.4rem;min-height:48px}
+#whRecent{margin-top:1rem;display:grid;gap:.4rem;max-width:40rem}
+#whRecent a{display:flex;justify-content:space-between;gap:.6rem;background:var(--white);border:1px solid var(--line);border-radius:12px;padding:.75rem 1rem;text-decoration:none;color:var(--ink);min-height:48px;align-items:center}
+#whRecent a b{font-family:var(--font-mono)}
+@media (max-width:720px){
+  .wh-card.feat{display:flex}
+  .wh-line{grid-template-columns:1fr 1fr}
+  .wh-line .wh-pl{grid-column:1/-1}
+  .wh-trackrow{flex-direction:column}
+}
+</style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you supply restaurants and hotels?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply kitchens across Mombasa and the south coast, and we deliver countrywide. Standing orders are agreed directly with you — species, quantities, cut, frequency and delivery window."}}, {"@type": "Question", "name": "What is the minimum order?", "acceptedAnswer": {"@type": "Answer", "text": "There is no fixed minimum for a first order. For standing supply we agree a weekly volume with you so we can commit the right buying at the landing site. Tell us what your kitchen actually uses in a week and we will build around it."}}, {"@type": "Question", "name": "Can you guarantee the same fish every week?", "acceptedAnswer": {"@type": "Answer", "text": "Honestly, no — and be wary of any supplier who says otherwise. The catch is whatever the boats land. What we can guarantee is a weekly volume, a price agreed in advance, and a call the evening before telling you exactly what is coming so your kitchen can plan the menu around it."}}, {"@type": "Question", "name": "Do you offer trade pricing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on standing volume. Trade rates are agreed per species and per week rather than published, because they depend on quantity and consistency. Send us your usual weekly list and we will quote against it."}}, {"@type": "Question", "name": "Can you prepare fish to our specification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Scaled, gutted, filleted, portioned to a set weight, steaked, peeled and deveined. Tell us the portion size your kitchen plates and we cut to it, so your line cooks receive fish ready to go."}}, {"@type": "Question", "name": "How do we pay?", "acceptedAnswer": {"@type": "Answer", "text": "M-Pesa as standard. For regular accounts we can discuss terms once a supply relationship is established."}}, {"@type": "Question", "name": "Do you supply export buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Export-grade product is part of what we handle, particularly dried prawns and dried seafood. Export requires the correct licensing and documentation, which we handle case by case — start a conversation and we will tell you plainly what is and is not possible."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mombasafish.com/"}, {"@type": "ListItem", "position": 2, "name": "Wholesale & Trade", "item": "https://mombasafish.com/wholesale"}]}</script>
 </head>
@@ -43,14 +113,153 @@
 </header>
 
 <div class="hero hero-photo">
-  <p class="tag">For kitchens</p>
-  <h1>Supply your kitchen <span>from the source.</span></h1>
-  <p class="sub">Restaurants, hotels, caterers and retailers — standing weekly supply, cut to your specification, straight from the boats at Shimoni.</p>
-  <div class="cta" style="margin-top:1.6rem"><a class="btn btn-wa" href="https://wa.me/254787668888?text=Hello%20MombasaFish%20%E2%80%94%20trade%20enquiry.%0A%0ABusiness%3A%20%0AType%20%28restaurant%20/%20hotel%20/%20caterer%20/%20retailer%29%3A%20%0ACounty%3A%20%0ASpecies%20and%20weekly%20volume%3A%20%0APreparation%20needed%3A%20%0ADelivery%20days%3A%20%0A">Start a trade enquiry</a></div>
+  <p class="tag">Wholesale &amp; distribution</p>
+  <h1>Connecting Shimoni's seafood supply <span>to markets across Kenya.</span></h1>
+  <p class="sub">Order directly from our coastal processing network. Access wholesale seafood, track consignments and follow your order from Shimoni to your destination.</p>
+  <div class="cta" style="margin-top:1.6rem;display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap"><a class="btn btn-coral" href="#order">Order or get a quote</a><a class="btn wh-ghost" href="#track">Track a consignment</a></div>
 </div>
 
 <div class="wrap">
 <nav class="crumb" aria-label="Breadcrumb"><a href="index.html">Home</a> › <span>Wholesale &amp; Trade</span></nav>
+<section id="range" class="wh-sec">
+  <span class="kick">Wholesale range</span>
+  <h2 class="sec">Katashingo and dried fish first, <span>fresh fish on request</span></h2>
+  <p class="sec-sub">Prices are per kilogram. Where no price is listed, we quote against your volume and destination — usually the same day.</p>
+  <div class="wh-cats" role="group" aria-label="Filter the range">
+    <button type="button" class="wh-cat" data-cat="all" aria-pressed="true">All</button>
+    <button type="button" class="wh-cat" data-cat="katashingo" aria-pressed="false">Katashingo</button>
+    <button type="button" class="wh-cat" data-cat="dried" aria-pressed="false">Dried fish</button>
+    <button type="button" class="wh-cat" data-cat="frozen" aria-pressed="false">Frozen seafood</button>
+    <button type="button" class="wh-cat" data-cat="fresh" aria-pressed="false">Fresh fish</button>
+  </div>
+  <div id="whRange"><p class="wh-hint">Loading the wholesale range…</p></div>
+</section>
+
+<section id="process" class="wh-sec">
+  <span class="kick">How wholesale orders work</span>
+  <h2 class="sec">Nothing is a sale until <span>you say yes</span></h2>
+  <ol class="wh-flow">
+    <li><b>Request</b><span>Kilograms and destination</span></li>
+    <li><b>Quotation</b><span>Priced with transport</span></li>
+    <li><b>You accept</b><span>On your tracking page</span></li>
+    <li><b>Payment</b><span>M-Pesa, confirmed by us</span></li>
+    <li><b>Processing</b><span>Prepared, checked, weighed</span></li>
+    <li><b>Dispatch</b><span>From Shimoni, with a waybill</span></li>
+    <li><b>Delivered</b><span>Confirmed with you</span></li>
+  </ol>
+</section>
+
+<section id="order" class="wh-sec">
+  <span class="kick">Order or request a quote</span>
+  <h2 class="sec">Tell us what you need and <span>where it's going</span></h2>
+  <form id="whForm" class="wh-form" novalidate>
+    <fieldset>
+      <legend>1 · Products</legend>
+      <div id="whLines" class="wh-lines"></div>
+      <button type="button" class="wh-add" id="whAddLine">+ Add a product</button>
+      <p class="wh-hint" id="whEst" aria-live="polite"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>2 · Destination</legend>
+      <div class="wh-row">
+        <label>County
+          <select id="whCounty"><option value="">Choose your county</option></select></label>
+        <label>Town
+          <select id="whTown" disabled><option value="">Choose a county first</option></select></label>
+        <label id="whTownOtherWrap" hidden>Your town
+          <input id="whTownOther" maxlength="60" autocomplete="address-level2"></label>
+      </div>
+      <div class="wh-choice" role="radiogroup" aria-label="Delivery or collection">
+        <label><input type="radio" name="whMode" value="delivery" checked> Deliver to me</label>
+        <label><input type="radio" name="whMode" value="collection"> I'll collect</label>
+      </div>
+      <div class="wh-row">
+        <label id="whTransportWrap">Transport
+          <select id="whTransport">
+            <option value="advise">Advise me</option>
+            <option value="bus">Bus / parcel service</option>
+            <option value="truck">Truck or lorry</option>
+            <option value="courier">Courier</option>
+            <option value="own_transport">My own transport</option>
+          </select></label>
+        <label><span id="whAddrLabel">Delivery address or landmark</span>
+          <input id="whAddr" maxlength="300" autocomplete="street-address"></label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>3 · Your details</legend>
+      <div class="wh-row">
+        <label>Contact name
+          <input id="whName" maxlength="80" autocomplete="name"></label>
+        <label>Business name <span class="wh-hint">optional</span>
+          <input id="whBiz" maxlength="120" autocomplete="organization"></label>
+        <label>Phone (M-Pesa / WhatsApp)
+          <input id="whPhone" inputmode="tel" autocomplete="tel" placeholder="07xx xxx xxx"></label>
+        <label>Email <span class="wh-hint">optional</span>
+          <input id="whEmail" type="email" maxlength="120" autocomplete="email"></label>
+        <label>You are a
+          <select id="whType">
+            <option value="">Choose</option>
+            <option value="retailer">Retailer or shop</option>
+            <option value="wholesaler">Wholesaler or distributor</option>
+            <option value="hotel">Hotel or lodge</option>
+            <option value="restaurant">Restaurant</option>
+            <option value="caterer">Caterer</option>
+            <option value="institution">School or institution</option>
+            <option value="exporter">Exporter</option>
+            <option value="individual">Individual</option>
+            <option value="other">Other</option>
+          </select></label>
+      </div>
+      <label>Anything else? <span class="wh-hint">grade, delivery days, deadlines</span>
+        <textarea id="whNote" rows="3" maxlength="1000"></textarea></label>
+    </fieldset>
+
+    <fieldset>
+      <legend>4 · How to proceed</legend>
+      <div class="wh-choice" role="radiogroup" aria-label="Order type">
+        <label><input type="radio" name="whKind" value="quote" checked> Request a quotation</label>
+        <label id="whStdWrap"><input type="radio" name="whKind" value="standard" id="whStd"> Order at listed prices</label>
+      </div>
+      <p class="wh-hint" id="whKindHint"></p>
+    </fieldset>
+
+    <div class="wh-err" id="whErr" role="alert" hidden></div>
+    <button class="btn btn-coral" id="whSend" type="submit">Send request</button>
+  </form>
+
+  <div class="wh-ok" id="whOk" hidden>
+    <span class="kick">Request received</span>
+    <p class="wh-ref" id="whOkRef"></p>
+    <p id="whOkMsg"></p>
+    <p><b>Your private tracking page.</b> Keep this link: it is the only way to see this order. Share it only with people you trust.</p>
+    <code id="whOkLink"></code>
+    <div class="wh-okbtns">
+      <a class="btn btn-coral" id="whOkOpen" href="#">Open tracking page</a>
+      <button type="button" class="btn wh-ghost" id="whOkCopy">Copy link</button>
+      <a class="btn btn-wa" id="whOkWa" href="#">Message us about it</a>
+    </div>
+  </div>
+</section>
+
+<section id="track" class="wh-sec">
+  <span class="kick">Track a consignment</span>
+  <h2 class="sec">Follow your order from <span>Shimoni to your door</span></h2>
+  <form id="whTrackForm" class="wh-trackform" novalidate>
+    <label for="whTrackIn">Paste the tracking link we gave you</label>
+    <div class="wh-trackrow">
+      <input id="whTrackIn" placeholder="mombasafish.com/track/…" autocomplete="off">
+      <button class="btn btn-foam" type="submit">Open</button>
+    </div>
+    <p class="wh-err" id="whTrackErr" role="alert" hidden></p>
+  </form>
+  <div id="whRecent" hidden></div>
+  <p class="wh-hint">Shop and home-delivery orders are tracked on the <a href="track.html">order tracker</a>.</p>
+</section>
+
+<div class="wh-kitchens"><span class="kick" style="text-align:center;margin:2.4rem 0 .8rem">For kitchens</span></div>
 <section>
   <span class="kick">Why buy direct</span>
   <h2 class="sec">One less hand between the boat and <span>your pass</span></h2>
@@ -142,6 +351,286 @@
   <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
 </footer>
 
+<script>
+(function(){
+  'use strict';
+  var SB = 'https://tcpqbrchpxpshmqprbkv.supabase.co';
+  var KEY = 'sb_publishable_7YLqP3JMq8AFZQl4XF--bw_itOMj1gA';
+  var WA = '254787668888';
+  var CATS = [['katashingo','Katashingo'],['dried','Dried fish and seafood'],['frozen','Frozen seafood'],['fresh','Fresh fish']];
+  var AV = {available:'In supply', limited:'Limited supply', on_request:'On request'};
+
+  var products = [], places = [], lines = [], filter = 'all';
+  var $ = function(id){ return document.getElementById(id); };
+  function esc(s){ return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]; }); }
+  function kes(n){ return 'KES ' + Number(n).toLocaleString('en-KE', {maximumFractionDigits: 2}); }
+  function kg(n){ return Number(n).toLocaleString('en-KE', {maximumFractionDigits: 2}) + ' kg'; }
+  function photo(u){ return (u || '').replace(/^https:\/\/(www\.)?mombasafish\.com/, ''); }
+  function byId(id){ for (var i = 0; i < products.length; i++) if (products[i].id === id) return products[i]; return null; }
+
+  function rpc(fn, body){
+    return fetch(SB + '/rest/v1/rpc/' + fn, {
+      method: 'POST',
+      headers: {'apikey': KEY, 'Authorization': 'Bearer ' + KEY, 'Content-Type': 'application/json'},
+      body: JSON.stringify(body || {})
+    }).then(function(r){
+      return r.json().catch(function(){ return null; }).then(function(j){
+        if (!r.ok) throw new Error((j && j.message) || 'Something went wrong. Please try again, or message us on WhatsApp 0787 668 888.');
+        return j;
+      });
+    }, function(){ throw new Error('We could not reach our system. Check your connection and try again, or message us on WhatsApp 0787 668 888.'); });
+  }
+
+  // price for a quantity: highest tier whose min_kg <= qty
+  function priceFor(p, q){
+    var best = null;
+    (p.tiers || []).forEach(function(t){ if (q >= Number(t.min_kg) && (!best || Number(t.min_kg) >= Number(best.min_kg))) best = t; });
+    return best ? Number(best.price_per_kg) : null;
+  }
+  function priceText(p){
+    var t = p.tiers || [];
+    if (!t.length) return '<p class="wh-price q">Price on quotation</p>';
+    var parts = t.map(function(x){ return kes(x.price_per_kg) + '/kg' + (Number(x.min_kg) > 0 ? ' from ' + kg(x.min_kg) : ''); });
+    return '<p class="wh-price">' + esc(parts.join(' · ')) + '</p>';
+  }
+
+  // ---------------- range ----------------
+  function card(p, feat){
+    var facts = [];
+    if (p.moq_kg) facts.push('Minimum order: ' + kg(p.moq_kg));
+    if (p.processing_days != null) facts.push('Processing time: ' + p.processing_days + (p.processing_days === 1 ? ' day' : ' days'));
+    if (p.packaging_options && p.packaging_options.length) facts.push('Packaging: ' + p.packaging_options.join(', '));
+    if (p.available_kg != null) facts.push('Available now: ' + kg(p.available_kg));
+    return '<article class="wh-card' + (feat ? ' feat' : '') + '">' +
+      '<div class="im"><img src="' + esc(photo(p.photo_url)) + '" alt="' + esc(p.name) + '" loading="lazy" width="800" height="600"></div>' +
+      '<div class="bd"><span class="wh-av ' + esc(p.availability) + '">' + esc(AV[p.availability] || p.availability) + '</span>' +
+      '<h4>' + esc(p.name) + '</h4>' + (p.sw_name ? '<span class="wh-sw">' + esc(p.sw_name) + '</span>' : '') +
+      (p.description ? '<p class="wh-desc">' + esc(p.description) + '</p>' : '') + priceText(p) +
+      (facts.length ? '<ul class="wh-facts">' + facts.map(function(f){ return '<li>' + esc(f) + '</li>'; }).join('') + '</ul>' : '') +
+      '<button type="button" class="btn btn-foam" data-add="' + p.id + '">Add to request</button></div></article>';
+  }
+  function renderRange(){
+    var html = '';
+    CATS.forEach(function(c){
+      if (filter !== 'all' && filter !== c[0]) return;
+      var list = products.filter(function(p){ return p.category === c[0]; });
+      html += '<div class="wh-group"><h3>' + esc(c[1]) + '</h3>';
+      if (!list.length) {
+        html += '<p class="wh-empty">We supply ' + esc(c[1].toLowerCase()) + ' on request. Add what you need in the request form below and we will quote it.</p>';
+      } else {
+        html += '<div class="wh-grid">' + list.map(function(p){ return card(p, c[0] === 'katashingo'); }).join('') + '</div>';
+      }
+      html += '</div>';
+    });
+    $('whRange').innerHTML = html;
+  }
+
+  // ---------------- order lines ----------------
+  function productOptions(sel){
+    var html = '<option value="">Choose a product</option>';
+    CATS.forEach(function(c){
+      var list = products.filter(function(p){ return p.category === c[0]; });
+      if (!list.length) return;
+      html += '<optgroup label="' + esc(c[1]) + '">' + list.map(function(p){
+        return '<option value="' + p.id + '"' + (p.id === sel ? ' selected' : '') + '>' + esc(p.name) + '</option>';
+      }).join('') + '</optgroup>';
+    });
+    return html;
+  }
+  function renderLines(){
+    var box = $('whLines');
+    if (!lines.length) lines.push({product_id: null, kg: '', packaging: ''});
+    box.innerHTML = lines.map(function(l, i){
+      var p = l.product_id ? byId(l.product_id) : null;
+      var pack = (p && p.packaging_options && p.packaging_options.length)
+        ? '<select data-i="' + i + '" data-f="packaging"><option value="">Packaging</option>' + p.packaging_options.map(function(o){
+            return '<option' + (o === l.packaging ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>'
+        : '<input data-i="' + i + '" data-f="packaging" maxlength="60" placeholder="Packaging (optional)" value="' + esc(l.packaging) + '">';
+      var info = '';
+      if (p) {
+        var q = Number(l.kg) || 0, pr = q ? priceFor(p, q) : null;
+        if (p.moq_kg && q && q < Number(p.moq_kg)) info = 'Minimum order is ' + kg(p.moq_kg) + '.';
+        else if (pr != null) info = kes(pr) + '/kg · about ' + kes(pr * q) + ' before transport';
+        else info = (p.tiers && p.tiers.length && q) ? 'Below the smallest listed quantity — we will quote it.' : 'Priced on quotation.';
+      }
+      return '<div class="wh-line">' +
+        '<label class="wh-pl">Product<select data-i="' + i + '" data-f="product_id">' + productOptions(l.product_id) + '</select></label>' +
+        '<label>Kilograms<input data-i="' + i + '" data-f="kg" type="number" inputmode="decimal" min="0.5" step="0.5" value="' + esc(l.kg) + '"></label>' +
+        '<label>Packaging' + pack + '</label>' +
+        '<button type="button" class="wh-x" data-rm="' + i + '" aria-label="Remove this product">Remove</button>' +
+        (info ? '<p class="wh-lp">' + esc(info) + '</p>' : '') + '</div>';
+    }).join('');
+    updateKind();
+  }
+  function updateKind(){
+    var filled = lines.filter(function(l){ return l.product_id && Number(l.kg) > 0; });
+    var allPriced = filled.length > 0 && filled.every(function(l){
+      var p = byId(l.product_id); var q = Number(l.kg);
+      return p && priceFor(p, q) != null && (!p.moq_kg || q >= Number(p.moq_kg));
+    });
+    var std = $('whStd'), wrap = $('whStdWrap');
+    std.disabled = !allPriced; wrap.classList.toggle('off', !allPriced);
+    if (!allPriced && std.checked) document.querySelector('input[name="whKind"][value="quote"]').checked = true;
+    var total = 0;
+    if (allPriced) filled.forEach(function(l){ var p = byId(l.product_id); total += priceFor(p, Number(l.kg)) * Number(l.kg); });
+    $('whEst').textContent = allPriced ? 'At listed prices this comes to about ' + kes(total) + ' before transport.' : '';
+    var kind = document.querySelector('input[name="whKind"]:checked').value;
+    $('whKindHint').textContent = kind === 'standard'
+      ? 'We confirm availability and transport, then your order is confirmed on your tracking page.'
+      : (allPriced ? 'You will get a quotation on your tracking page. Nothing is confirmed until you accept it.'
+                   : 'Listed-price ordering opens when every product has a price for your quantity. You will get a quotation on your tracking page, and nothing is confirmed until you accept it.');
+  }
+
+  // ---------------- destination ----------------
+  function renderCounties(){
+    var seen = {}, counties = [];
+    places.forEach(function(p){ if (!seen[p.county]) { seen[p.county] = 1; counties.push(p.county); } });
+    counties.sort();
+    $('whCounty').innerHTML = '<option value="">Choose your county</option>' + counties.map(function(c){ return '<option>' + esc(c) + '</option>'; }).join('');
+  }
+  function renderTowns(){
+    var c = $('whCounty').value, t = $('whTown');
+    if (!c) { t.innerHTML = '<option value="">Choose a county first</option>'; t.disabled = true; $('whTownOtherWrap').hidden = true; return; }
+    var list = places.filter(function(p){ return p.county === c; }).sort(function(a, b){ return a.name.localeCompare(b.name); });
+    t.innerHTML = '<option value="">Choose your town</option>' + list.map(function(p){ return '<option value="' + p.id + '">' + esc(p.name) + '</option>'; }).join('') +
+                  '<option value="other">My town is not listed</option>';
+    t.disabled = false; $('whTownOtherWrap').hidden = true;
+  }
+
+  // ---------------- recent requests (this browser only) ----------------
+  function recentGet(){ try { return JSON.parse(localStorage.getItem('mf_wh_recent') || '[]'); } catch (e) { return []; } }
+  function recentAdd(ref, token){
+    try {
+      var r = recentGet().filter(function(x){ return x.token !== token; });
+      r.unshift({ref: ref, token: token, at: new Date().toISOString()});
+      localStorage.setItem('mf_wh_recent', JSON.stringify(r.slice(0, 5)));
+    } catch (e) {}
+    renderRecent();
+  }
+  function renderRecent(){
+    var r = recentGet(), box = $('whRecent');
+    if (!r.length) { box.hidden = true; return; }
+    box.hidden = false;
+    box.innerHTML = '<p class="wh-hint">Requests sent from this phone</p>' + r.map(function(x){
+      return '<a href="/track/' + esc(x.token) + '"><b>' + esc(x.ref) + '</b><span class="wh-hint">' +
+        esc(new Date(x.at).toLocaleDateString('en-KE', {day: 'numeric', month: 'short'})) + ' · open</span></a>';
+    }).join('');
+  }
+
+  // ---------------- submit ----------------
+  function fail(m){ var e = $('whErr'); e.textContent = m; e.hidden = false; $('whSend').disabled = false; $('whSend').textContent = 'Send request'; e.scrollIntoView({block: 'nearest', behavior: 'smooth'}); }
+  function sourceTag(){ try { var s = sessionStorage.getItem('mf_src') || ''; return s ? 'via: ' + s : ''; } catch (e) { return ''; } }
+
+  function submit(ev){
+    ev.preventDefault(); $('whErr').hidden = true;
+    var good = lines.filter(function(l){ return l.product_id && Number(l.kg) > 0; });
+    if (!good.length) return fail('Add at least one product and the kilograms you need.');
+    if (good.length !== lines.filter(function(l){ return l.product_id || l.kg; }).length) return fail('Each product needs kilograms, and each quantity needs a product.');
+    for (var i = 0; i < good.length; i++) {
+      var p = byId(good[i].product_id);
+      if (p.moq_kg && Number(good[i].kg) < Number(p.moq_kg)) return fail('The minimum order for ' + p.name + ' is ' + kg(p.moq_kg) + '.');
+    }
+    var county = $('whCounty').value, town = $('whTown').value, other = $('whTownOther').value.trim();
+    if (!county) return fail('Choose the county this is going to.');
+    if (!town) return fail('Choose your town, or pick "My town is not listed".');
+    if (town === 'other' && other.length < 2) return fail('Type the name of your town.');
+    var name = $('whName').value.trim(), phone = $('whPhone').value.replace(/[\s-]/g, '');
+    if (name.length < 2) return fail('Give us a contact name.');
+    if (!/^(\+?254|0)?[17][0-9]{8}$/.test(phone)) return fail('That phone number does not look right. Use 07xx xxx xxx or 01xx xxx xxx.');
+    var email = $('whEmail').value.trim();
+    if (email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) return fail('That email address does not look right.');
+
+    var mode = document.querySelector('input[name="whMode"]:checked').value;
+    var note = [$('whNote').value.trim(), sourceTag()].filter(Boolean).join('  |  ');
+    var payload = {
+      contact_name: name, business_name: $('whBiz').value.trim(), phone: phone, email: email,
+      buyer_type: $('whType').value, county: county,
+      delivery_mode: mode, transport_pref: mode === 'collection' ? 'collection' : $('whTransport').value,
+      address_note: $('whAddr').value.trim(), note: note.slice(0, 1000),
+      kind: document.querySelector('input[name="whKind"]:checked').value,
+      lines: good.map(function(l){ return {product_id: l.product_id, kg: Number(l.kg), packaging: l.packaging || ''}; })
+    };
+    if (town === 'other') payload.town = other; else payload.place_id = Number(town);
+
+    $('whSend').disabled = true; $('whSend').textContent = 'Sending…';
+    rpc('mfm_w_place_order', {p: payload}).then(function(r){
+      var link = location.origin + r.track_path;
+      $('whOkRef').textContent = r.ref;
+      $('whOkMsg').textContent = r.kind === 'quote'
+        ? 'We will post your quotation on your tracking page and message you on WhatsApp. Nothing is confirmed until you accept it.'
+        : 'We will confirm availability and transport on your tracking page and message you on WhatsApp.';
+      $('whOkLink').textContent = link;
+      $('whOkOpen').href = r.track_path;
+      $('whOkWa').href = 'https://wa.me/' + WA + '?text=' + encodeURIComponent('Hello MombasaFish, about my wholesale request ' + r.ref + '.');
+      $('whForm').hidden = true; $('whOk').hidden = false;
+      $('whOk').scrollIntoView({block: 'start', behavior: 'smooth'});
+      recentAdd(r.ref, r.token);
+    }).catch(function(e){ fail(e.message); });
+  }
+
+  // ---------------- wiring ----------------
+  document.addEventListener('click', function(e){
+    var add = e.target.closest('[data-add]');
+    if (add) {
+      var id = Number(add.getAttribute('data-add'));
+      var empty = lines.filter(function(l){ return !l.product_id; })[0];
+      if (empty) empty.product_id = id; else if (!lines.some(function(l){ return l.product_id === id; })) lines.push({product_id: id, kg: '', packaging: ''});
+      renderLines();
+      $('order').scrollIntoView({behavior: 'smooth'});
+      setTimeout(function(){ var ins = $('whLines').querySelectorAll('input[data-f="kg"]'); for (var i = 0; i < lines.length; i++) if (lines[i].product_id === id && ins[i]) { ins[i].focus({preventScroll: true}); break; } }, 450);
+      return;
+    }
+    var rm = e.target.closest('[data-rm]');
+    if (rm) { lines.splice(Number(rm.getAttribute('data-rm')), 1); renderLines(); return; }
+    var cat = e.target.closest('.wh-cat');
+    if (cat) {
+      filter = cat.getAttribute('data-cat');
+      document.querySelectorAll('.wh-cat').forEach(function(b){ b.setAttribute('aria-pressed', String(b === cat)); });
+      renderRange();
+    }
+  });
+  $('whLines').addEventListener('change', function(e){
+    var i = e.target.getAttribute('data-i'), f = e.target.getAttribute('data-f'); if (i == null) return;
+    var v = e.target.value;
+    if (f === 'product_id') { lines[i].product_id = v ? Number(v) : null; lines[i].packaging = ''; }
+    else lines[i][f] = v;
+    renderLines();
+  });
+  $('whLines').addEventListener('input', function(e){
+    var i = e.target.getAttribute('data-i'), f = e.target.getAttribute('data-f');
+    if (i != null && f !== 'product_id') { lines[i][f] = e.target.value; if (f === 'kg') updateKind(); }
+  });
+  $('whAddLine').addEventListener('click', function(){ lines.push({product_id: null, kg: '', packaging: ''}); renderLines(); });
+  $('whCounty').addEventListener('change', renderTowns);
+  $('whTown').addEventListener('change', function(){ $('whTownOtherWrap').hidden = this.value !== 'other'; });
+  document.querySelectorAll('input[name="whMode"]').forEach(function(r){ r.addEventListener('change', function(){
+    var col = this.value === 'collection';
+    $('whTransportWrap').hidden = col;
+    $('whAddrLabel').textContent = col ? 'Where will you collect? (e.g. Shimoni, our Mombasa shop)' : 'Delivery address or landmark';
+  }); });
+  document.querySelectorAll('input[name="whKind"]').forEach(function(r){ r.addEventListener('change', updateKind); });
+  $('whForm').addEventListener('submit', submit);
+  $('whOkCopy').addEventListener('click', function(){
+    var t = $('whOkLink').textContent, b = this;
+    (navigator.clipboard ? navigator.clipboard.writeText(t) : Promise.reject()).then(function(){ b.textContent = 'Copied'; }, function(){ b.textContent = 'Select the link above to copy'; });
+  });
+  $('whTrackForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var m = ($('whTrackIn').value || '').toLowerCase().match(/[0-9a-f]{32}/);
+    if (!m) { var er = $('whTrackErr'); er.textContent = 'That does not look like one of our tracking links. Paste the whole link we sent you.'; er.hidden = false; return; }
+    location.href = '/track/' + m[0];
+  });
+
+  renderRecent();
+  Promise.all([rpc('mfm_w_catalogue'), rpc('mfm_w_places_list')]).then(function(r){
+    products = r[0] || []; places = r[1] || [];
+    renderRange(); renderCounties(); renderLines();
+  }).catch(function(e){
+    $('whRange').innerHTML = '<p class="wh-err">' + esc(e.message) + '</p>';
+    fail(e.message);
+  });
+})();
+</script>
 <script src="search.js" defer></script>
 <script src="ui.js" defer></script>
 <!-- Cloudflare Web Analytics --><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "a0dfbad9d92441fe9afdaf972bb97acd"}'></script><!-- End Cloudflare Web Analytics -->

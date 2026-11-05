@@ -5,6 +5,10 @@
 #  Netlify reads these top to bottom; the first match wins.
 # ===================================================================
 
+# ---- Wholesale: private consignment tracking (/track/<32-char token>) ----
+# Rewrites to wtrack.html. The shop tracker at /track itself is unaffected.
+/track/*                                         /wtrack.html                  200
+
 # ---- products: mapped one by one to their new pages ----
 /products/changu-emperor-fish                    /fish/changu                  301!
 /products/jodari-tuna-fish                       /fish/jodari                  301!
