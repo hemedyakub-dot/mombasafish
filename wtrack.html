@@ -54,6 +54,10 @@
 .wt-table th{font-family:var(--font-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:400}
 .wt-table td.out{color:var(--coral);font-weight:700}
 .wt-quote .wt-total{font-family:var(--font-display);font-size:1.4rem;color:var(--abyss);margin:.6rem 0 .2rem}
+.wt-value .wt-total{font-family:var(--font-display);font-size:1.4rem;color:var(--abyss);margin:.2rem 0 .1rem}
+.wt-value .lead{margin:0 0 .8rem;color:var(--muted)}
+.wt-value .wt-qgrid{grid-template-columns:repeat(auto-fit,minmax(130px,1fr));margin-bottom:.7rem}
+.wt-value .wt-qgrid dd small{display:block;font-weight:400;color:var(--muted);font-size:.8rem}
 .wt-quote .btns{display:flex;gap:.6rem;flex-wrap:wrap;margin-top:.9rem}
 .wt-quote textarea{font:inherit;width:100%;box-sizing:border-box;border:1px solid rgba(3,42,46,.28);border-radius:10px;padding:.7rem .85rem;min-height:48px;margin-top:.6rem}
 .wt-pay{background:var(--cream);border-radius:14px;padding:1rem;margin-top:.9rem}
@@ -240,6 +244,23 @@
     return h + '</section>';
   }
 
+  // value of the buyer's goods at their agreed price per kg (their own prices only)
+  function valueCard(o){
+    var g = o.goods_value;
+    if (!g || !g.priced || o.cancelled || o.declined) return '';
+    var cell = function(label, v, kgs){ return '<div><dt>' + label + '</dt><dd>' + kes(v) + (kgs != null ? '<small>' + num(kgs) + ' kg</small>' : '') + '</dd></div>'; };
+    var road = Number(g.on_road_kes) > 0, allIn = !road && Number(g.to_send_kg) <= 0 && Number(g.delivered_kg) > 0;
+    var h = '<section class="wt-card wt-value"><h2>Value of your goods</h2>';
+    if (road) h += '<p class="wt-total">On the road now: ' + kes(g.on_road_kes) + '</p><p class="lead">' + num(g.on_road_kg) + ' kg in transit</p>';
+    else if (allIn) h += '<p class="wt-total">All goods delivered</p><p class="lead">Nothing is on the road now.</p>';
+    else h += '<p class="lead">Nothing is on the road yet.</p>';
+    h += '<dl class="wt-qgrid">' + cell(g.confirmed ? 'Agreed goods value' : 'At listed prices', g.agreed_kes, g.agreed_kg) +
+      cell('Delivered', g.delivered_kes, g.delivered_kg) + cell('Still to send', g.to_send_kes, g.to_send_kg) +
+      (Number(g.transport_kes) > 0 ? cell('Transport', g.transport_kes, null) : '') + '</dl>' +
+      '<p class="wh-hint">Worked out from your ' + (g.confirmed ? 'agreed' : 'listed (not yet confirmed)') + ' price per kg for each product. Use "On the road now" as the value of your goods in transit, for example for insurance or a transport declaration. Only people with this link can see these amounts.</p></section>';
+    return h;
+  }
+
   function render(o){
     last = o;
     var st = STATUS[o.status] || [o.status, ''];
@@ -259,6 +280,7 @@
     if (o.declined) h += '<div class="wt-banner bad">This quotation was declined, so the order is closed.</div>';
 
     h += quoteCard(o);
+    h += valueCard(o);
     h += mapCard(o);
     h += '<section class="wt-card' + (o.cancelled || o.declined ? ' wt-dim' : '') + '"><h2>Progress</h2>' + steps(o) + '</section>';
 
@@ -271,7 +293,8 @@
         cell('Prepared', num(l.prepared_kg) + ' kg') +
         cell('Dispatched', num(l.dispatched_kg) + ' kg') +
         cell('Delivered', num(l.delivered_kg) + ' kg') +
-        cell('Still to send', num(l.outstanding_kg) + ' kg', part ? 'out' : '') + '</dl></div>';
+        cell('Still to send', num(l.outstanding_kg) + ' kg', part ? 'out' : '') +
+        (l.price_per_kg != null && !o.cancelled && !o.declined ? cell('Price / kg', kes(l.price_per_kg)) + cell('Value', kes(l.value_kes)) : '') + '</dl></div>';
     }).join('');
     h += '<section class="wt-card"><h2>Quantities</h2>' + qty + '</section>';
 
@@ -279,6 +302,7 @@
       h += '<section class="wt-card"><h2>Shipments</h2>' + o.shipments.map(function(s){
         return '<div class="wt-ship"><div class="r1"><b>' + esc(s.ref) + '</b><span class="wt-pill ' + (s.status === 'delivered' ? 'good' : s.status === 'delayed' ? 'warn' : 'neutral') + '">' + esc(SHIP[s.status] || s.status) + '</span></div>' +
           '<div>' + num(s.kg) + ' kg · ' + esc(MODE[s.mode] || s.mode) + (s.dispatched_at ? ' · left Shimoni ' + when(s.dispatched_at, true) : '') + '</div>' +
+          (s.value_kes != null && !o.cancelled ? '<div>Goods value ' + kes(s.value_kes) + '</div>' : '') +
           (s.eta && s.status !== 'delivered' ? '<div>Expected ' + when(s.eta) + '</div>' : '') +
           (s.delivered_at ? '<div>Delivered ' + when(s.delivered_at, true) + '</div>' : '') +
           (s.last_location ? '<div class="loc">Last confirmed: ' + esc(s.last_location) + (s.last_location_at ? ', ' + when(s.last_location_at, true) : '') + '</div>' : '') +
