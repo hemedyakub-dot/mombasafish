@@ -19,6 +19,7 @@
 <link rel="icon" href="images/logo.jpg">
 <link rel="preload" as="image" href="images/blog-journey.jpg" fetchpriority="high">
 <link rel="stylesheet" href="style.css">
+<style>.rmap{margin:1.1rem 0 .4rem}.rmap h3{font-family:var(--font-display);font-size:1rem;color:var(--abyss);margin:0 0 .6rem}.rmap .cap{font-weight:600;margin:.7rem 0 .2rem;color:var(--ink)}.rmap .nt{font-size:.8rem;color:var(--muted);margin:0}</style>
 <style>.hero.hero-photo{--hero-img:url("images/blog-journey.jpg");min-height:32vh;padding:3rem 1rem 2.5rem}</style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mombasafish.com/"},{"@type":"ListItem","position":2,"name":"Track Order","item":"https://mombasafish.com/track"}]}</script>
 </head>
@@ -66,6 +67,7 @@
   <div class="result" id="tres">
     <p class="pill" style="font-family:var(--font-mono);color:var(--coral);font-size:.75rem" id="r-ord"></p>
     <div class="stages" id="r-stages"></div>
+    <div class="rmap" id="r-map" hidden></div>
     <dl class="kv" id="r-kv"></dl>
     <button class="btn btn-wa" style="width:100%;margin-top:1rem;display:none" id="r-confirm">✓ I have received my order</button>
   </div>
@@ -84,6 +86,7 @@
   <p class="fine"><span class="wmf">Mombasa<em>Fish</em></span> — Market · Media · Academy · Ocean · Exports<br>Quality · Delivery · Freshness · Traceable to the Source<br>© 2026 MombasaFish</p>
 </footer>
 
+<script src="kmap.js?v=1"></script>
 <script>
 (function(){
   var SB='https://tcpqbrchpxpshmqprbkv.supabase.co';
@@ -141,6 +144,7 @@
       go.disabled=false;go.textContent='Track order';
       if(!rows||!rows.length){err.style.display='block';return;}
       paint(rows[0]);
+      drawMap();
     }).catch(function(){
       go.disabled=false;go.textContent='Track order';
       err.innerHTML='<strong>Network problem.</strong> Try again in a few seconds.';
@@ -148,12 +152,25 @@
     });
   });
 
+  /* route map: Shimoni -> Mombasa check point -> the customer's county (never the exact address) */
+  function drawMap(){
+    var box=document.getElementById('r-map');
+    box.hidden=true;box.innerHTML='';
+    if(!window.KMap)return;
+    rpc('track_order_route',{p_order:cur.ord,p_code:cur.code}).then(function(r){
+      var m=window.KMap.retail(r,{cw:Math.max(280,Math.min(res.clientWidth||360,736))});
+      if(!m)return;
+      box.innerHTML='<h3>Route of your order</h3>'+m.svg+'<p class="cap">'+m.caption+'</p><p class="nt">'+m.note+'</p>';
+      box.hidden=false;
+    }).catch(function(){});
+  }
+
   document.getElementById('r-confirm').addEventListener('click',function(){
     var b=this;b.disabled=true;b.textContent='Confirming…';
     rpc('confirm_receipt',{p_order:cur.ord,p_code:cur.code}).then(function(){
       b.disabled=false;b.textContent='✓ I have received my order';
       return rpc('track_order',{p_order:cur.ord,p_code:cur.code});
-    }).then(function(rows){if(rows&&rows.length)paint(rows[0]);})
+    }).then(function(rows){if(rows&&rows.length){paint(rows[0]);drawMap();}})
     .catch(function(){b.disabled=false;b.textContent='✓ I have received my order';});
   });
 })();
