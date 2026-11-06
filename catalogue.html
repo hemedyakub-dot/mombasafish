@@ -1261,7 +1261,7 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
       var unit=c.dataset.unit==='kg'?' kg':' pc';
       var cost=q*(+c.dataset.price);
       t+=cost;
-      out.push(c.dataset.name+' — '+q+unit+' — KES '+cost.toLocaleString());
+      out.push(c.dataset.name+' — '+q+unit+' — KES '+cost.toLocaleString('en-KE'));
     });
     return {lines:out, total:t};
   }
@@ -1290,7 +1290,7 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
 
     var prep=(document.getElementById('cprep')||{}).value||'';
     var items=cart.lines.join('; ')
-      + ' | Items total: KES '+cart.total.toLocaleString()
+      + ' | Items total: KES '+cart.total.toLocaleString('en-KE')
       + (prep?' | Prep: '+prep:'')
       + ' | Placed on website';
 
