@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://tcpqbrchpxpshmqprbkv.supabase.co" crossorigin>
 <title>Track Your Order · MombasaFish</title>
 <meta name="description" content="Enter your order number and tracking code to see exactly where your catch is — from Shimoni to your door.">
 <link rel="canonical" href="https://mombasafish.com/track">
@@ -140,11 +141,11 @@
     go.disabled=true;go.textContent='Searching…';
     cur.ord=document.getElementById('ord').value.trim();
     cur.code=document.getElementById('code').value.trim();
-    rpc('track_order',{p_order:cur.ord,p_code:cur.code}).then(function(rows){
+    rpc('track_order_bundle',{p_order:cur.ord,p_code:cur.code}).then(function(b){
       go.disabled=false;go.textContent='Track order';
-      if(!rows||!rows.length){err.style.display='block';return;}
-      paint(rows[0]);
-      drawMap();
+      if(!b||!b.found){err.style.display='block';return;}
+      paint(b.order);
+      drawMap(b.route);
     }).catch(function(){
       go.disabled=false;go.textContent='Track order';
       err.innerHTML='<strong>Network problem.</strong> Try again in a few seconds.';
@@ -153,24 +154,24 @@
   });
 
   /* route map: Shimoni -> Mombasa check point -> the customer's county (never the exact address) */
-  function drawMap(){
+  function drawMap(r){
     var box=document.getElementById('r-map');
     box.hidden=true;box.innerHTML='';
-    if(!window.KMap)return;
-    rpc('track_order_route',{p_order:cur.ord,p_code:cur.code}).then(function(r){
+    if(!window.KMap||!r)return;
+    try{
       var m=window.KMap.retail(r,{cw:Math.max(280,Math.min(res.clientWidth||360,736))});
       if(!m)return;
       box.innerHTML='<h3>Route of your order</h3>'+m.svg+'<p class="cap">'+m.caption+'</p><p class="nt">'+m.note+'</p>';
       box.hidden=false;
-    }).catch(function(){});
+    }catch(e){}
   }
 
   document.getElementById('r-confirm').addEventListener('click',function(){
     var b=this;b.disabled=true;b.textContent='Confirming…';
     rpc('confirm_receipt',{p_order:cur.ord,p_code:cur.code}).then(function(){
       b.disabled=false;b.textContent='✓ I have received my order';
-      return rpc('track_order',{p_order:cur.ord,p_code:cur.code});
-    }).then(function(rows){if(rows&&rows.length){paint(rows[0]);drawMap();}})
+      return rpc('track_order_bundle',{p_order:cur.ord,p_code:cur.code});
+    }).then(function(b){if(b&&b.found){paint(b.order);drawMap(b.route);}})
     .catch(function(){b.disabled=false;b.textContent='✓ I have received my order';});
   });
 })();
