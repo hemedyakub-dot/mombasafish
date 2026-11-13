@@ -62,6 +62,9 @@
 .wh-lines{display:grid;gap:.6rem}
 .wh-line{display:grid;grid-template-columns:minmax(0,2fr) minmax(90px,.8fr) minmax(0,1.3fr) auto;gap:.55rem;align-items:end;background:var(--cream);border-radius:12px;padding:.75rem}
 .wh-line .wh-lp{grid-column:1/-1;font-size:.8rem;color:var(--muted);font-weight:400;margin:0}
+.wh-line .wh-lp.warn{background:#fff1d6;color:#7a4a00;border-left:4px solid #e0a100;border-radius:8px;padding:.6rem .8rem;font-size:.88rem;font-weight:600}
+.wh-line .wh-lp.warn a{color:#7a4a00}
+.wh-line input.under{border-color:#e0a100;background:#fffaf0}
 .wh-x{border:0;background:transparent;color:#b3261e;font-weight:700;cursor:pointer;min-height:48px;padding:0 .7rem;font-size:.9rem}
 .wh-add{border:1px dashed var(--deep);background:transparent;color:var(--deep);border-radius:12px;padding:.8rem;font:inherit;font-weight:700;cursor:pointer;min-height:48px}
 .wh-choice{display:flex;gap:.6rem;flex-wrap:wrap}
@@ -89,7 +92,7 @@
   .wh-trackrow{flex-direction:column}
 }
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you supply restaurants and hotels?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply kitchens across Mombasa and the south coast, and we deliver countrywide. Standing orders are agreed directly with you — species, quantities, cut, frequency and delivery window."}}, {"@type": "Question", "name": "What is the minimum order?", "acceptedAnswer": {"@type": "Answer", "text": "There is no fixed minimum for a first order. For standing supply we agree a weekly volume with you so we can commit the right buying at the landing site. Tell us what your kitchen actually uses in a week and we will build around it."}}, {"@type": "Question", "name": "Can you guarantee the same fish every week?", "acceptedAnswer": {"@type": "Answer", "text": "Honestly, no — and be wary of any supplier who says otherwise. The catch is whatever the boats land. What we can guarantee is a weekly volume, a price agreed in advance, and a call the evening before telling you exactly what is coming so your kitchen can plan the menu around it."}}, {"@type": "Question", "name": "Do you offer trade pricing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on standing volume. Trade rates are agreed per species and per week rather than published, because they depend on quantity and consistency. Send us your usual weekly list and we will quote against it."}}, {"@type": "Question", "name": "Can you prepare fish to our specification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Scaled, gutted, filleted, portioned to a set weight, steaked, peeled and deveined. Tell us the portion size your kitchen plates and we cut to it, so your line cooks receive fish ready to go."}}, {"@type": "Question", "name": "How do we pay?", "acceptedAnswer": {"@type": "Answer", "text": "M-Pesa as standard. For regular accounts we can discuss terms once a supply relationship is established."}}, {"@type": "Question", "name": "Do you supply export buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Export-grade product is part of what we handle, particularly dried prawns and dried seafood. Export requires the correct licensing and documentation, which we handle case by case — start a conversation and we will tell you plainly what is and is not possible."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do you supply restaurants and hotels?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. We supply kitchens across Mombasa and the south coast, and we deliver countrywide. Standing orders are agreed directly with you — species, quantities, cut, frequency and delivery window."}}, {"@type": "Question", "name": "What is the minimum order?", "acceptedAnswer": {"@type": "Answer", "text": "Katashingo and dried seafood (dried prawns, sea moss) start at 10 kg per product. Fresh fish has no fixed minimum for a first order. For standing supply we agree a weekly volume with you so we can commit the right buying at the landing site."}}, {"@type": "Question", "name": "Can you guarantee the same fish every week?", "acceptedAnswer": {"@type": "Answer", "text": "Honestly, no — and be wary of any supplier who says otherwise. The catch is whatever the boats land. What we can guarantee is a weekly volume, a price agreed in advance, and a call the evening before telling you exactly what is coming so your kitchen can plan the menu around it."}}, {"@type": "Question", "name": "Do you offer trade pricing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, on standing volume. Trade rates are agreed per species and per week rather than published, because they depend on quantity and consistency. Send us your usual weekly list and we will quote against it."}}, {"@type": "Question", "name": "Can you prepare fish to our specification?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Scaled, gutted, filleted, portioned to a set weight, steaked, peeled and deveined. Tell us the portion size your kitchen plates and we cut to it, so your line cooks receive fish ready to go."}}, {"@type": "Question", "name": "How do we pay?", "acceptedAnswer": {"@type": "Answer", "text": "M-Pesa as standard. For regular accounts we can discuss terms once a supply relationship is established."}}, {"@type": "Question", "name": "Do you supply export buyers?", "acceptedAnswer": {"@type": "Answer", "text": "Export-grade product is part of what we handle, particularly dried prawns and dried seafood. Export requires the correct licensing and documentation, which we handle case by case — start a conversation and we will tell you plainly what is and is not possible."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://mombasafish.com/"}, {"@type": "ListItem", "position": 2, "name": "Wholesale & Trade", "item": "https://mombasafish.com/wholesale"}]}</script>
 </head>
 <body>
@@ -314,7 +317,7 @@
 
 <section class="psec"><h2>Questions from buyers</h2>
 <details class="pfaq"><summary>Do you supply restaurants and hotels?</summary><div class="a"><p>Yes. We supply kitchens across Mombasa and the south coast, and we deliver countrywide. Standing orders are agreed directly with you — species, quantities, cut, frequency and delivery window.</p></div></details>
-<details class="pfaq"><summary>What is the minimum order?</summary><div class="a"><p>There is no fixed minimum for a first order. For standing supply we agree a weekly volume with you so we can commit the right buying at the landing site. Tell us what your kitchen actually uses in a week and we will build around it.</p></div></details>
+<details class="pfaq"><summary>What is the minimum order?</summary><div class="a"><p>Katashingo and dried seafood (dried prawns, sea moss) start at 10 kg per product. Fresh fish has no fixed minimum for a first order. For standing supply we agree a weekly volume with you so we can commit the right buying at the landing site.</p></div></details>
 <details class="pfaq"><summary>Can you guarantee the same fish every week?</summary><div class="a"><p>Honestly, no — and be wary of any supplier who says otherwise. The catch is whatever the boats land. What we can guarantee is a weekly volume, a price agreed in advance, and a call the evening before telling you exactly what is coming so your kitchen can plan the menu around it.</p></div></details>
 <details class="pfaq"><summary>Do you offer trade pricing?</summary><div class="a"><p>Yes, on standing volume. Trade rates are agreed per species and per week rather than published, because they depend on quantity and consistency. Send us your usual weekly list and we will quote against it.</p></div></details>
 <details class="pfaq"><summary>Can you prepare fish to our specification?</summary><div class="a"><p>Yes. Scaled, gutted, filleted, portioned to a set weight, steaked, peeled and deveined. Tell us the portion size your kitchen plates and we cut to it, so your line cooks receive fish ready to go.</p></div></details>
@@ -437,6 +440,29 @@
     });
     return html;
   }
+  // the note under each product line; a warning when below the wholesale minimum
+  function lineInfo(l){
+    var p = l.product_id ? byId(l.product_id) : null;
+    if (!p) return null;
+    var q = Number(l.kg) || 0, pr = q ? priceFor(p, q) : null;
+    if (p.moq_kg && q && q < Number(p.moq_kg)) return {warn: true, html:
+      '&#9888; Wholesale for ' + esc(p.name) + ' starts at ' + esc(kg(p.moq_kg)) + '. Raise it to at least ' + esc(kg(p.moq_kg)) +
+      ' to continue. Need less? <a href="catalogue.html">Buy smaller amounts in our shop</a>.'};
+    if (pr != null) return {html: esc(kes(pr) + '/kg · about ' + kes(pr * q) + ' before transport')};
+    if (p.moq_kg && !q) return {html: esc('Wholesale starts at ' + kg(p.moq_kg) + '.')};
+    return {html: esc((p.tiers && p.tiers.length && q) ? 'Below the smallest listed quantity — we will quote it.' : 'Priced on quotation.')};
+  }
+  // refresh one line's note while the buyer is still typing (keeps the cursor in the box)
+  function refreshLineInfo(i){
+    var row = $('whLines').children[i]; if (!row) return;
+    var info = lineInfo(lines[i]), el = row.querySelector('.wh-lp'), inp = row.querySelector('input[data-f="kg"]');
+    if (inp) { inp.classList.toggle('under', !!(info && info.warn)); if (info && info.warn) inp.setAttribute('aria-invalid', 'true'); else inp.removeAttribute('aria-invalid'); }
+    if (!info) { if (el) el.remove(); return; }
+    if (!el) { el = document.createElement('p'); row.appendChild(el); }
+    el.className = 'wh-lp' + (info.warn ? ' warn' : '');
+    if (info.warn) el.setAttribute('role', 'alert'); else el.removeAttribute('role');
+    el.innerHTML = info.html;
+  }
   function renderLines(){
     var box = $('whLines');
     if (!lines.length) lines.push({product_id: null, kg: '', packaging: ''});
@@ -446,19 +472,13 @@
         ? '<select data-i="' + i + '" data-f="packaging"><option value="">Packaging</option>' + p.packaging_options.map(function(o){
             return '<option' + (o === l.packaging ? ' selected' : '') + '>' + esc(o) + '</option>'; }).join('') + '</select>'
         : '<input data-i="' + i + '" data-f="packaging" maxlength="60" placeholder="Packaging (optional)" value="' + esc(l.packaging) + '">';
-      var info = '';
-      if (p) {
-        var q = Number(l.kg) || 0, pr = q ? priceFor(p, q) : null;
-        if (p.moq_kg && q && q < Number(p.moq_kg)) info = 'Minimum order is ' + kg(p.moq_kg) + '.';
-        else if (pr != null) info = kes(pr) + '/kg · about ' + kes(pr * q) + ' before transport';
-        else info = (p.tiers && p.tiers.length && q) ? 'Below the smallest listed quantity — we will quote it.' : 'Priced on quotation.';
-      }
+      var info = lineInfo(l), under = info && info.warn;
       return '<div class="wh-line">' +
         '<label class="wh-pl">Product<select data-i="' + i + '" data-f="product_id">' + productOptions(l.product_id) + '</select></label>' +
-        '<label>Kilograms<input data-i="' + i + '" data-f="kg" type="number" inputmode="decimal" min="0.5" step="0.5" value="' + esc(l.kg) + '"></label>' +
+        '<label>Kilograms<input data-i="' + i + '" data-f="kg" type="number" inputmode="decimal" min="' + (p && p.moq_kg ? Number(p.moq_kg) : 0.5) + '" step="0.5"' + (p && p.moq_kg ? ' placeholder="Min ' + Number(p.moq_kg) + '"' : '') + (under ? ' class="under" aria-invalid="true"' : '') + ' value="' + esc(l.kg) + '"></label>' +
         '<label>Packaging' + pack + '</label>' +
         '<button type="button" class="wh-x" data-rm="' + i + '" aria-label="Remove this product">Remove</button>' +
-        (info ? '<p class="wh-lp">' + esc(info) + '</p>' : '') + '</div>';
+        (info ? '<p class="wh-lp' + (info.warn ? ' warn' : '') + '"' + (info.warn ? ' role="alert"' : '') + '>' + info.html + '</p>' : '') + '</div>';
     }).join('');
     updateKind();
   }
@@ -528,7 +548,7 @@
     if (good.length !== lines.filter(function(l){ return l.product_id || l.kg; }).length) return fail('Each product needs kilograms, and each quantity needs a product.');
     for (var i = 0; i < good.length; i++) {
       var p = byId(good[i].product_id);
-      if (p.moq_kg && Number(good[i].kg) < Number(p.moq_kg)) return fail('The minimum order for ' + p.name + ' is ' + kg(p.moq_kg) + '.');
+      if (p.moq_kg && Number(good[i].kg) < Number(p.moq_kg)) return fail('Wholesale for ' + p.name + ' starts at ' + kg(p.moq_kg) + '. Raise the kilograms, or buy smaller amounts in our shop.');
     }
     var county = $('whCounty').value, town = $('whTown').value, other = $('whTownOther').value.trim();
     if (!county) return fail('Choose the county this is going to.');
@@ -598,7 +618,7 @@
   });
   $('whLines').addEventListener('input', function(e){
     var i = e.target.getAttribute('data-i'), f = e.target.getAttribute('data-f');
-    if (i != null && f !== 'product_id') { lines[i][f] = e.target.value; if (f === 'kg') updateKind(); }
+    if (i != null && f !== 'product_id') { lines[i][f] = e.target.value; if (f === 'kg') { refreshLineInfo(Number(i)); updateKind(); } }
   });
   $('whAddLine').addEventListener('click', function(){ lines.push({product_id: null, kg: '', packaging: ''}); renderLines(); });
   $('whCounty').addEventListener('change', renderTowns);
