@@ -7,6 +7,9 @@
   if(!box) return;
 
   var name=box.dataset.name, unit=box.dataset.unit, price=+box.dataset.price||0;
+  /* data-batch: sold only in whole batches (prawns: 2 kg), so +/- moves a batch at a time */
+  var batch=+box.dataset.batch||0, step=batch||1;
+  function toBatch(v){ return (batch&&v>0) ? Math.ceil(v/batch-1e-9)*batch : v; }
   var addBtn=box.querySelector('.add'), qtyBox=box.querySelector('.qty'),
       nEl=box.querySelector('.n'), plus=box.querySelector('.pl'), minus=box.querySelector('.mn'),
       toCart=box.querySelector('.tocart');
@@ -17,7 +20,7 @@
 
   function read(){ try{ return JSON.parse(localStorage.getItem(STORE)||'{}'); }catch(e){ return {}; } }
   function write(d){ try{ localStorage.setItem(STORE,JSON.stringify(d)); }catch(e){} }
-  function get(){ var d=read(); return (d.q&&d.q[name])||0; }
+  function get(){ var d=read(); return toBatch((d.q&&d.q[name])||0); }
   function set(v){
     var d=read(); d.q=d.q||{};
     if(v>0) d.q[name]=v; else delete d.q[name];
@@ -43,9 +46,9 @@
     }
   }
 
-  addBtn.addEventListener('click',function(){ set(get()||1); });
-  plus.addEventListener('click',function(){ set(get()+1); });
-  minus.addEventListener('click',function(){ set(Math.max(0,get()-1)); });
+  addBtn.addEventListener('click',function(){ set(get()||step); });
+  plus.addEventListener('click',function(){ set(get()+step); });
+  minus.addEventListener('click',function(){ var v=get()-step; set(batch&&v<batch ? 0 : Math.max(0,v)); });
 
   paint();
   window.addEventListener('pageshow',paint);
