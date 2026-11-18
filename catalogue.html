@@ -33,6 +33,9 @@
 .ordgrid input:focus{outline:2px solid var(--deep);outline-offset:1px}
 .ordf .btn{margin-top:1rem}
 .ordsmall{font-size:.8rem;color:var(--muted);text-align:center;margin-top:.5rem}
+.ordoptin{display:flex;gap:.6rem;align-items:flex-start;margin-top:.9rem;font-size:.88rem;line-height:1.4;color:var(--abyss);cursor:pointer}
+.ordoptin input{width:20px;height:20px;margin:.1rem 0 0;flex:0 0 auto;accent-color:var(--deep)}
+.ordoptin span{color:var(--muted)}
 .orderr{margin-top:.7rem;background:#FDECEC;border:1px solid #E7B4B4;color:#8A2323;border-radius:10px;padding:.7rem .85rem;font-size:.9rem}
 .ordalt{text-align:center;font-size:.82rem;color:var(--muted);margin:1.1rem 0 .5rem}
 .ordok{margin-top:1.2rem;background:var(--abyss);color:var(--sand);border-radius:16px;padding:1.3rem}
@@ -1009,6 +1012,7 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
       <div class="wide"><label for="oplace">Town, estate or stage</label><input id="oplace" name="place" type="text" maxlength="60" placeholder="e.g. South C, Nairobi"></div>
       <div class="wide"><label for="onote">Anything we should know <span>(optional)</span></label><input id="onote" name="note" type="text" maxlength="200" placeholder="e.g. deliver Saturday morning"></div>
     </div>
+    <label class="ordoptin" for="ooptin"><input id="ooptin" type="checkbox"> <div>Send me fresh-catch alerts and offers on WhatsApp. <span>About once a week. Reply STOP anytime.</span></div></label>
     <button class="btn btn-foam" style="width:100%" id="osend" type="submit">Place order</button>
     <p class="ordsmall">No payment now. We confirm availability and your total first.</p>
     <p class="orderr" id="orderr" role="alert" hidden></p>
@@ -1314,6 +1318,13 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
       }
       var row=Array.isArray(res.body)?res.body[0]:res.body;
       if(!row||!row.order_number) return fail('Order did not save. Please use WhatsApp so we do not lose it.');
+      var optin=document.getElementById('ooptin');
+      if(optin&&optin.checked){
+        // only a tick is sent; the database takes the phone number from the order itself
+        fetch(SB+'/rest/v1/rpc/mfm_checkout_consent',{method:'POST',
+          headers:{'Content-Type':'application/json','apikey':KEY,'Authorization':'Bearer '+KEY},
+          body:JSON.stringify({p_order:row.order_number,p_tracking:row.tracking_code,p_whatsapp:true})}).catch(function(){});
+      }
       f.hidden=true;
       document.querySelector('.ordalt').textContent='Anything else? Message us:';
       okEl.hidden=false;
