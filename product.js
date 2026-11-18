@@ -7,6 +7,10 @@
   if(!box) return;
 
   var name=box.dataset.name, unit=box.dataset.unit, price=+box.dataset.price||0;
+  /* Google Analytics shop events. GA is added by Netlify, not in this file: gtag() queues the event
+     until GA has loaded, and does nothing harmful if GA is switched off. No names or phone numbers are sent. */
+  function mfg(n,p){try{window.dataLayer=window.dataLayer||[];if(typeof window.gtag!=='function'){window.gtag=function(){window.dataLayer.push(arguments);};}window.gtag('event',n,p);}catch(e){}}
+  mfg('view_item',{currency:'KES',value:price,items:[{item_name:name,price:price,quantity:1}]});
   /* data-batch: sold only in whole batches (prawns: 2 kg), so +/- moves a batch at a time */
   var batch=+box.dataset.batch||0, step=batch||1;
   function toBatch(v){ return (batch&&v>0) ? Math.ceil(v/batch-1e-9)*batch : v; }
@@ -46,7 +50,7 @@
     }
   }
 
-  addBtn.addEventListener('click',function(){ set(get()||step); });
+  addBtn.addEventListener('click',function(){ set(get()||step); mfg('add_to_cart',{currency:'KES',value:price*step,items:[{item_name:name,price:price,quantity:step}]}); });
   plus.addEventListener('click',function(){ set(get()+step); });
   minus.addEventListener('click',function(){ var v=get()-step; set(batch&&v<batch ? 0 : Math.max(0,v)); });
 
