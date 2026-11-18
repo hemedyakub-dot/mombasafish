@@ -1084,9 +1084,16 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
     c.classList.toggle('sel',c.qty>0);
     refresh();
   }
+  /* Google Analytics shop events. GA is added by Netlify, not in this file: gtag() queues the event
+     until GA has loaded, and does nothing harmful if GA is switched off. No names or phone numbers are sent. */
+  function mfg(n,p){try{window.dataLayer=window.dataLayer||[];if(typeof window.gtag!=='function'){window.gtag=function(){window.dataLayer.push(arguments);};}window.gtag('event',n,p);}catch(e){}}
+  function gaItem(c,q){return {item_name:c.dataset.name,price:+c.dataset.price||0,quantity:q||c.qty||1};}
+  window.mfGaCart=function(){var it=[],v=0;cards.forEach(function(c){if(c.qty>0){it.push(gaItem(c));v+=c.qty*(+c.dataset.price||0);}});return {currency:'KES',value:v,items:it};};
+  window.mfg=mfg;
   cards.forEach(function(c){
     c.qty=0;
-    c.querySelector('.add').addEventListener('click',function(){c.qty=batch(c)||1;paint(c);});
+    c.querySelector('.add').addEventListener('click',function(){c.qty=batch(c)||1;paint(c);
+      mfg('add_to_cart',{currency:'KES',value:c.qty*(+c.dataset.price||0),items:[gaItem(c)]});});
     c.querySelector('.pl').addEventListener('click',function(){inc(c);});
     c.querySelector('.mn').addEventListener('click',function(){dec(c);});
 
@@ -1209,6 +1216,7 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
   });
   document.getElementById('oview').addEventListener('click',function(){
     renderPanel();panel.classList.add('open');document.body.classList.add('cart-sheet');
+    mfg('view_cart',window.mfGaCart());
   });
   document.getElementById('cclose').addEventListener('click',function(){
     panel.classList.remove('open');document.body.classList.remove('cart-sheet');
@@ -1237,6 +1245,7 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
   }
   if(waBtn) waBtn.addEventListener('click',function(){
     var sel=selected(); if(!sel.length) return;
+    mfg('generate_lead',{method:'whatsapp_checkout',currency:'KES',value:total(sel)});
     var ref=waBtn.dataset.order;
     if(ref){
       window.open('https://wa.me/'+WA+'?text='+encodeURIComponent(waMessage(sel,ref)),'_blank');
@@ -1284,6 +1293,8 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
   function fail(m){ errEl.textContent=m; errEl.hidden=false; btn.disabled=false; btn.textContent='Place order';
                     errEl.scrollIntoView({block:'nearest',behavior:'smooth'}); }
 
+  var gaBegun=false;
+  f.addEventListener('focusin',function(){ if(gaBegun) return; gaBegun=true; if(window.mfg&&window.mfGaCart) window.mfg('begin_checkout',window.mfGaCart()); });
   f.addEventListener('submit', function(ev){
     ev.preventDefault(); errEl.hidden=true;
     var cart=cartLines();
@@ -1318,6 +1329,8 @@ body.cart-sheet .mfwa{opacity:0;pointer-events:none}
       }
       var row=Array.isArray(res.body)?res.body[0]:res.body;
       if(!row||!row.order_number) return fail('Order did not save. Please use WhatsApp so we do not lose it.');
+      // order placed (not yet paid): value is the website basket
+      if(window.mfg&&window.mfGaCart){ var gc=window.mfGaCart(); gc.transaction_id=row.order_number; gc.county=county; window.mfg('purchase',gc); }
       var optin=document.getElementById('ooptin');
       if(optin&&optin.checked){
         // only a tick is sent; the database takes the phone number from the order itself
