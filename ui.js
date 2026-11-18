@@ -196,6 +196,13 @@
     var cmp = q.get('utm_campaign') || q.get('cmp');
     var fb  = q.get('fbclid');
 
+    // In-app browsers (TikTok, Instagram, Facebook) usually send no referrer,
+    // so they used to show as "direct". Their browser name gives them away.
+    var ua = navigator.userAgent || '';
+    var app = /musical_ly|BytedanceWebview|TikTok/i.test(ua) ? 'tiktok'
+            : /Instagram/i.test(ua) ? 'instagram'
+            : /FBAN|FBAV|FB_IAB|FBIOS/i.test(ua) ? 'facebook' : '';
+
     if (src) bits.push(src + (med ? '/' + med : ''));
     else if (fb) bits.push('meta');
     else if (document.referrer) {
@@ -204,11 +211,12 @@
       if (h && h.indexOf(location.hostname) === -1) {
         if (/facebook|fb\.|instagram|messenger/.test(h)) bits.push('meta');
         else if (/google|bing|duckduckgo|yahoo/.test(h)) bits.push('search');
-        else if (/whatsapp|wa\.me/.test(h))              bits.push('whatsapp');
+        else if (/whatsapp|wa\.me|l\.wl\.co/.test(h))    bits.push('whatsapp');
         else if (/tiktok/.test(h))                        bits.push('tiktok');
         else bits.push(h);
       }
     }
+    if (!bits.length && app) bits.push(app + '/app');
     if (!bits.length) bits.push('direct');
     if (cmp) bits.push('cmp:' + cmp);
 
